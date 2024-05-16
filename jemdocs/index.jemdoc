@@ -4,29 +4,31 @@
 ~~~
 {}{img_left}{imgs/tyh.jpg}{Yihang Tao}{125px}{160px}{}
 Yihang Tao (陶祎航) \n
-Master student in Electronic Information \n
-[https://english.seiee.sjtu.edu.cn/ School\ of\ Electronic\ Information\ and\ Electrical\ Engineering] \n
-[https://en.sjtu.edu.cn/ Shanghai\ Jiao\ Tong\ University] \n
+PhD Student in Computer Science \n
+[https://www.cs.cityu.edu.hk/ Department\ of\ Computer\ Science] \n
+[https://www.cityu.edu.hk/ City\ University\ of\ Hong\ Kong] \n
 Email: yihangtao\[AT\]sjtu\[DOT\]edu\[DOT\]cn \n
 \[[https://yihangtao.github.io Google\ Scholar]\] \[[https://www.researchgate.net/profile/Yihang-Tao ResearchGate]\]
 ~~~
 
 == About Me
 
-Yihang Tao received the B.S. degree from the School of Information Science and Engineering, [https://www.seu.edu.cn/english/ Southeast\ University], Nanjing, China, in 2021. He is currently pursuing the M.S. degree with the School of Electronic Information and Electrical Engineering, [https://en.sjtu.edu.cn/ Shanghai\ Jiao\ Tong\ University], Shanghai, China. His research interests include digital twin networks, intelligent reflection surface, and RF energy harvesting. He is the reviewer for /IEEE LNET/, TPC member and session chair for /IEEE GLOBECOM 2023/.
+Yihang Tao received the B.S. degree from the School of Information Science and Engineering, [https://www.seu.edu.cn/english/ Southeast\ University], Nanjing, China, in 2021 and received his M.S. degree from the School of Electronic Information and Electrical Engineering, [https://en.sjtu.edu.cn/ Shanghai\ Jiao\ Tong\ University], Shanghai, China, in 2024 (Advisor: Prof. Jun Wu). 
+Currently, he is pursuing his PhD degree in the Department of Computer Science at City University of Hong Kong (Advisor: Prof. Yuguang “Michael” Fang).
+His research interests include digital twin networks, intelligent reflection surface, and Internet of Vehicles. He is the reviewer for /IEEE LNET/, TPC member and session chair for /IEEE GLOBECOM 2023/.
 
 == Research Interests
 
 - Digital twin for mobile networks
 - Intelligent reflection surface
-- Internet of vehicles
+- Internet of Vehicles
 
 
 == News
+- May 2024: I was nominated as the *Outstanding Graduate* by Shanghai Jiao Tong University!
 - January 2024: Our paper entitled "Graph Attentive Joint Design for Learning Energy Harvesting and Navigation Control in RIS-Assisted Cooperative UAV Systems" was submitted to *IEEE Systems Journal*!
 - December 2023: Our paper entitled "O-RAN-Based Digital Twin Function Virtualization for Sustainable IoV Service Response: An Asynchronous Hierarchical Reinforcement Learning Approach" was submitted to *IEEE TGCN*!
 - December 2023: I was nominated as the session chair for *IEEE GLOBECOM 2023*!
-- November 2023: Our paper entitled "Energy Harvesting Design for Cooperative Reconfigurable Intelligent Surface with Multi-Agent Deep Reinforcement Learning" was accepted by *SmartCom 2023*!
 - October 2023: I was awarded the *WEICHAI POWER Scholarship* by Shanghai Jiao Tong University!
 - August 2023: Our paper entitled "Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service" was accepted by *IEEE GLOBECOM 2023*!
 - July 2023: I was nominated as the TPC member for *IEEE GLOBECOM 2023*!
@@ -34,7 +36,11 @@ Yihang Tao received the B.S. degree from the School of Information Science and E
 
 == Academic Background
 
-- Shanghai Jiao Tong University, Shanghai, China (2021\-now)\n
+- City University of Hong Kong, Hong Kong SAR (2024\-now)\n
+PhD student, Computer Science\n
+Advisor: Prof. Yuguang “Michael” Fang
+
+- Shanghai Jiao Tong University, Shanghai, China (2021\-2024)\n
 Master student, Electronic Information\n
 Advisor: Prof. Jun Wu
 
