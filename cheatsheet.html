@@ -43,70 +43,70 @@ _gaq.push(['_trackPageview']);
 <td id="layout-content">
 <div id="toptitle">
 <h1>jemdoc &ndash; cheatsheet</h1>
-<div id="subtitle">
+<div id="subtitle">
 </div>
 </div>
 <h2>Basic formatting</h2>
 <ul>
-<li><p><i>/italics/</i>
+<li><p><i>/italics/</i>
 </p>
 </li>
-<li><p><b>*bold*</b>
+<li><p><b>*bold*</b>
 </p>
 </li>
-<li><p><tt>+monospace+</tt>
+<li><p><tt>+monospace+</tt>
 </p>
 </li>
-<li><p><tt>-</tt> is a hyphen (-)
+<li><p><tt>-</tt> is a hyphen (-)
 </p>
 </li>
-<li><p><tt>--</tt> is an en-dash (&ndash;)
+<li><p><tt>--</tt> is an en-dash (&ndash;)
 </p>
 </li>
-<li><p><tt>---</tt> is an em-dash (&#8201;&mdash;&#8201;)
+<li><p><tt>---</tt> is an em-dash (&#8201;&mdash;&#8201;)
 </p>
 </li>
-<li><p><tt>...</tt> is an ellipsis (&hellip;)
+<li><p><tt>...</tt> is an ellipsis (&hellip;)
 </p>
 </li>
-<li><p><tt>~</tt> is a non-breaking space (&nbsp;)
+<li><p><tt>~</tt> is a non-breaking space (&nbsp;)
 </p>
 </li>
-<li><p><tt>#</tt> begins a comment, for the remainder of the line
+<li><p><tt>#</tt> begins a comment, for the remainder of the line
 </p>
 </li>
-<li><p><tt>\C</tt> is &copy;
+<li><p><tt>\C</tt> is &copy;
 </p>
 </li>
-<li><p><tt>\R</tt> is &reg;
+<li><p><tt>\R</tt> is &reg;
 </p>
 </li>
-<li><p><tt>\M</tt> is &middot;
+<li><p><tt>\M</tt> is &middot;
 </p>
 </li>
-<li><p>&lsquo;singly quoted text&rsquo; is written <tt>`singly quoted text'</tt>
+<li><p>&lsquo;singly quoted text&rsquo; is written <tt>`singly quoted text'</tt>
 </p>
 </li>
-<li><p>&ldquo;doubly quoted text&rdquo; is written <tt>"doubly quoted text"</tt>
+<li><p>&ldquo;doubly quoted text&rdquo; is written <tt>"doubly quoted text"</tt>
 </p>
 </li>
-<li><p>jemdoc's apostrophes are converted automatically from <tt>jemdoc's</tt> input
+<li><p>jemdoc's apostrophes are converted automatically from <tt>jemdoc's</tt> input
 </p>
 </li>
-<li><p>the sequence <tt>\n</tt> <br /> forces a manual line break
+<li><p>the sequence <tt>\n</tt> <br /> forces a manual line break
 </p>
 </li>
-<li><p>paragraphs are separated by blank lines
+<li><p>paragraphs are separated by blank lines
 </p>
 </li>
-<li><p><tt>$inline LaTeX equation$</tt>
+<li><p><tt>$inline LaTeX equation$</tt>
 </p>
 </li>
-<li><p><tt>\( LaTeX equation on its own line \)</tt>
+<li><p><tt>\( LaTeX equation on its own line \)</tt>
 </p>
 </li>
-<li><p><tt>#</tt>s (and only <tt>#</tt>s) must be quoted in URLs
-
+<li><p><tt>#</tt>s (and only <tt>#</tt>s) must be quoted in URLs
+
 </p>
 </li>
 </ul>
@@ -119,28 +119,28 @@ _gaq.push(['_trackPageview']);
 Code block with monospaced text.
 ~~~
 </pre></div></div>
-<p>
+<p>
 </p>
 <div class="infoblock">
 <div class="blocktitle">Information block</div>
 <div class="blockcontent">
-<p>Omit the second pair of braces in the first line of the block (or omit the whole
-first line altogether if you don't want a title) and you will get an
-<i>information block</i>. All the usual conventions apply in here.
+<p>Omit the second pair of braces in the first line of the block (or omit the whole
+first line altogether if you don't want a title) and you will get an
+<i>information block</i>. All the usual conventions apply in here.
 </p>
 </div></div>
 <h2>Headings and lists</h2>
-<p>Headings are defined by starting a line with <tt>=</tt>.
+<p>Headings are defined by starting a line with <tt>=</tt>.
 </p>
 <ul>
-<li><p><tt>= Heading level 1</tt>
+<li><p><tt>= Heading level 1</tt>
 </p>
 </li>
-<li><p><tt>== Heading level 2</tt>, <i>etc.</i>
-
-Lists are defined with <tt>-</tt> for bulleted lists, <tt>.</tt> for numbered lists and <tt>:</tt>
-for lists of definitions. Here is some code and the resulting list:
-
+<li><p><tt>== Heading level 2</tt>, <i>etc.</i>
+
+Lists are defined with <tt>-</tt> for bulleted lists, <tt>.</tt> for numbered lists and <tt>:</tt>
+for lists of definitions. Here is some code and the resulting list:
+
 </p>
 </li>
 </ul>
@@ -156,16 +156,16 @@ for lists of definitions. Here is some code and the resulting list:
 : {jemdoc} light markup
 : {asciidoc} a great alternative, but more complicated
 </pre></div></div>
-<p>
+<p>
 </p>
 <div class="infoblock">
 <div class="blockcontent">
 <ul>
-<li><p>Bullet level one
+<li><p>Bullet level one
 </p>
 <ul>
-<li><p>Bullet level two
-
+<li><p>Bullet level two
+
 </p>
 </li>
 </ul>
@@ -173,14 +173,14 @@ for lists of definitions. Here is some code and the resulting list:
 </li>
 </ul>
 <ol>
-<li><p>Number level one
+<li><p>Number level one
 </p>
 <ol>
-<li><p>Number level two
+<li><p>Number level two
 </p>
 </li>
-<li><p>Number level two (again)
-
+<li><p>Number level two (again)
+
 </p>
 </li>
 </ol>
@@ -189,63 +189,63 @@ for lists of definitions. Here is some code and the resulting list:
 </ol>
 <dl>
 <dt>jemdoc</dt>
-<dd><p>light markup
+<dd><p>light markup
 </p></dd>
 <dt>asciidoc</dt>
-<dd><p>a great alternative, but more complicated
+<dd><p>a great alternative, but more complicated
 </p></dd>
 </dl>
 </div></div>
 <h2>Preventing matches</h2>
 <ul>
-<li><p>a literal backslash (\) is written <tt>\\\\</tt> 
+<li><p>a literal backslash (\) is written <tt>\\\\</tt> 
 </p>
 </li>
-<li><p>the literal characters /, *, + and ~ and # are written <tt>\/</tt>, <tt>\*</tt>,
-<tt>\+</tt>, <tt>\~</tt> and <tt>\#</tt> to avoid the above formatting
+<li><p>the literal characters /, *, + and ~ and # are written <tt>\/</tt>, <tt>\*</tt>,
+<tt>\+</tt>, <tt>\~</tt> and <tt>\#</tt> to avoid the above formatting
 </p>
 </li>
-<li><p><tt>\...</tt> avoids an ellipsis
+<li><p><tt>\...</tt> avoids an ellipsis
 </p>
 </li>
-<li><p><tt>-\-</tt> avoids an en-dash
+<li><p><tt>-\-</tt> avoids an en-dash
 </p>
 </li>
-<li><p><tt>-\-\-</tt> avoids an em-dash
+<li><p><tt>-\-\-</tt> avoids an em-dash
 </p>
 </li>
-<li><p><tt>\`</tt> gives a back-tick (`)
+<li><p><tt>\`</tt> gives a back-tick (`)
 </p>
 </li>
-<li><p><tt>\'</tt> gives an ordinary single quotation mark (')
+<li><p><tt>\'</tt> gives an ordinary single quotation mark (')
 </p>
 </li>
-<li><p><tt>\"</tt> gives an ordinary double quotation mark (")
-
+<li><p><tt>\"</tt> gives an ordinary double quotation mark (")
+
 </p>
 </li>
 </ul>
 <h2>Other stuff</h2>
 <ul>
-<li><p><tt>{{html text}}</tt> will insert <tt>html text</tt> directly into the output document
-without performing any substitutions. (This is for inline escaping; use
-<a href="extra.html" target=&ldquo;blank&rdquo;>raw blocks</a> for larger amounts of html.)
+<li><p><tt>{{html text}}</tt> will insert <tt>html text</tt> directly into the output document
+without performing any substitutions. (This is for inline escaping; use
+<a href="extra.html" target=&ldquo;blank&rdquo;>raw blocks</a> for larger amounts of html.)
 </p>
 </li>
-<li><p><tt>%quoted tt%</tt> is an alias for <tt>+{{quoted tt}}+</tt>. It's not quite as
-robust, so use <tt>+{{plus signs with double brace blocks}}+</tt> if you run into
-problems with some characters.
+<li><p><tt>%quoted tt%</tt> is an alias for <tt>+{{quoted tt}}+</tt>. It's not quite as
+robust, so use <tt>+{{plus signs with double brace blocks}}+</tt> if you run into
+problems with some characters.
 </p>
 </li>
-<li><p><tt>{\{text}\}</tt> <i>will</i> perform replacements and insert {{text}}.
-
-This page is not exhaustive.
+<li><p><tt>{\{text}\}</tt> <i>will</i> perform replacements and insert {{text}}.
+
+This page is not exhaustive.
 </p>
 </li>
 </ul>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-05-24 13:25:04 China Standard Time, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2024-05-25 16:56:30 HKT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
