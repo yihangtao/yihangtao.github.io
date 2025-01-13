@@ -16,17 +16,18 @@ Email: yihang\[DOT\]tommy\[AT\]my\[DOT\]cityu\[DOT\]edu\[DOT\]hk \n
 
 Yihang Tao received the B.S. degree from the School of Information Science and Engineering, [https://www.seu.edu.cn/english/ Southeast\ University], Nanjing, China, in 2021 and received his M.S. degree from the School of Electronic Information and Electrical Engineering, [https://en.sjtu.edu.cn/ Shanghai\ Jiao\ Tong\ University], Shanghai, China, in 2024. 
 Currently, he is pursuing his PhD degree in the Department of Computer Science at [https://www.cityu.edu.hk/ City\ University\ of\ Hong\ Kong] (Advisor: Prof. Yuguang “Michael” Fang).
-His current research interests include collaborative perception, decentralized multi-agent communication, driving digital twin and world model. He serves as the program committee member for /ICML 2025/, /ICLR 2025/, /AAAI 2025/, /IEEE GLOBECOM 2023-2024/, and the reviewer for /IEEE TITS/, /EAAI/, /Pattern Recognition/, etc.
+His current research interests include collaborative perception, cooperative intelligence, and AI security. He serves as the program committee member for /ICML 2025/, /ICLR 2025/, /AAAI 2025/, and the reviewer for /IEEE TITS/, /EAAI/, /Pattern Recognition/, etc.
 
 == Research Interests
 
 
 - Collaborative perception
-- Decentralized multi-agent communication
-- Driving digital twin and world model
+- Cooperative intelligence
+- AI security
 
 == News
 
+- January 2025: Our paper entitled "GCP: Guarded Collaborative Perception with Spatial-Temporal aware Malicious Agent Detection" was submitted.
 - December 2024: Our paper entitled "CP-Guard: Malicious Agent Detection and Defense in Collaborative Bird's Eye View Perception" was accepted by *AAAI 2025*!
 - October 2024: Our paper entitled "R-ACP: Real-Time Adaptive Collaborative Perception Leveraging Robust Task-Oriented Communications" was submitted.
 - September 2024: Our paper entitled "Direct-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention" was submitted.
