@@ -39,6 +39,19 @@
     ]
   },
   {
+    "title": "R-ACP: Real-Time Adaptive Collaborative Perception Leveraging Robust Task-Oriented Communications",
+    "authors": "Zhengru Fang, Jingjing Wang, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "https://arxiv.org/abs/2410.04168"
+      }
+    ]
+  },
+  {
     "title": "CP-Guard+: A New Paradigm for Malicious Agent Detection and Defense in Collaborative Perception",
     "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
@@ -75,20 +88,6 @@
         "text": "PDF",
         "class": "code-tag",
         "link": "#"
-      }
-    ]
-  },
-
-  {
-    "title": "IC3M: In-Car Multimodal Multi-object Monitoring for Abnormal Status of Both Driver and Passengers",
-    "authors": "Zihan Fang, Zheng Lin, <strong><u>Senkang \"Forest\" Hu</u></strong>, Hangcheng Cao, Xianhao Chen, and Yuguang Fang",
-    "type": "preprint",
-    "isFirstAuthor": false,
-    "tags": [
-      {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "https://arxiv.org/abs/2410.02592"
       }
     ]
   },
