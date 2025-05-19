@@ -469,6 +469,7 @@ nav {
 /* About Section */
 .about-content {
     font-size: 1.1rem;
+    text-align: justify;
 }
 
 /* News Section */
