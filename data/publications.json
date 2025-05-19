@@ -43,7 +43,13 @@
     "authors": "Zhengru Fang, Jingjing Wang, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
+    "venue": "IEEE Journal on Selected Areas in Communications (JSAC)",
+    "year": "2024",
     "tags": [
+      {
+        "text": "JSAC",
+        "class": "venue-tag"
+      },
       {
         "text": "PDF",
         "class": "code-tag",
@@ -134,11 +140,11 @@
     "authors": "Yihang Tao, Jun Wu, Qianqian Pan, Ali Kashif Bashir, Marwan Omar",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "IEEE Transactions on Green Communications and Networking.",
+    "venue": "IEEE Transactions on Green Communications and Networking (TGCN)",
     "year": "2024",
     "tags": [
       {
-        "text": "IEEE TGCN",
+        "text": "TGCN",
         "class": "venue-tag"
       },
       {
@@ -170,11 +176,11 @@
     "title": "DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks",
     "authors": "Yihang Tao, Jun Wu, Xi Lin, Wu Yang",
     "type": "accepted",
-    "venue": "IEEE LNET",
+    "venue": "IEEE Networking Letters (LNET)",
     "year": "2023",
     "tags": [ 
       {
-        "text": "IEEE LNET",
+        "text": "LNET",
         "class": "venue-tag"
       },
       {

@@ -1,6 +1,6 @@
 {
   "name": "Yihang Tao",
-  "subtitle": "<span style=\"color:#999\">PhD@CITYUHK, MEng@SJTU, BEng@SEU</span><br><a href=\"https://jcstemlab.netlify.app/\">JC STEM Lab of Smart City</a><br><a href=\"https://jcstemlab.netlify.app/\">Wireless Intelligence and Networked Things Laboratory (WINET)</a><br><a href=\"https://www.cs.cityu.edu.hk/\">Department of Computer Science, City University of Hong Kong</a>",
+  "subtitle": "<span style=\"color:#999\">PhD@CITYUHK, MEng@SJTU, BEng@SEU</span><br><a href=\"https://jcstemlab.netlify.app/\">JC STEM Lab of Smart City</a><br><span style=\"color:#000\"><a href=\"https://jcstemlab.netlify.app/\">Wireless Intelligence and Networked Things Laboratory (WINET)</a><br><a href=\"https://www.cs.cityu.edu.hk/\">Department of Computer Science, City University of Hong Kong</a></span>",
   "socialLinks": [
     {
       "type": "email",
@@ -23,6 +23,18 @@
       "type": "researchgate",
       "url": "https://www.researchgate.net/profile/Yihang-Tao",
       "icon": "<i class=\"fab fa-researchgate\"></i>",
+      "target": "_blank"
+    },
+    {
+      "type": "blog",
+      "url": "https://yihangtao.github.io/blog/",
+      "icon": "<i class=\"fas fa-blog\"></i>",
+      "target": "_blank"
+    },
+    {
+      "type": "openreview",
+      "url": "https://openreview.net/profile?id=~Yihang_Tao1",
+      "icon": "<i class=\"fas fa-openreview\"></i>",
       "target": "_blank"
     }
   ],
