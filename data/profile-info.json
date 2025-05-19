@@ -34,7 +34,7 @@
     {
       "type": "openreview",
       "url": "https://openreview.net/profile?id=~Yihang_Tao1",
-      "icon": "<i class=\"fas fa-openreview\"></i>",
+      "icon": "<img src=\"assets/openreview.svg\" alt=\"OpenReview\" class=\"icon-svg\">",
       "target": "_blank"
     }
   ],
