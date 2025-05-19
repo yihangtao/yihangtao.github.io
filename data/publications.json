@@ -158,6 +158,7 @@
     "title": "Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service",
     "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Shahid Mumtaz, Soumaya Cherkaoui",
     "type": "accepted",
+    "isFirstAuthor": true,
     "venue": "IEEE Global Communications Conference, Kuala Lumpur, Malaysia, December 2023",
     "year": "2023",
     "tags": [ 
@@ -176,6 +177,7 @@
     "title": "DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks",
     "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Wu Yang",
     "type": "accepted",
+    "isFirstAuthor": true,
     "venue": "IEEE Networking Letters (LNET)",
     "year": "2023",
     "tags": [ 
