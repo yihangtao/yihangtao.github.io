@@ -1,0 +1,30 @@
+{
+  "name": "Yihang Tao",
+  "subtitle": "<span style=\"color:#999\">PhD@CITYUHK, BEng@BIT</span><br><a href=\"https://jcstemlab.netlify.app/\">JC STEM Lab of Smart City</a><br><a href=\"https://jcstemlab.netlify.app/\">Wireless Intelligence and Networked Things Laboratory (WINET)</a><br><a href=\"https://www.cs.cityu.edu.hk/\">Department of Computer Science, City University of Hong Kong</a>",
+  "socialLinks": [
+    {
+      "type": "email",
+      "url": "yihang.tommy@my.cityu.edu.hk",
+      "icon": "<i class=\"fas fa-envelope\"></i>"
+    },
+    {
+      "type": "googleScholar",
+      "url": "https://scholar.google.com.hk/citations?user=YopoapwAAAAJ&hl=zh-CN&oi=ao",
+      "icon": "<i class=\"fas fa-graduation-cap\"></i>",
+      "target": "_blank"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/yihangtao",
+      "icon": "<i class=\"fab fa-github\"></i>",
+      "target": "_blank"
+    },
+    {
+      "type": "researchgate",
+      "url": "https://www.researchgate.net/profile/Yihang-Tao",
+      "icon": "<i class=\"fab fa-researchgate\"></i>",
+      "target": "_blank"
+    }
+  ],
+  "profileImage": "assets/profile.png"
+} 

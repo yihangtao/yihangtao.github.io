@@ -1,0 +1,252 @@
+[
+  {
+    "number": 1,
+    "title": "Sustainable Materials for High-Efficiency Solar Energy Storage Systems",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Jennifer Lee, Michael Taylor, Sarah Johnson, David Chen, Thomas Wright, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "Bio-inspired Filtration Membranes for Advanced Water Purification",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Michael Taylor, David Chen, William Brown, Thomas Wright, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "EnergyNexus: A Novel Framework for Integrated Renewable Energy Management in Urban Environments",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, David Chen, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "Lifecycle Assessment of Novel Carbon Capture Materials in Industrial Applications",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, David Chen, Emily White, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      },
+      {
+        "text": "Blog",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "Sustainable Energy Transitions in Developing Economies: Challenges, Solutions and Future Directions",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Thomas Wright, Emily White, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "BioClear: Algae-based Bioremediation System for Urban Water Treatment",
+    "authors": "Jennifer Lee, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Mark Davis, Thomas Wright, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "HydroGuard: Real-time Monitoring and Protection System for Groundwater Contamination Prevention",
+    "authors": "Michael Taylor<sup>#</sup>, <strong><u>Alexander \"Alex\" Morgan</u></strong><sup>#</sup>, Lisa Wang, Kevin Miller, Christopher Harris, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "title": "GreenBuild: Sustainable Construction Materials from Recycled Industrial Waste",
+    "authors": "David Chen, Ryan Smith, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Christopher Harris, Emily White, Robert Williams",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      {
+        "text": "Preprint",
+        "class": "preprint-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "title": "SolarGrid: Adaptive Control Algorithms for Resilient Solar Microgrids in Remote Communities",
+    "authors": "Michael Taylor, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Robert Williams",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "venue": "The 2025 IEEE International Conference on Energy & Sustainability, 19-23 May, Atlanta, USA.",
+    "tags": [
+      {
+        "text": "ICES'25",
+        "class": "venue-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "title": "CarbonTrap: Novel Nanomaterials for Enhanced Direct Air Capture of Carbon Dioxide",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong><sup>#</sup>, Michael Taylor<sup>#</sup>, William Brown, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "type": "accepted",
+    "isFirstAuthor": true,
+    "venue": "The 39th Annual Environmental Science Conference, Philadelphia, Pennsylvania, USA, February 2025.",
+    "tags": [
+      {
+        "text": "ESC'25 Oral",
+        "class": "venue-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "title": "Advanced Membrane Technologies for Microplastic Removal from Wastewater Treatment Plants",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "type": "accepted",
+    "isFirstAuthor": true,
+    "venue": "IEEE Transactions on Environmental Engineering.",
+    "tags": [
+      {
+        "text": "TEE'24",
+        "class": "venue-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "title": "Hybrid Renewable Energy Systems: Optimizing Wind-Solar Integration for Coastal Communities",
+    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Kevin Miller, William Brown, Richard Davis, Emily White, Robert Williams",
+    "type": "accepted",
+    "isFirstAuthor": true,
+    "venue": "Global Renewable Energy Conference, Cape Town, South Africa, December 2024.",
+    "tags": [
+      {
+        "text": "GREC'24",
+        "class": "venue-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "title": "Circular Economy Approaches to Electronics Waste Management in Developing Countries",
+    "authors": "Sarah Johnson, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Lisa Wang, Thomas Wright, Emily White, Robert Williams",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "venue": "Journal of Sustainable Development.",
+    "tags": [
+      {
+        "text": "JSD'24",
+        "class": "venue-tag"
+      },
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  }
+
+] 

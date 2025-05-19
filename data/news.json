@@ -1,0 +1,38 @@
+[
+  {
+    "date": "Preprint, 2025",
+    "title": "GCP: Guarded Collaborative Perception with Spatial-Temporal aware Malicious Agent Detection",
+    "content": "<b>Y. Tao #</b>, S. Hu #, Y. Hu, H. An, H. Cao, and Y. Fang<br><i>Preprint</i>",
+    "category": "Journal"
+  },
+  {
+    "date": "AAAI'25 Oral, 2025",
+    "title": "CP-Guard: Malicious Agent Detection and Defense in Collaborative Bird's Eye View Perception",
+    "content": "S. Hu #, <b>Y. Tao #</b>, G. Xu, Y. Deng, X. Chen, Y. Fang, and S. Kwong<br><i>in the 39th Annual AAAI Conference on Artificial Intelligence (AAAI)</i>",
+    "category": "Conference"
+  },
+  {
+    "date": "ICRA'25, 2025",
+    "title": "Directed-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention",
+    "content": "<b>Y. Tao</b>, S. Hu, Z. Fang, and Y. Fang<br><i>in IEEE International Conference on Robotics and Automation (ICRA)</i>",
+    "category": "Conference"
+  },
+  {
+    "date": "IEEE TGCN, 2023",
+    "title": "O-RAN-Based Digital Twin Function Virtualization for Sustainable IoV Service Response: An Asynchronous Hierarchical Reinforcement Learning Approach",
+    "content": "<b>Y. Tao</b>, J. Wu, Q. Pan, A. K. Bashir and M. Omar<br><i>IEEE Transactions on Green Communications and Networking</i>",
+    "category": "Journal"
+  },
+  {
+    "date": "GLOBECOM'23, 2023",
+    "title": "Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service",
+    "content": "<b>Y. Tao</b>, J. Wu, X. Lin, S. Mumtaz and S. M. S. Islam<br><i>in IEEE Global Communications Conference (GLOBECOM)</i>",
+    "category": "Conference"
+  },
+  {
+    "date": "IEEE LNET, 2023",
+    "title": "DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks",
+    "content": "<b>Y. Tao</b>, J. Wu, X. Lin and W. Yang<br><i>IEEE Networking Letters</i>",
+    "category": "Journal"
+  }
+] 
