@@ -1,15 +1,10 @@
 [
   {
-    "number": 1,
-    "title": "Sustainable Materials for High-Efficiency Solar Energy Storage Systems",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Jennifer Lee, Michael Taylor, Sarah Johnson, David Chen, Thomas Wright, Robert Williams",
+    "title": "A Unified Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems",
+    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Guowen Xu, Yuguang Fang, et al.",
     "type": "preprint",
     "isFirstAuthor": true,
     "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
       {
         "text": "PDF",
         "class": "code-tag",
@@ -18,16 +13,11 @@
     ]
   },
   {
-    "number": 2,
-    "title": "Bio-inspired Filtration Membranes for Advanced Water Purification",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Michael Taylor, David Chen, William Brown, Thomas Wright, Robert Williams",
+    "title": "LLM Task Adaptation with Task-Aware Parameter-Efficient Fine-Tuning",
+    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihan Fang, Yuguang Fang, et al.",
     "type": "preprint",
     "isFirstAuthor": true,
     "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
       {
         "text": "PDF",
         "class": "code-tag",
@@ -36,16 +26,51 @@
     ]
   },
   {
-    "number": 3,
-    "title": "EnergyNexus: A Novel Framework for Integrated Renewable Energy Management in Urban Environments",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, David Chen, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "title": "Task-Aware Parameter-Efficient Fine-Tuning of Large Pre-Trained Models at the Edge",
+    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yanan Ma, Yihang Tao, Zhengru Fang, Zihan Fang, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
     "tags": [
       {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "https://arxiv.org/abs/2504.03718"
+      }
+    ]
+  },
+  {
+    "title": "CP-Guard+: A New Paradigm for Malicious Agent Detection and Defense in Collaborative Perception",
+    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "https://arxiv.org/abs/2502.07807v1"
+      }
+    ]
+  },
+  {
+    "title": "GCP: Guarded Collaborative Perception with Spatial-Temporal Aware Malicious Agent Detection",
+    "authors": "Yihang Tao*, <strong><u>Senkang \"Forest\" Hu</u></strong>*, Yue Hu, Haonan An, Hangcheng Cao, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "tags": [
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "https://arxiv.org/abs/2501.02450"
+      }
+    ]
+  },
+  {
+    "title": "Adaptive Attack on Multi-Agent Collaborative Perception",
+    "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      
       {
         "text": "PDF",
         "class": "code-tag",
@@ -53,200 +78,111 @@
       }
     ]
   },
+
   {
-    "number": 4,
-    "title": "Lifecycle Assessment of Novel Carbon Capture Materials in Industrial Applications",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, David Chen, Emily White, Robert Williams",
-    "type": "preprint",
-    "isFirstAuthor": true,
-    "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
-      },
-      {
-        "text": "Blog",
-        "class": "code-tag",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "number": 5,
-    "title": "Sustainable Energy Transitions in Developing Economies: Challenges, Solutions and Future Directions",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Thomas Wright, Emily White, Robert Williams",
-    "type": "preprint",
-    "isFirstAuthor": true,
-    "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "number": 6,
-    "title": "BioClear: Algae-based Bioremediation System for Urban Water Treatment",
-    "authors": "Jennifer Lee, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Mark Davis, Thomas Wright, Robert Williams",
+    "title": "IC3M: In-Car Multimodal Multi-object Monitoring for Abnormal Status of Both Driver and Passengers",
+    "authors": "Zihan Fang, Zheng Lin, <strong><u>Senkang \"Forest\" Hu</u></strong>, Hangcheng Cao, Xianhao Chen, and Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": false,
     "tags": [
       {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
-      {
         "text": "PDF",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2410.02592"
       }
     ]
   },
   {
-    "number": 7,
-    "title": "HydroGuard: Real-time Monitoring and Protection System for Groundwater Contamination Prevention",
-    "authors": "Michael Taylor<sup>#</sup>, <strong><u>Alexander \"Alex\" Morgan</u></strong><sup>#</sup>, Lisa Wang, Kevin Miller, Christopher Harris, Robert Williams",
-    "type": "preprint",
-    "isFirstAuthor": true,
-    "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "number": 8,
-    "title": "GreenBuild: Sustainable Construction Materials from Recycled Industrial Waste",
-    "authors": "David Chen, Ryan Smith, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Christopher Harris, Emily White, Robert Williams",
-    "type": "preprint",
-    "isFirstAuthor": false,
-    "tags": [
-      {
-        "text": "Preprint",
-        "class": "preprint-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "number": 9,
-    "title": "SolarGrid: Adaptive Control Algorithms for Resilient Solar Microgrids in Remote Communities",
-    "authors": "Michael Taylor, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Robert Williams",
+    "title": "Directed-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention",
+    "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Zhengru Fang, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
-    "venue": "The 2025 IEEE International Conference on Energy & Sustainability, 19-23 May, Atlanta, USA.",
+    "venue": "The 2025 IEEE International Conference on Robotics & Automation, 19-23 May, Atlanta, USA.",
+    "year": "2025",
     "tags": [
       {
-        "text": "ICES'25",
+        "text": "ICRA'25",
         "class": "venue-tag"
       },
       {
         "text": "PDF",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2409.08840"
       }
     ]
   },
   {
-    "number": 10,
-    "title": "CarbonTrap: Novel Nanomaterials for Enhanced Direct Air Capture of Carbon Dioxide",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong><sup>#</sup>, Michael Taylor<sup>#</sup>, William Brown, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "title": "CP-Guard: Malicious Agent Detection and Defense in Collaborative Bird's Eye View Perception",
+    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>*, Yihang Tao*, Guowen Xu, Yiqin Deng, Xianhao Chen, Yuguang Fang, Sam Kwong",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "The 39th Annual Environmental Science Conference, Philadelphia, Pennsylvania, USA, February 2025.",
+    "venue": "The 39th Annual AAAI Conference on Artificial Intelligence, Philadelphia, Pennsylvania, USA, February 2025.",
+    "year": "2024",
     "tags": [
       {
-        "text": "ESC'25 Oral",
+        "text": "AAAI'25 Oral",
         "class": "venue-tag"
       },
       {
         "text": "PDF",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/34486"
       }
     ]
   },
   {
-    "number": 11,
-    "title": "Advanced Membrane Technologies for Microplastic Removal from Wastewater Treatment Plants",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Thomas Wright, Emily White, Robert Williams, James Miller",
+    "title": "O-RAN-Based Digital Twin Function Virtualization for Sustainable IoV Service Response: An Asynchronous Hierarchical Reinforcement Learning Approach",
+    "authors": "Yihang Tao, Jun Wu, Qianqian Pan, Ali Kashif Bashir, Marwan Omar",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "IEEE Transactions on Environmental Engineering.",
+    "venue": "IEEE Transactions on Green Communications and Networking.",
+    "year": "2024",
     "tags": [
       {
-        "text": "TEE'24",
+        "text": "IEEE TGCN",
         "class": "venue-tag"
       },
       {
         "text": "PDF",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://ieeexplore.ieee.org/document/10614333"
       }
     ]
   },
   {
-    "number": 12,
-    "title": "Hybrid Renewable Energy Systems: Optimizing Wind-Solar Integration for Coastal Communities",
-    "authors": "<strong><u>Alexander \"Alex\" Morgan</u></strong>, Sarah Johnson, Kevin Miller, William Brown, Richard Davis, Emily White, Robert Williams",
+    "title": "Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service",
+    "authors": "Yihang Tao, Jun Wu, Xi Lin, Shahid Mumtaz, Soumaya Cherkaoui",
     "type": "accepted",
-    "isFirstAuthor": true,
-    "venue": "Global Renewable Energy Conference, Cape Town, South Africa, December 2024.",
-    "tags": [
+    "venue": "IEEE Global Communications Conference, Kuala Lumpur, Malaysia, December 2023",
+    "year": "2023",
+    "tags": [ 
       {
-        "text": "GREC'24",
+        "text": "GLOBECOM'23",
         "class": "venue-tag"
       },
       {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
+        "text": "PDF",  
+        "class": "code-tag",  
+        "link": "https://ieeexplore.ieee.org/document/10437455" 
       }
     ]
   },
   {
-    "number": 13,
-    "title": "Circular Economy Approaches to Electronics Waste Management in Developing Countries",
-    "authors": "Sarah Johnson, <strong><u>Alexander \"Alex\" Morgan</u></strong>, Lisa Wang, Thomas Wright, Emily White, Robert Williams",
+    "title": "DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks",
+    "authors": "Yihang Tao, Jun Wu, Xi Lin, Wu Yang",
     "type": "accepted",
-    "isFirstAuthor": false,
-    "venue": "Journal of Sustainable Development.",
-    "tags": [
+    "venue": "IEEE LNET",
+    "year": "2023",
+    "tags": [ 
       {
-        "text": "JSD'24",
+        "text": "IEEE LNET",
         "class": "venue-tag"
       },
       {
         "text": "PDF",
         "class": "code-tag",
-        "link": "#"
-      },
-      {
-        "text": "Code",
-        "class": "code-tag",
-        "link": "#"
+        "link": "https://ieeexplore.ieee.org/document/10107755"
       }
     ]
   }
-
 ] 
