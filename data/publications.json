@@ -3,7 +3,7 @@
     "title": "A Unified Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems",
     "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Guowen Xu, Yuguang Fang, et al.",
     "type": "preprint",
-    "isFirstAuthor": true,
+    "isFirstAuthor": false,
     "tags": [
       {
         "text": "PDF",
@@ -16,7 +16,7 @@
     "title": "LLM Task Adaptation with Task-Aware Parameter-Efficient Fine-Tuning",
     "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihan Fang, Yuguang Fang, et al.",
     "type": "preprint",
-    "isFirstAuthor": true,
+    "isFirstAuthor": false,
     "tags": [
       {
         "text": "PDF",
@@ -29,7 +29,7 @@
     "title": "Task-Aware Parameter-Efficient Fine-Tuning of Large Pre-Trained Models at the Edge",
     "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yanan Ma, Yihang Tao, Zhengru Fang, Zihan Fang, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
-    "isFirstAuthor": true,
+    "isFirstAuthor": false,
     "tags": [
       {
         "text": "PDF",
@@ -41,7 +41,7 @@
   {
     "title": "R-ACP: Real-Time Adaptive Collaborative Perception Leveraging Robust Task-Oriented Communications",
     "authors": "Zhengru Fang, Jingjing Wang, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": false,
     "tags": [
       {
@@ -55,7 +55,7 @@
     "title": "CP-Guard+: A New Paradigm for Malicious Agent Detection and Defense in Collaborative Perception",
     "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
-    "isFirstAuthor": true,
+    "isFirstAuthor": false,
     "tags": [
       {
         "text": "PDF",
@@ -81,7 +81,7 @@
     "title": "Adaptive Attack on Multi-Agent Collaborative Perception",
     "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
     "type": "preprint",
-    "isFirstAuthor": false,
+    "isFirstAuthor": true,
     "tags": [
       
       {
@@ -95,7 +95,7 @@
     "title": "Directed-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention",
     "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Zhengru Fang, Yuguang Fang",
     "type": "accepted",
-    "isFirstAuthor": false,
+    "isFirstAuthor": true,
     "venue": "The 2025 IEEE International Conference on Robotics & Automation, 19-23 May, Atlanta, USA.",
     "year": "2025",
     "tags": [
