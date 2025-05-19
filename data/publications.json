@@ -1,7 +1,7 @@
 [
   {
     "title": "A Unified Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems",
-    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Guowen Xu, Yuguang Fang, et al.",
+    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Yuguang Fang, et al.",
     "type": "preprint",
     "isFirstAuthor": false,
     "tags": [
@@ -14,7 +14,7 @@
   },
   {
     "title": "LLM Task Adaptation with Task-Aware Parameter-Efficient Fine-Tuning",
-    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihan Fang, Yuguang Fang, et al.",
+    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Zihan Fang, Yuguang Fang, et al.",
     "type": "preprint",
     "isFirstAuthor": false,
     "tags": [
@@ -27,7 +27,7 @@
   },
   {
     "title": "Task-Aware Parameter-Efficient Fine-Tuning of Large Pre-Trained Models at the Edge",
-    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yanan Ma, Yihang Tao, Zhengru Fang, Zihan Fang, Yiqin Deng, Sam Kwong, Yuguang Fang",
+    "authors": "Senkang \"Forest\" Hu, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Zhengru Fang, Zihan Fang, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": false,
     "tags": [
@@ -59,7 +59,7 @@
   },
   {
     "title": "CP-Guard+: A New Paradigm for Malicious Agent Detection and Defense in Collaborative Perception",
-    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>, Yihang Tao, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
+    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": false,
     "tags": [
@@ -72,7 +72,7 @@
   },
   {
     "title": "GCP: Guarded Collaborative Perception with Spatial-Temporal Aware Malicious Agent Detection",
-    "authors": "Yihang Tao*, <strong><u>Senkang \"Forest\" Hu</u></strong>*, Yue Hu, Haonan An, Hangcheng Cao, Yuguang Fang",
+    "authors": "<strong><u>Yihang Tao</u></strong>*, Senkang \"Forest\" Hu*, Yue Hu, Haonan An, Hangcheng Cao, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
     "tags": [
@@ -85,7 +85,7 @@
   },
   {
     "title": "Adaptive Attack on Multi-Agent Collaborative Perception",
-    "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Senkang \"Forest\" Hu, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
     "tags": [
@@ -99,7 +99,7 @@
   },
   {
     "title": "Directed-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention",
-    "authors": "Yihang Tao, <strong><u>Senkang \"Forest\" Hu</u></strong>, Zhengru Fang, Yuguang Fang",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Senkang \"Forest\" Hu, Zhengru Fang, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": true,
     "venue": "The 2025 IEEE International Conference on Robotics & Automation, 19-23 May, Atlanta, USA.",
@@ -118,7 +118,7 @@
   },
   {
     "title": "CP-Guard: Malicious Agent Detection and Defense in Collaborative Bird's Eye View Perception",
-    "authors": "<strong><u>Senkang \"Forest\" Hu</u></strong>*, Yihang Tao*, Guowen Xu, Yiqin Deng, Xianhao Chen, Yuguang Fang, Sam Kwong",
+    "authors": "Senkang \"Forest\" Hu*, <strong><u>Yihang Tao</u></strong>*, Guowen Xu, Yiqin Deng, Xianhao Chen, Yuguang Fang, Sam Kwong",
     "type": "accepted",
     "isFirstAuthor": true,
     "venue": "The 39th Annual AAAI Conference on Artificial Intelligence, Philadelphia, Pennsylvania, USA, February 2025.",
@@ -137,7 +137,7 @@
   },
   {
     "title": "O-RAN-Based Digital Twin Function Virtualization for Sustainable IoV Service Response: An Asynchronous Hierarchical Reinforcement Learning Approach",
-    "authors": "Yihang Tao, Jun Wu, Qianqian Pan, Ali Kashif Bashir, Marwan Omar",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Qianqian Pan, Ali Kashif Bashir, Marwan Omar",
     "type": "accepted",
     "isFirstAuthor": true,
     "venue": "IEEE Transactions on Green Communications and Networking (TGCN)",
@@ -156,7 +156,7 @@
   },
   {
     "title": "Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service",
-    "authors": "Yihang Tao, Jun Wu, Xi Lin, Shahid Mumtaz, Soumaya Cherkaoui",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Shahid Mumtaz, Soumaya Cherkaoui",
     "type": "accepted",
     "venue": "IEEE Global Communications Conference, Kuala Lumpur, Malaysia, December 2023",
     "year": "2023",
@@ -174,7 +174,7 @@
   },
   {
     "title": "DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks",
-    "authors": "Yihang Tao, Jun Wu, Xi Lin, Wu Yang",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Wu Yang",
     "type": "accepted",
     "venue": "IEEE Networking Letters (LNET)",
     "year": "2023",
