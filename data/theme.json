@@ -1,0 +1,40 @@
+{
+    "colors": {
+        "primary": "#0A2540",
+        "secondary": "#635BFF",
+        "accent": "#00D4FF",
+        "background": {
+            "light": "#FFFFFF",
+            "subtle": "#F7FAFC",
+            "muted": "#EDF2F7"
+        },
+        "text": {
+            "primary": "#1A202C",
+            "secondary": "#4A5568",
+            "muted": "#718096"
+        },
+        "border": "#E2E8F0",
+        "success": "#0CCE6B",
+        "gradient": {
+            "primary": "linear-gradient(135deg, #0A2540 0%, #635BFF 100%)",
+            "accent": "linear-gradient(135deg, #635BFF 0%, #00D4FF 100%)"
+        }
+    },
+    "shadows": {
+        "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+    },
+    "spacing": {
+        "section": "6rem",
+        "element": "1.5rem",
+        "text": "1rem"
+    },
+    "borderRadius": {
+        "sm": "0.375rem",
+        "md": "0.5rem",
+        "lg": "1rem",
+        "xl": "1.5rem"
+    }
+} 
