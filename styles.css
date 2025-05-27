@@ -44,7 +44,7 @@ a:hover {
 
 /* Header Styles */
 header {
-    padding: 3rem 0;
+    padding: 4rem 0;
     background-color: var(--secondary-color);
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 1px 3px var(--shadow-color);
@@ -53,24 +53,33 @@ header {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 3rem;
 }
 
 .profile-info {
-    flex: 2;
+    flex: 3;
+    padding-right: 2rem;
 }
 
 .profile-image {
     flex: 1;
     text-align: right;
+    min-width: 220px;
 }
 
 #profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 220px;
+    height: 280px;
+    border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
@@ -1254,13 +1263,18 @@ footer {
 /* Responsive Design */
 @media (max-width: 992px) {
     .header-content {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 2rem;
     }
     
     .profile-image {
-        align-self: center;
+        min-width: 180px;
+    }
+    
+    #profile-img {
+        width: 180px;
+        height: 230px;
     }
     
     .research-areas {
@@ -1271,6 +1285,27 @@ footer {
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
+    }
+    
+    .header-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-info {
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .profile-image {
+        text-align: center;
+        min-width: auto;
+    }
+    
+    #profile-img {
+        width: 160px;
+        height: 200px;
     }
     
     .nav-links {
@@ -1285,9 +1320,12 @@ footer {
         padding: 3rem 0;
     }
     
-    #profile-img {
-        width: 150px;
-        height: 150px;
+    .contact-info {
+        justify-content: center;
+    }
+    
+    header {
+        padding: 3rem 0;
     }
     
     .projects-grid {
@@ -1340,6 +1378,15 @@ footer {
 }
 
 @media (max-width: 576px) {
+    #profile-img {
+        width: 140px;
+        height: 180px;
+    }
+    
+    header {
+        padding: 2rem 0;
+    }
+    
     .contact-info {
         flex-direction: row;
         gap: 0.5rem;
