@@ -8,6 +8,12 @@
       "icon": "<i class=\"fas fa-envelope\"></i>"
     },
     {
+      "type": "cv",
+      "url": "assets/CV.pdf",
+      "icon": "<i class=\"fas fa-file-pdf\"></i>",
+      "target": "_blank"
+    },
+    {
       "type": "googleScholar",
       "url": "https://scholar.google.com.hk/citations?user=YopoapwAAAAJ&hl=zh-CN&oi=ao",
       "icon": "<i class=\"fas fa-graduation-cap\"></i>",
