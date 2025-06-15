@@ -711,10 +711,76 @@ nav {
 
 /* Research Areas */
 .research-areas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     margin-top: 2rem;
+}
+
+.research-main-area {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.research-main-area:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.research-main-area i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.research-main-area h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.research-description {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.research-subtopics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.research-subtopic {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.research-subtopic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.research-subtopic h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.research-subtopic h4 i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0;
 }
 
 .research-area {
@@ -1384,8 +1450,9 @@ footer {
         height: 230px;
     }
     
-    .research-areas {
-        flex-direction: column;
+    .research-subtopics {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 
@@ -1481,6 +1548,19 @@ footer {
     .honor-year {
         margin-bottom: 0.75rem;
         margin-right: 0;
+    }
+    
+    .research-subtopics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .research-subtopic {
+        padding: 1rem;
+    }
+    
+    .research-main-area {
+        padding: 1.5rem;
     }
 }
 
