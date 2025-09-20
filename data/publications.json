@@ -2,9 +2,15 @@
     {
     "title": "Neptune-X: Active X-to-Maritime Generation for Universal Maritime Object Detection",
     "authors": "Yu Guo, Shengfeng He, Yuxu Lu, Haonan An, <strong><u>Yihang Tao</u></strong>, Huilin Zhu, Jingxian Liu, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": false,
+    "venue": "The 39th Annual Conference on Neural Information Processing Systems (NeurIPS'25, <strong><Spotlight></strong>)",
+    "year": "2025",
     "tags": [
+      {
+        "text": "NeurIPS'25",
+        "class": "venue-tag"
+      },
       {
         "text": "PDF",
         "class": "code-tag",
@@ -15,9 +21,15 @@
   {
     "title": "Distribution-Aligned Decoding for Efficient LLM Task Adaptation",
     "authors": "Senkang Hu, Xudong Han, Jinqi Jiang, <strong><u>Yihang Tao</u></strong>, Zihan Fang, Yong Dai, Sam Kwong, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": false,
+    "venue": "The 39th Annual Conference on Neural Information Processing Systems (NeurIPS'25)",
+    "year": "2025",
     "tags": [
+      {
+        "text": "NeurIPS'25",
+        "class": "venue-tag"
+      },
       {
         "text": "PDF",
         "class": "code-tag",
