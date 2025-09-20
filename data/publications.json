@@ -1,4 +1,30 @@
 [
+    {
+    "title": "Neptune-X: Active X-to-Maritime Generation for Universal Maritime Object Detection",
+    "authors": "Yu Guo, Shengfeng He, Yuxu Lu, Haonan An, <strong><u>Yihang Tao</u></strong>, Huilin Zhu, Jingxian Liu, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "title": "Distribution-Aligned Decoding for Efficient LLM Task Adaptation",
+    "authors": "Senkang Hu, Xudong Han, Jinqi Jiang, <strong><u>Yihang Tao</u></strong>, Zihan Fang, Yong Dai, Sam Kwong, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": false,
+    "tags": [
+      {
+        "text": "PDF",
+        "class": "code-tag",
+        "link": "#"
+      }
+    ]
+  },
   {
     "title": "Dynamic Uncertainty-aware Multimodal Fusion for Outdoor Health Monitoring",
     "authors": "Zihan Fang, Zheng Lin, Senkang Hu, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
