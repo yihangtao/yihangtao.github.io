@@ -306,14 +306,14 @@ a:hover {
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid #e8e8e8;
-    background: #f8f9fa;
+    background: #ffffff;
 }
 
 .pub-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .pub-content {
