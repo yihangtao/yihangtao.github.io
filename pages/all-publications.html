@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Publications - Yihang Tao</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation - Shared Banner -->
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" class="active">All Publications</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <main class="main-content">
+                <section id="all-publications" class="section">
+                    <h2 class="section-title">📄 All Publications <span class="subtitle-text" id="filter-indicator"></span></h2>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="publication-filters" style="margin-top: 0; padding-top: 0; border-top: none;">
+                        <a href="all-publications.html" class="filter-link" id="filter-all">
+                            <i class="fas fa-list"></i> All Publications
+                        </a>
+                        <a href="all-publications.html?filter=first-author" class="filter-link" id="filter-first">
+                            <i class="fas fa-user"></i> First Author Papers
+                        </a>
+                        <a href="all-publications.html?filter=accepted" class="filter-link" id="filter-accepted">
+                            <i class="fas fa-check-circle"></i> Accepted Papers
+                        </a>
+                    </div>
+                    
+                    <div class="content-block" style="margin-top: 30px;">
+                        <div id="all-publications-container" class="publications-list">
+                            <!-- Publications items will be dynamically loaded here from publications.json -->
+                        </div>
+                        <div class="view-all-container">
+                            <a href="../index.html" class="view-all-btn"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Yihang Tao. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Get filter from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filter = urlParams.get('filter') || 'all';
+        
+        // Update active filter button
+        document.querySelectorAll('.filter-link').forEach(link => {
+            link.style.background = '#e3f2fd';
+            link.style.color = '#1976d2';
+        });
+        
+        if (filter === 'first-author') {
+            document.getElementById('filter-first').style.background = '#1976d2';
+            document.getElementById('filter-first').style.color = 'white';
+            document.getElementById('filter-indicator').textContent = '(First Author Papers)';
+        } else if (filter === 'accepted') {
+            document.getElementById('filter-accepted').style.background = '#1976d2';
+            document.getElementById('filter-accepted').style.color = 'white';
+            document.getElementById('filter-indicator').textContent = '(Accepted Papers)';
+        } else {
+            document.getElementById('filter-all').style.background = '#1976d2';
+            document.getElementById('filter-all').style.color = 'white';
+        }
+        
+        // Load and filter publications
+        fetch('../data/publications.json')
+            .then(response => response.json())
+            .then(publications => {
+                let filteredPubs = publications;
+                
+                if (filter === 'first-author') {
+                    filteredPubs = publications.filter(pub => pub.isFirstAuthor === true);
+                } else if (filter === 'accepted') {
+                    filteredPubs = publications.filter(pub => pub.type === 'accepted');
+                }
+                
+                const container = document.getElementById('all-publications-container');
+                container.innerHTML = '';
+                
+                filteredPubs.forEach((pub, index) => {
+                    const pubElement = document.createElement('div');
+                    pubElement.className = 'publication';
+                    
+                    // Add thumbnail if exists
+                    if (pub.thumbnail) {
+                        const thumbnailDiv = document.createElement('div');
+                        thumbnailDiv.className = 'pub-thumbnail';
+                        const thumbnailImg = document.createElement('img');
+                        thumbnailImg.src = '../' + pub.thumbnail;
+                        thumbnailImg.alt = pub.title;
+                        thumbnailDiv.appendChild(thumbnailImg);
+                        pubElement.appendChild(thumbnailDiv);
+                    }
+                    
+                    const contentElement = document.createElement('div');
+                    contentElement.className = 'pub-content';
+                    
+                    // Create header with venue logo
+                    const headerDiv = document.createElement('div');
+                    headerDiv.className = 'pub-header';
+                    
+                    if (pub.venueLogo) {
+                        const venueLogoImg = document.createElement('img');
+                        venueLogoImg.src = '../' + pub.venueLogo;
+                        venueLogoImg.alt = pub.venue || 'Venue';
+                        venueLogoImg.className = 'venue-logo';
+                        headerDiv.appendChild(venueLogoImg);
+                    }
+                    
+                    const infoDiv = document.createElement('div');
+                    infoDiv.className = 'pub-info';
+                    
+                    if (pub.venue) {
+                        const venueNameElement = document.createElement('div');
+                        venueNameElement.className = 'pub-venue-name';
+                        venueNameElement.textContent = pub.venue;
+                        infoDiv.appendChild(venueNameElement);
+                    }
+                    
+                    const titleElement = document.createElement('h3');
+                    titleElement.textContent = pub.title;
+                    infoDiv.appendChild(titleElement);
+                    
+                    headerDiv.appendChild(infoDiv);
+                    contentElement.appendChild(headerDiv);
+                    
+                    const authorsElement = document.createElement('p');
+                    authorsElement.className = 'authors';
+                    authorsElement.innerHTML = pub.authors;
+                    contentElement.appendChild(authorsElement);
+                    
+                    if (pub.highlight) {
+                        const highlightElement = document.createElement('p');
+                        highlightElement.className = 'pub-highlight';
+                        highlightElement.textContent = pub.highlight;
+                        contentElement.appendChild(highlightElement);
+                    }
+                    
+                    if (pub.tags && pub.tags.length > 0) {
+                        const tagsContainer = document.createElement('div');
+                        tagsContainer.className = 'pub-tags';
+                        
+                        pub.tags.forEach(tag => {
+                            if (tag.link) {
+                                const tagLink = document.createElement('a');
+                                tagLink.href = tag.link;
+                                tagLink.className = `tag ${tag.class || ''}`;
+                                tagLink.textContent = tag.text;
+                                if (!tag.link.startsWith('#')) {
+                                    tagLink.setAttribute('target', '_blank');
+                                }
+                                tagsContainer.appendChild(tagLink);
+                            } else {
+                                const tagSpan = document.createElement('span');
+                                tagSpan.className = `tag ${tag.class || ''}`;
+                                tagSpan.textContent = tag.text;
+                                tagsContainer.appendChild(tagSpan);
+                            }
+                        });
+                        
+                        contentElement.appendChild(tagsContainer);
+                    }
+                    
+                    if (pub.githubStats) {
+                        const statsDiv = document.createElement('div');
+                        statsDiv.className = 'pub-github-stats';
+                        
+                        if (pub.githubStats.stars !== undefined) {
+                            const starStat = document.createElement('div');
+                            starStat.className = 'github-stat';
+                            starStat.innerHTML = `<i class="fab fa-github github-icon"></i><i class="fas fa-star star-icon"></i><span class="count">${pub.githubStats.stars}</span>`;
+                            statsDiv.appendChild(starStat);
+                        }
+                        
+                        if (pub.githubStats.forks !== undefined) {
+                            const forkStat = document.createElement('div');
+                            forkStat.className = 'github-stat';
+                            forkStat.innerHTML = `<i class="fas fa-code-branch fork-icon"></i><span class="count">${pub.githubStats.forks}</span>`;
+                            statsDiv.appendChild(forkStat);
+                        }
+                        
+                        contentElement.appendChild(statsDiv);
+                    }
+                    
+                    pubElement.appendChild(contentElement);
+                    container.appendChild(pubElement);
+                });
+                
+                if (filteredPubs.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #999; padding: 40px 0;">No publications found for this filter.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading publications data:', error);
+            });
+    </script>
+</body>
+</html>
+

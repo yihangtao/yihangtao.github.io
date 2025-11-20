@@ -1,18 +1,23 @@
 [
-    {
+  {
     "title": "Neptune-X: Active X-to-Maritime Generation for Universal Maritime Object Detection",
     "authors": "Yu Guo, Shengfeng He, Yuxu Lu, Haonan An, <strong><u>Yihang Tao</u></strong>, Huilin Zhu, Jingxian Liu, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
-    "venue": "The 39th Annual Conference on Neural Information Processing Systems (NeurIPS'25, Spotlight)",
+    "showOnHomepage": true,
+    "venue": "NeurIPS 2025",
     "year": "2025",
+    "thumbnail": "assets/publications/2025-neptune-x/thumbnail.jpg",
+    "venueLogo": "assets/publications/2025-neptune-x/venue-logo.svg",
+    "highlight": "(Spotlight, Acceptance Rate 3.2%)",
     "tags": [
       {
-        "text": "NeurIPS'25",
-        "class": "venue-tag"
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "#"
       },
       {
-        "text": "PDF",
+        "text": "Code",
         "class": "code-tag",
         "link": "#"
       }
@@ -23,16 +28,15 @@
     "authors": "Senkang Hu, Xudong Han, Jinqi Jiang, <strong><u>Yihang Tao</u></strong>, Zihan Fang, Yong Dai, Sam Kwong, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
-    "venue": "The 39th Annual Conference on Neural Information Processing Systems (NeurIPS'25)",
+    "showOnHomepage": true,
+    "venue": "NeurIPS 2025",
     "year": "2025",
+    "thumbnail": "assets/publications/2025-distribution-aligned-decoding/thumbnail.png",
+    "venueLogo": "assets/publications/2025-distribution-aligned-decoding/venue-logo.svg",
     "tags": [
       {
-        "text": "NeurIPS'25",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "#"
       }
     ]
@@ -42,10 +46,14 @@
     "authors": "Zihan Fang, Zheng Lin, Senkang Hu, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": false,
+    "showOnHomepage": false,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-dynamic-uncertainty-multimodal/thumbnail.png",
+    "venueLogo": "assets/publications/2025-dynamic-uncertainty-multimodal/venue-logo.svg",
     "tags": [
       {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "#"
       }
     ]
@@ -55,23 +63,14 @@
     "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Yuguang Fang, et al.",
     "type": "preprint",
     "isFirstAuthor": false,
+    "showOnHomepage": false,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-cp-uniguard/thumbnail.png",
+    "venueLogo": "assets/publications/2025-cp-uniguard/venue-logo.svg",
     "tags": [
       {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "title": "LLM Task Adaptation with Task-Aware Parameter-Efficient Fine-Tuning",
-    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Zihan Fang, Yuguang Fang, et al.",
-    "type": "preprint",
-    "isFirstAuthor": false,
-    "tags": [
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "#"
       }
     ]
@@ -81,16 +80,15 @@
     "authors": "Senkang \"Forest\" Hu, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Zhengru Fang, Zihan Fang, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
-    "venue": "IEEE Global Communications Conference (GLOBECOM'25)",
+    "showOnHomepage": false,
+    "venue": "GLOBECOM 2025",
     "year": "2025",
+    "thumbnail": "assets/publications/2025-task-aware-peft/thumbnail.png",
+    "venueLogo": "assets/publications/2025-task-aware-peft/venue-logo.png",
     "tags": [
       {
-        "text": "GLOBECOM'25",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://arxiv.org/abs/2504.03718"
       }
     ]
@@ -100,16 +98,15 @@
     "authors": "Zhengru Fang, Jingjing Wang, Yanan Ma, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": false,
-    "venue": "IEEE Journal on Selected Areas in Communications (JSAC)",
+    "showOnHomepage": true,
+    "venue": "IEEE JSAC 2024",
     "year": "2024",
+    "thumbnail": "assets/publications/2024-r-acp/thumbnail.png",
+    "venueLogo": "assets/publications/2024-r-acp/venue-logo.png",
     "tags": [
       {
-        "text": "JSAC",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://arxiv.org/abs/2410.04168"
       }
     ]
@@ -119,10 +116,14 @@
     "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Zihang Fang, Guowen Xu, Yiqin Deng, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": false,
+    "showOnHomepage": false,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-cp-guard-plus/thumbnail.png",
+    "venueLogo": "assets/publications/2025-cp-guard-plus/venue-logo.svg",
     "tags": [
       {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://arxiv.org/abs/2502.07807v1"
       }
     ]
@@ -132,10 +133,14 @@
     "authors": "<strong><u>Yihang Tao</u></strong>*, Senkang \"Forest\" Hu*, Yue Hu, Haonan An, Hangcheng Cao, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
+    "showOnHomepage": true,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-gcp/thumbnail.png",
+    "venueLogo": "assets/publications/2025-gcp/venue-logo.svg",
     "tags": [
       {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://arxiv.org/abs/2501.02450"
       }
     ]
@@ -145,11 +150,14 @@
     "authors": "<strong><u>Yihang Tao</u></strong>, Senkang \"Forest\" Hu, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
+    "showOnHomepage": true,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-adaptive-attack/thumbnail.png",
+    "venueLogo": "assets/publications/2025-adaptive-attack/venue-logo.svg",
     "tags": [
-      
       {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "#"
       }
     ]
@@ -159,17 +167,21 @@
     "authors": "<strong><u>Yihang Tao</u></strong>, Senkang \"Forest\" Hu, Zhengru Fang, Yuguang Fang",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "The 2025 IEEE International Conference on Robotics & Automation, 19-23 May, Atlanta, USA.",
+    "showOnHomepage": true,
+    "venue": "ICRA 2025",
     "year": "2025",
+    "thumbnail": "assets/publications/2025-directed-cp/thumbnail.png",
+    "venueLogo": "assets/publications/2025-directed-cp/venue-logo.png",
     "tags": [
       {
-        "text": "ICRA'25",
-        "class": "venue-tag"
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "https://arxiv.org/abs/2409.08840"
       },
       {
-        "text": "PDF",
+        "text": "Code",
         "class": "code-tag",
-        "link": "https://arxiv.org/abs/2409.08840"
+        "link": "#"
       }
     ]
   },
@@ -178,17 +190,22 @@
     "authors": "Senkang \"Forest\" Hu*, <strong><u>Yihang Tao</u></strong>*, Guowen Xu, Yiqin Deng, Xianhao Chen, Yuguang Fang, Sam Kwong",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "The 39th Annual AAAI Conference on Artificial Intelligence, Philadelphia, Pennsylvania, USA, February 2025.",
+    "showOnHomepage": true,
+    "venue": "AAAI 2025",
     "year": "2024",
+    "thumbnail": "assets/publications/2025-cp-guard/thumbnail.png",
+    "venueLogo": "assets/publications/2025-cp-guard/venue-logo.png",
+    "highlight": "(Oral Presentation)",
     "tags": [
       {
-        "text": "AAAI'25 Oral",
-        "class": "venue-tag"
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/34486"
       },
       {
-        "text": "PDF",
+        "text": "Code",
         "class": "code-tag",
-        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/34486"
+        "link": "#"
       }
     ]
   },
@@ -197,16 +214,15 @@
     "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Qianqian Pan, Ali Kashif Bashir, Marwan Omar",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "IEEE Transactions on Green Communications and Networking (TGCN)",
+    "showOnHomepage": false,
+    "venue": "IEEE TGCN 2024",
     "year": "2024",
+    "thumbnail": "assets/publications/2024-oran-digital-twin/thumbnail.png",
+    "venueLogo": "assets/publications/2024-oran-digital-twin/venue-logo.png",
     "tags": [
       {
-        "text": "TGCN",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://ieeexplore.ieee.org/document/10614333"
       }
     ]
@@ -216,17 +232,16 @@
     "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Shahid Mumtaz, Soumaya Cherkaoui",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "IEEE Global Communications Conference, Kuala Lumpur, Malaysia, December 2023",
+    "showOnHomepage": false,
+    "venue": "GLOBECOM 2023",
     "year": "2023",
-    "tags": [ 
+    "thumbnail": "assets/publications/2023-digital-twin-drl/thumbnail.png",
+    "venueLogo": "assets/publications/2023-digital-twin-drl/venue-logo.png",
+    "tags": [
       {
-        "text": "GLOBECOM'23",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",  
-        "class": "code-tag",  
-        "link": "https://ieeexplore.ieee.org/document/10437455" 
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "https://ieeexplore.ieee.org/document/10437455"
       }
     ]
   },
@@ -235,18 +250,17 @@
     "authors": "<strong><u>Yihang Tao</u></strong>, Jun Wu, Xi Lin, Wu Yang",
     "type": "accepted",
     "isFirstAuthor": true,
-    "venue": "IEEE Networking Letters (LNET)",
+    "showOnHomepage": false,
+    "venue": "IEEE LNET 2023",
     "year": "2023",
-    "tags": [ 
+    "thumbnail": "assets/publications/2023-drl-digital-twin/thumbnail.png",
+    "venueLogo": "assets/publications/2023-drl-digital-twin/venue-logo.png",
+    "tags": [
       {
-        "text": "LNET",
-        "class": "venue-tag"
-      },
-      {
-        "text": "PDF",
-        "class": "code-tag",
+        "text": "Paper",
+        "class": "paper-tag",
         "link": "https://ieeexplore.ieee.org/document/10107755"
       }
     ]
   }
-] 
+]

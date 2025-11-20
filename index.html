@@ -6,330 +6,192 @@
     <title>Yihang Tao</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="profile-info">
-                    <h1>Yihang Tao</h1>
-                    <div class="affiliations">
-                        <div class="affiliation-card">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>PhD Student</span>
-                            <a href="https://www.cs.cityu.edu.hk/">Department of Computer Science</a>
-                            <a href="https://www.cityu.edu.hk/">City University of Hong Kong</a>
-                        </div>
-                        <div class="affiliation-card">
-                            <i class="fas fa-flask"></i>
-                            <span>Research Lab</span>
-                            <a href="https://jcstemlab.netlify.app/">JC STEM Lab of Smart City</a>
-                            <a href="https://jcstemlab.netlify.app/">WINET Laboratory</a>
-                        </div>
-                        <div class="affiliation-card">
-                            <i class="fas fa-user-graduate"></i>
-                            <span>Education</span>
-                            <div class="education-tags">
-                                <a href="https://www.cityu.edu.hk/">PhD@CITYUHK</a>
-                                <a href="https://www.sjtu.edu.cn/">MEng@SJTU</a>
-                                <a href="https://www.seu.edu.cn/">BEng@SEU</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <!-- Contact info will be loaded from JSON -->
-                    </div>
-                </div>
-                <div class="profile-image">
-                    <img src="assets/profile.png" id="profile-img" alt="Yihang Tao">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#about" class="active">Biography</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#latest-news">News</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#honors">Honors</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#location">Contact</a></li>
-            </ul>
-        </div>
+    <!-- Top Navigation - Shared Banner -->
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="#homepage" class="active">Homepage</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#latest-news">News</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#honors">Honors and Awards</a></li>
+            <li><a href="#educations">Educations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">Biography</h2>
-                <div class="about-content">
-                    <p><b>Yihang Tao</b> received the B.S. degree from the School of Information Science and Engineering, <a href="https://www.seu.edu.cn/">Southeast University</a>, Nanjing, China, in 2021 and received his M.S. degree from the School of Computer Science, <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, Shanghai, China, in 2024. Currently, he is pursuing his PhD degree in the Department of Computer Science at <a href="https://www.cityu.edu.hk/">City University of Hong Kong</a> (Advisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a>). His current research interests include collaborative perception, autonomous driving, and AI security. He serves as the program committee member for ICML, ICLR, ACM MM, and the reviewer for IEEE TITS, TMC, RA-L, etc. <br> <br>
-                    <!-- <u><b><span style="font-size: x-large;">🔥🔥🔥 Check this <a href="https://github.com/dl-m9/academic-homepage-modernism">Github repository</a> to get started and welcome to star / fork / contribute!!</span></b></u> -->
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile-section">
+                    <img src="assets/profile.jpg" id="profile-img" alt="Yihang Tao">
+                    <h1>Yihang Tao | 陶祎航</h1>
+                    <p class="subtitle">PhD Student at CityU</p>
+                </div>
+                
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hong Kong, China</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:yihang.tommy@my.cityu.edu.hk">Email</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <a href="assets/CV.pdf" target="_blank">CV</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <a href="https://scholar.google.com.hk/citations?user=YopoapwAAAAJ&hl=zh-CN&oi=ao" target="_blank">Google Scholar</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/yihangtao" target="_blank">Github</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-researchgate"></i>
+                        <a href="https://www.researchgate.net/profile/Yihang-Tao" target="_blank">ResearchGate</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-blog"></i>
+                        <a href="https://yihangtao.github.io/blog/" target="_blank">Blog</a>
+                    </div>
+                    <div class="info-item">
+                        <img src="assets/openreview.svg" alt="OpenReview" class="icon-svg">
+                        <a href="https://openreview.net/profile?id=~Yihang_Tao1" target="_blank">OpenReview</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-wrapper">
+
+        <main class="main-content">
+            <!-- Homepage/About Me Section - Biography -->
+            <section id="homepage" class="section about-section">
+                <span id="about"></span>
+                <h2 class="section-title">About Me</h2>
+                <div class="content-block">
+                    <p><b>Yihang Tao</b> received the B.S. degree from the School of Information Science and Engineering, <a href="https://www.seu.edu.cn/">Southeast University</a>, Nanjing, China, in 2021 and received his M.S. degree from the School of Computer Science, <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, Shanghai, China, in 2024. Currently, he is pursuing his PhD degree in the Department of Computer Science at <a href="https://www.cityu.edu.hk/">City University of Hong Kong</a> (Advisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a>).</p>
                     
+                    <p>His current research interests include <b>computer vision</b>, <b>generative models</b>, and <b>autonomous driving</b>. He serves as the program committee member for ICML, ICLR, ACM MM, and the reviewer for IEEE TITS, TMC, RA-L, etc.</p>
+                    
+                    <div class="highlight-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p><strong>I am actively seeking collaborators of like-minded interests.</strong> If you are interested in my work, please feel free to contact me via email: <a href="mailto:yihang.tommy@my.cityu.edu.hk">yihang.tommy@my.cityu.edu.hk</a>.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="edu-content-wrapper">
-                                <div class="edu-text">
-                                    <h3>PhD @ City University of Hong Kong (CITYUHK)</h3>
-                                    <p class="timeline-date">Sep. 2024 - Now</p>
-                                    <p>Department of Computer Science</p>
-                                    <p>Supervisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a> </p>
+            <!-- News Section -->
+            <section id="latest-news" class="section">
+                <h2 class="section-title">🔥 News</h2>
+                <div class="content-block">
+                    <div id="news-container" class="news-list">
+                        <!-- News items will be dynamically loaded here from news.json -->
+                    </div>
+                    <div class="view-all-container">
+                        <a href="pages/all-news.html" class="view-all-btn">View All News <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">📄 Publications <span class="subtitle-text">(* means equal contribution)</span></h2>
+                <div class="content-block">
+                    <div class="publications-list">
+                        <!-- Publications items will be dynamically loaded here from publications.json -->
+                    </div>
+                    <div class="publication-filters">
+                        <a href="pages/all-publications.html" class="filter-link">
+                            <i class="fas fa-list"></i> View All Publications
+                        </a>
+                        <a href="pages/all-publications.html?filter=first-author" class="filter-link">
+                            <i class="fas fa-user"></i> First Author Papers
+                        </a>
+                        <a href="pages/all-publications.html?filter=accepted" class="filter-link">
+                            <i class="fas fa-check-circle"></i> Accepted Papers
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educations Section -->
+            <section id="educations" class="section">
+                <h2 class="section-title">🎓 Education</h2>
+                <div class="content-block">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="edu-content-wrapper">
+                                    <div class="edu-text">
+                                        <h3>PhD @ City University of Hong Kong (CITYUHK)</h3>
+                                        <p class="timeline-date">Sep. 2024 - Now</p>
+                                        <p>Department of Computer Science</p>
+                                        <p>Supervisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a> </p>
+                                    </div>
+                                    <div class="school-logo">
+                                        <img src="assets/cityu.png" alt="City University of Hong Kong" class="edu-logo">
+                                    </div>
                                 </div>
-                                <div class="school-logo">
-                                    <img src="assets/cityu.png" alt="City University of Hong Kong" class="edu-logo">
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="edu-content-wrapper">
+                                    <div class="edu-text">
+                                        <h3>MEng @ Shanghai Jiao Tong University (SJTU)</h3>
+                                        <p class="timeline-date">Sep. 2021 - Apr. 2024</p>
+                                        <p>School of Computer Science</p>
+                                    </div>
+                                    <div class="school-logo">
+                                        <img src="assets/sjtu.png" alt="Shanghai Jiao Tong University" class="edu-logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="edu-content-wrapper">
+                                    <div class="edu-text">
+                                        <h3>BEng @ Southeast University (SEU)</h3>
+                                        <p class="timeline-date">Sep. 2017 - Jul. 2021</p>
+                                        <p>School of Information Engineering</p>
+                                    </div>
+                                    <div class="school-logo">
+                                        <img src="assets/seu.png" alt="Southeast University" class="edu-logo">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="edu-content-wrapper">
-                                <div class="edu-text">
-                                    <h3>MEng @ Shanghai Jiao Tong University (SJTU)</h3>
-                                    <p class="timeline-date">Sep. 2021 - Apr. 2024</p>
-                                    <p>School of Computer Science</p>
-                                </div>
-                                <div class="school-logo">
-                                    <img src="assets/sjtu.png" alt="Shanghai Jiao Tong University" class="edu-logo">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="edu-content-wrapper">
-                                <div class="edu-text">
-                                    <h3>BEng @ Southeast University (SEU)</h3>
-                                    <p class="timeline-date">Sep. 2017 - Jul. 2021</p>
-                                    <p>School of Information Engineering</p>
-                                </div>
-                                <div class="school-logo">
-                                    <img src="assets/seu.png" alt="Southeast University" class="edu-logo">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="research" class="section">
-            <div class="container">
-                <h2 class="section-title">Research Interests</h2>
-                <div class="research-areas">
-                    <div class="research-main-area">
-                        <h3><i class="fas fa-car"></i> Towards Next-Generation Robust and Efficient Connected Autonomous Driving</h3>
-                        <p class="research-description">This research is dedicated to designing robust and efficient systems for multi-agent connected autonomous driving and generative model-enhanced connected agents. Focusing on the practical deployment of connected autonomous driving, it addresses challenges from the dual perspectives of system efficiency and security. Concurrently, generative models are leveraged to augment data and construct interactive world models, thereby enhancing the generalization and decision-making capabilities of autonomous systems.</p>
-                        
-                        <div class="research-subtopics">
-                            <div class="research-subtopic">
-                                <h4><i class="fas fa-users"></i> Multi-Agent Connected Autonomous Driving</h4>
-                                <ul class="research-list">
-                                    <li><strong>Efficient System Design for Connected Autonomous Driving:</strong> Task partitioning and communication scheduling are employed to address the heterogeneous resources of vehicle and roadside units (RSUs), fully utilizing computational power and bandwidth to improve system throughput and timeliness.</li>
-                                    <li><strong>Security and Defense Mechanisms:</strong> Investigation of potential <em>data fabrication</em> attack surfaces in real-world deployments of connected autonomous driving, including cross-view and adaptive perturbations, and development of detection and defense schemes to ensure the robustness of Bird's-Eye-View (BEV) perspectives and multi-stage pipelines.</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="research-subtopic">
-                                <h4><i class="fas fa-brain"></i> Generative Model-Enhanced Connected Agents</h4>
-                                <ul class="research-list">
-                                    <li><strong>Street View Synthesis and Data Augmentation:</strong> Generating more diverse scene distributions, including rare events and long-tail cases, based on real-world datasets to systematically augment data and improve the generalization capabilities of connected autonomous driving models.</li>
-                                    <li><strong>World Models and Interactive Platforms:</strong> Building upon street view synthesis, temporally consistent generation and 3D box trajectory prediction are incorporated to construct interactive world models. These models can serve as both a testing platform and an online aid for real-time planning and decision-making.</li>
-                                </ul>
-                            </div>
-                        </div>
+            <!-- Honors Section -->
+            <section id="honors" class="section">
+                <h2 class="section-title">🏆 Honors & Awards</h2>
+                <div class="content-block">
+                    <div id="honors-container" class="honors-list">
+                        <!-- Honors items will be dynamically loaded here from honors.json -->
+                    </div>
+                    <div class="view-all-container">
+                        <a href="pages/all-honors.html" class="view-all-btn">View All Honors <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="latest-news" class="section">
-            <div class="container">
-                <h2 class="section-title">Latest News</h2>
-                <div id="news-container" class="news-list">
-                    <!-- News items will be dynamically loaded here from news.json -->
-                </div>
-                <div class="view-all-news">
-                    <a href="pages/all-news.html" class="btn btn-primary"><i class="fas fa-list"></i> View All News</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section">
-            <div class="container">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-description"><sup>#</sup>equal contribution, *corresponding author.</p>
-                <div class="publication-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="preprint">Preprints</button>
-                    <button class="filter-btn" data-filter="accepted">Accepted</button>
-                    <button class="filter-btn" data-filter="first-author">First Author</button>
-                </div>
-                <div class="publications-list">
-                    <!-- Publications items will be dynamically loaded here from publications.json -->
-                </div>
-            </div>
-        </section>
-
-        <section id="honors" class="section">
-            <div class="container">
-                <h2 class="section-title">Honors & Awards</h2>
-                <div class="honors-list">
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Aug. 2025</span></div>
-                        <div class="honor-content">
-                            <h3>Outstanding Academic Performance Award (OAPA), City University of Hong Kong</h3>
-                            <p>2025年度香港城市大学学术优秀奖</p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Mar. 2025</span></div>
-                        <div class="honor-content">
-                            <h3>ICRA'25 Travel Grant, IEEE Robotics and Automation Society</h3>
-                            <p>2025年度ICRA机器人与自动化学会旅行资助</p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">May. 2024</span></div>
-                        <div class="honor-content">
-                            <h3>Outstanding Graduate, Shanghai Jiao Tong University</h3>
-                            <p>2024年度上海交通大学优秀毕业生</p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Oct. 2023</span></div>
-                        <div class="honor-content">
-                            <h3>WEICHAI POWER Scholarship, Shanghai Jiao Tong University</h3>
-                            <p>2023年度上海交通大学潍柴动力奖学金</p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Apr. 2022</span></div>
-                        <div class="honor-content">
-                            <h3>Excellent League Member, Shanghai Jiao Tong University</h3>
-                            <p>2022年度上海交通大学优秀共青团员</p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Jan. 2021</span></div>
-                        <div class="honor-content">
-                            <h3>"My Favorite Work" Award, 15th College Students' Innovation and Entrepreneurship Achievements Exhibition, Southeast University</h3>
-                            <p>2020年度东南大学大学生创新创业成果展示会"我最喜爱的作品"奖 <b>(Program Leader)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Oct. 2020</span></div>
-                        <div class="honor-content">
-                            <h3>Excellence, National Student Research Training Program (20191028611Z), Southeast University</h3>
-                            <p>2020年度国家级大学生创新创业项目优秀结项 <b>(Program Leader)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Oct. 2020</span></div>
-                        <div class="honor-content">
-                            <h3>Excellence, the 2nd International Data Competition, IKCEST</h3>
-                            <p>2020年度"一带一路"国际大数据竞赛优秀奖 <b>(top 3%)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Jun. 2020</span></div>
-                        <div class="honor-content">
-                            <h3>Sun Qingyun Innovation Scholarship, Southeast University</h3>
-                            <p>2020年度东南大学孙庆云创新奖学金 <b>(Less than 1% each year)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Apr. 2020</span></div>
-                        <div class="honor-content">
-                            <h3>Finalist, the 36th Mathematical Contest in Modeling (MCM), COMAP</h3>
-                            <p>2020年度美国大学生数学建模竞赛特等奖提名 <b>(top 1%)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Aug. 2019</span></div>
-                        <div class="honor-content">
-                            <h3>First Prize, the 12th National College Student Information Security Contest, China</h3>
-                            <p>2019年度全国大学生信息安全竞赛全国一等奖 <b>(top 8%)</b></p>
-                        </div>
-                    </div>
-                    <div class="honor-item">
-                        <div class="honor-year"><span class="year-highlight">Aug. 2018</span></div>
-                        <div class="honor-content">
-                            <h3>First Prize, the 15th Advanced Mathematics Competition, Jiangsu, China</h3>
-                            <p>2018年度全国大学生高等数学竞赛江苏赛区一等奖 <b>(top 10%)</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="section-title">Academic Service</h2>
-                <div class="services-content">
-                    <div class="service-category">
-                        <h3>Reviewer for Journals</h3>
-                        <ul class="service-list">
-                            <li>IEEE Robotics and Automation Letters (2025.10 - now)</li>
-                            <li>IEEE Transactions on Mobile Computing (2025.08 - now)</li>
-                            <li>IEEE Journal of Biomedical and Health Informatics (2025.01 - now)</li>
-                            <li>IEEE Transactions on Intelligent Transportation Systems (2024.10 - now)</li>
-                            <li>IEEE Transactions on Consumer Electronics (2024.10 - now)</li>
-                            <li>Engineering Applications of Artificial Intelligence (2024.10 - now)</li>
-                            <li>Pattern Recognition (2024.05 - now)</li>
-                            <li>Neural Networks (2024.09 - now)</li>
-                            <li>IEEE Networking Letters (2023.11 - now)</li>
-                        </ul>
-                    </div>
-                    <div class="service-category">
-                        <h3>PC member for Conferences</h3>
-                        <ul class="service-list">
-                            <li>CVPR 2026</li>
-                            <li>ACM MM 2025</li>
-                            <li>ICML 2025</li>
-                            <li>ICLR 2025-2026</li>
-                            <li>ICRA 2025</li>
-                            <li>ICLR 2025-2026</li>
-                            <li>IUI 2025</li>
-                            <li>IJCNN 2025</li>
-                            <li>IEEE ISBI 2025</li>
-                            <li>IEEE ICC 2025-2026</li>
-                            <li>IEEE GLOBECOM 2023-2026</li>
-                            <li>IEEE ICC 2025-2026</li>
-                            <li>IEEE GLOBECOM 2023-2026</li>
-                            <li>IEEE ICCC 2024</li>
-                        </ul>
-                    </div>
-                    <div class="service-category">
-                        <h3>Session Chair</h3>
-                        <ul class="service-list">
-                            <li>IEEE GLOBECOM 2023</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="location" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="location-content">
+            <!-- Contact Section with Map -->
+            <section id="contact" class="section">
+                <h2 class="section-title">📍 Contact</h2>
+                <div class="content-block">
                     <div class="address-container">
                         <div class="address-info">
                             <h3>Office Address</h3>
@@ -341,25 +203,26 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156431518!2d114.16990907694372!3d22.3379294415273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040736e9ad7dd3%3A0x1706ff4e8aa79fd1!2z5Lmd6b6N5aGY6YGU5LmL6LevODPomZ_lrbjooZPmqJMgKOS4iSk!5e0!3m2!1szh-CN!2shk!4v1747664344094!5m2!1szh-CN!2shk"
                             width="100%" 
                             height="400" 
-                            style="border:0;" 
+                            style="border:0; border-radius: 8px;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
+                    <div class="visitor-map">
+                        <h3 style="text-align: center; margin: 40px 0 20px 0;">Visitor Statistics</h3>
+                        <div style="width: 300px; margin: 0 auto;">
+                            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DGYryRUj2d1F6bWJ5iDqqI6z8tPVyqLu9TOe9LQmSt4"></script>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <br><br><br><br>
-                <div style="width: 15%; height: auto; margin: auto;">
-                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DGYryRUj2d1F6bWJ5iDqqI6z8tPVyqLu9TOe9LQmSt4"></script>
-                </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> <a href="https://github.com/dl-m9/academic-homepage-modernism">academic-homepage-modernism</a>. All rights reserved.</p>
+            </section>
+        </main>
         </div>
+    </div>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> Yihang Tao. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
@@ -367,35 +230,33 @@
         // Update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
-        // Mobile navigation horizontal scroll handling
+        // Active nav link on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks) {
-                // Check if scrollable
-                const checkScrollable = () => {
-                    const isScrollable = navLinks.scrollWidth > navLinks.clientWidth;
-                    document.querySelector('nav .container').classList.toggle('has-scroll', isScrollable);
-                };
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            function setActiveLink() {
+                let currentSection = '';
                 
-                // Check on load and resize
-                checkScrollable();
-                window.addEventListener('resize', checkScrollable);
-                
-                // Scroll to active link
-                const activeLink = navLinks.querySelector('a.active');
-                if (activeLink) {
-                    const activeLi = activeLink.closest('li');
-                    if (activeLi) {
-                        setTimeout(() => {
-                            // Center the active link
-                            const scrollPos = activeLi.offsetLeft - (navLinks.clientWidth / 2) + (activeLi.offsetWidth / 2);
-                            navLinks.scrollLeft = Math.max(0, scrollPos);
-                        }, 100);
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        currentSection = section.getAttribute('id');
                     }
-                }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
             }
+            
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink();
         });
     </script>
 </body>
-</html>
 </html>

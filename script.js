@@ -1,44 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load profile information
-    loadProfileInfo();
-
     // Make all links open in a new tab
     makeAllLinksOpenInNewTab();
 
     // Set up MutationObserver to watch for dynamically added links
     setupLinkObserver();
-
-    // Publication filters - including "First Author" for publications where user is first author or has equal contribution
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const publications = document.querySelectorAll('.publication');
     
     // Load publications data from JSON file
     loadPublications();
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get filter value
-            const filterValue = this.getAttribute('data-filter');
-            
-            // Filter publications
-            const pubElements = document.querySelectorAll('.publication');
-            pubElements.forEach(pub => {
-                if (filterValue === 'all') {
-                    pub.style.display = 'flex';
-                } else if (pub.classList.contains(filterValue)) {
-                    pub.style.display = 'flex';
-                } else {
-                    pub.style.display = 'none';
-                }
-            });
-        });
-    });
     
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -53,8 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetSection = document.querySelector(targetId);
                 
                 if (targetSection) {
+                    // Account for the sticky nav
+                    const navHeight = document.querySelector('.top-nav').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight - 20;
+                    
                     window.scrollTo({
-                        top: targetSection.offsetTop - 100,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                     
@@ -69,30 +41,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active nav link on scroll
     window.addEventListener('scroll', function() {
         let current = '';
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('section[id]');
+        const navHeight = document.querySelector('.top-nav').offsetHeight;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (pageYOffset >= sectionTop - 200) {
+            if (pageYOffset >= sectionTop - navHeight - 100) {
                 current = section.getAttribute('id');
             }
         });
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
+            const linkTarget = link.getAttribute('href').substring(1);
+            // Handle both homepage and about pointing to the same section
+            if (linkTarget === current || 
+                (current === 'homepage' && linkTarget === 'about') ||
+                (current === 'about' && linkTarget === 'homepage')) {
                 link.classList.add('active');
             }
         });
     });
 
     // Load news data
-    // Determine the correct path for news.json based on current page
     let newsJsonPath = 'data/news.json';
     if (window.location.pathname.includes('/pages/')) {
-        // If we're in the pages directory, we need to go up one level
         newsJsonPath = '../data/news.json';
     }
     
@@ -116,84 +91,34 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error loading news data:', error);
         });
-});
-
-// Function to load profile information
-function loadProfileInfo() {
-    let profileJsonPath = 'data/profile-info.json';
-    let isSubpage = window.location.pathname.includes('/pages/');
-    if (isSubpage) {
-        profileJsonPath = '../data/profile-info.json';
+    
+    // Load honors data
+    let honorsJsonPath = 'data/honors.json';
+    if (window.location.pathname.includes('/pages/')) {
+        honorsJsonPath = '../data/honors.json';
     }
-
-    // Get profile-info container
-    const profileInfoContainer = document.querySelector('.profile-info');
-    if (!profileInfoContainer) return;
-
-    fetch(profileJsonPath)
+    
+    fetch(honorsJsonPath)
         .then(response => response.json())
         .then(data => {
-            // Clear existing content
-            profileInfoContainer.innerHTML = '';
+            // Check if we're on the homepage
+            const honorsSection = document.getElementById('honors');
+            if (honorsSection) {
+                // On homepage - show limited honors (first 8 items)
+                renderHonorsItems(data.slice(0, 8), 'honors-container');
+            }
             
-            // Add name
-            const nameElement = document.createElement('h1');
-            nameElement.textContent = data.name;
-            profileInfoContainer.appendChild(nameElement);
-            
-            // Add subtitle
-            const subtitleElement = document.createElement('p');
-            subtitleElement.className = 'subtitle';
-            subtitleElement.innerHTML = data.subtitle;
-            profileInfoContainer.appendChild(subtitleElement);
-            
-            // Add social links container
-            const contactInfo = document.createElement('div');
-            contactInfo.className = 'contact-info';
-            
-            // Add each social link
-            data.socialLinks.forEach(link => {
-                const linkContainer = document.createElement('p');
-                const anchor = document.createElement('a');
-                // Adjust URL paths for subpages
-                if (isSubpage && link.url.startsWith('assets/')) {
-                    anchor.href = '../' + link.url;
-                } else {
-                    anchor.href = link.url;
-                }
-                
-                // Set target attribute - either from JSON or default to "_blank" for external links
-                if (link.target) {
-                    anchor.target = link.target;
-                } else if (link.url && !link.url.startsWith('#')) {
-                    anchor.target = '_blank';
-                }
-                
-                // Fix SVG icon paths for subpages
-                let iconHtml = link.icon;
-                if (isSubpage && link.type === 'dblp') {
-                    iconHtml = iconHtml.replace('src="assets/', 'src="../assets/');
-                }
-                
-                anchor.innerHTML = iconHtml;
-                linkContainer.appendChild(anchor);
-                contactInfo.appendChild(linkContainer);
-            });
-            
-            profileInfoContainer.appendChild(contactInfo);
-            
-            // Update profile image if there's a profile-image container
-            const profileImageContainer = document.querySelector('.profile-image img');
-            if (profileImageContainer && data.profileImage) {
-                profileImageContainer.src = isSubpage ? 
-                    '../' + data.profileImage : data.profileImage;
-                profileImageContainer.alt = data.name;
+            // Check if we're on the all-honors page
+            const allHonorsSection = document.getElementById('all-honors');
+            if (allHonorsSection) {
+                // On all-honors page - show all honors items
+                renderHonorsItems(data, 'all-honors-container');
             }
         })
         .catch(error => {
-            console.error('Error loading profile information:', error);
+            console.error('Error loading honors data:', error);
         });
-}
+});
 
 // Function to load publications from JSON
 function loadPublications() {
@@ -203,33 +128,76 @@ function loadPublications() {
     }
 
     const publicationsList = document.querySelector('.publications-list');
-    if (!publicationsList) return;
+    if (!publicationsList) {
+        console.warn('Publications list not found');
+        return;
+    }
     
     // Clear existing publications
     publicationsList.innerHTML = '';
     
     fetch(publicationsJsonPath)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(publications => {
-            publications.forEach(pub => {
+            console.log('Loaded publications:', publications.length);
+            
+            // Filter publications to show on homepage based on showOnHomepage flag
+            const pubsToShow = publications.filter(pub => pub.showOnHomepage === true);
+            
+            pubsToShow.forEach((pub, index) => {
                 const pubElement = document.createElement('div');
-                const classes = ['publication', pub.type];
-                if (pub.isFirstAuthor) classes.push('first-author');
-                pubElement.className = classes.join(' ');
+                pubElement.className = 'publication';
                 
-                // Create publication number
-                const numberElement = document.createElement('span');
-                numberElement.className = 'pub-number';
-                numberElement.textContent = pub.number;
+                // Add thumbnail if exists
+                if (pub.thumbnail) {
+                    const thumbnailDiv = document.createElement('div');
+                    thumbnailDiv.className = 'pub-thumbnail';
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = pub.thumbnail;
+                    thumbnailImg.alt = pub.title;
+                    thumbnailDiv.appendChild(thumbnailImg);
+                    pubElement.appendChild(thumbnailDiv);
+                }
                 
                 // Create publication content container
                 const contentElement = document.createElement('div');
                 contentElement.className = 'pub-content';
                 
+                // Create header with venue logo
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'pub-header';
+                
+                if (pub.venueLogo) {
+                    const venueLogoImg = document.createElement('img');
+                    venueLogoImg.src = pub.venueLogo;
+                    venueLogoImg.alt = pub.venue || 'Venue';
+                    venueLogoImg.className = 'venue-logo';
+                    headerDiv.appendChild(venueLogoImg);
+                }
+                
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'pub-info';
+                
+                // Add venue name
+                if (pub.venue) {
+                    const venueNameElement = document.createElement('div');
+                    venueNameElement.className = 'pub-venue-name';
+                    venueNameElement.textContent = pub.venue;
+                    infoDiv.appendChild(venueNameElement);
+                }
+                
                 // Add title
                 const titleElement = document.createElement('h3');
                 titleElement.textContent = pub.title;
-                contentElement.appendChild(titleElement);
+                infoDiv.appendChild(titleElement);
+                
+                headerDiv.appendChild(infoDiv);
+                contentElement.appendChild(headerDiv);
                 
                 // Add authors
                 const authorsElement = document.createElement('p');
@@ -237,54 +205,80 @@ function loadPublications() {
                 authorsElement.innerHTML = pub.authors;
                 contentElement.appendChild(authorsElement);
                 
-                // Add venue if it exists
-                if (pub.venue) {
-                    const venueElement = document.createElement('p');
-                    venueElement.className = 'venue';
-                    venueElement.textContent = pub.venue;
-                    contentElement.appendChild(venueElement);
+                // Add highlight if exists (like Spotlight, Oral, etc.)
+                if (pub.highlight) {
+                    const highlightElement = document.createElement('p');
+                    highlightElement.className = 'pub-highlight';
+                    highlightElement.textContent = pub.highlight;
+                    contentElement.appendChild(highlightElement);
                 }
                 
                 // Add tags
-                const tagsContainer = document.createElement('div');
-                tagsContainer.className = 'pub-tags';
-                
-                pub.tags.forEach(tag => {
-                    if (tag.link) {
-                        const tagLink = document.createElement('a');
-                        tagLink.href = tag.link;
-                        tagLink.className = `tag ${tag.class}`;
-                        tagLink.textContent = tag.text;
-                        // Add target="_blank" for links
-                        if (!tag.link.startsWith('#')) {
-                            tagLink.setAttribute('target', '_blank');
+                if (pub.tags && pub.tags.length > 0) {
+                    const tagsContainer = document.createElement('div');
+                    tagsContainer.className = 'pub-tags';
+                    
+                    pub.tags.forEach(tag => {
+                        if (tag.link) {
+                            const tagLink = document.createElement('a');
+                            tagLink.href = tag.link;
+                            tagLink.className = `tag ${tag.class || ''}`;
+                            tagLink.textContent = tag.text;
+                            if (!tag.link.startsWith('#')) {
+                                tagLink.setAttribute('target', '_blank');
+                            }
+                            tagsContainer.appendChild(tagLink);
+                        } else {
+                            const tagSpan = document.createElement('span');
+                            tagSpan.className = `tag ${tag.class || ''}`;
+                            tagSpan.textContent = tag.text;
+                            tagsContainer.appendChild(tagSpan);
                         }
-                        tagsContainer.appendChild(tagLink);
-                    } else {
-                        const tagSpan = document.createElement('span');
-                        tagSpan.className = `tag ${tag.class}`;
-                        tagSpan.textContent = tag.text;
-                        tagsContainer.appendChild(tagSpan);
+                    });
+                    
+                    contentElement.appendChild(tagsContainer);
+                }
+                
+                // Add GitHub stats if exists
+                if (pub.githubStats) {
+                    const statsDiv = document.createElement('div');
+                    statsDiv.className = 'pub-github-stats';
+                    
+                    if (pub.githubStats.stars !== undefined) {
+                        const starStat = document.createElement('div');
+                        starStat.className = 'github-stat';
+                        starStat.innerHTML = `<i class="fab fa-github github-icon"></i><i class="fas fa-star star-icon"></i><span class="count">${pub.githubStats.stars}</span>`;
+                        statsDiv.appendChild(starStat);
                     }
-                });
+                    
+                    if (pub.githubStats.forks !== undefined) {
+                        const forkStat = document.createElement('div');
+                        forkStat.className = 'github-stat';
+                        forkStat.innerHTML = `<i class="fas fa-code-branch fork-icon"></i><span class="count">${pub.githubStats.forks}</span>`;
+                        statsDiv.appendChild(forkStat);
+                    }
+                    
+                    contentElement.appendChild(statsDiv);
+                }
                 
-                contentElement.appendChild(tagsContainer);
-                
-                // Combine elements and add to publications list
-                pubElement.appendChild(numberElement);
+                // Add to publications list
                 pubElement.appendChild(contentElement);
                 publicationsList.appendChild(pubElement);
             });
         })
         .catch(error => {
             console.error('Error loading publications data:', error);
+            publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
         });
 }
 
 // Function to render news items
 function renderNewsItems(newsData, containerId) {
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container) {
+        console.warn('News container not found:', containerId);
+        return;
+    }
     
     // Clear any existing content
     container.innerHTML = '';
@@ -295,70 +289,48 @@ function renderNewsItems(newsData, containerId) {
         newsElement.className = 'news-item';
         
         // Create the date element
-        const dateElement = document.createElement('div');
+        const dateElement = document.createElement('span');
         dateElement.className = 'news-date';
-        
-        const dateHighlight = document.createElement('span');
-        dateHighlight.className = 'year-highlight';
-        dateHighlight.textContent = newsItem.date;
-        dateElement.appendChild(dateHighlight);
+        dateElement.textContent = newsItem.date;
         
         // Create the content element
         const contentElement = document.createElement('div');
         contentElement.className = 'news-content';
         
-        // Create the title element
-        const titleElement = document.createElement('h3');
-        
-        // Check if title contains HTML (like '<a href=')
-        if (newsItem.title && newsItem.title.includes('<a href=')) {
-            // Parse HTML in title
-            titleElement.innerHTML = newsItem.title;
-        } else {
-            titleElement.textContent = newsItem.title;
-        }
-        
-        contentElement.appendChild(titleElement);
-        
-        // Create the paragraph for content
-        const paragraphElement = document.createElement('p');
-        paragraphElement.innerHTML = newsItem.content;
+        // Create emoji and content text
+        const textSpan = document.createElement('span');
+        textSpan.innerHTML = '🎉 ' + newsItem.content;
+        contentElement.appendChild(textSpan);
         
         // Add links if provided in the links array format
         if (newsItem.links && newsItem.links.length > 0) {
             newsItem.links.forEach(link => {
-                // Add a space if needed
                 const space = document.createTextNode(' ');
-                paragraphElement.appendChild(space);
+                contentElement.appendChild(space);
                 
-                // Create link
                 const linkElement = document.createElement('a');
                 linkElement.href = link.url;
                 linkElement.textContent = link.text;
-                // Add target="_blank" for external links
                 if (link.url && !link.url.startsWith('#')) {
                     linkElement.setAttribute('target', '_blank');
                 }
-                paragraphElement.appendChild(linkElement);
+                contentElement.appendChild(linkElement);
             });
         }
         
         // Check for old style link (backward compatibility)
         if (newsItem.link && newsItem.linkText) {
             const space = document.createTextNode(' ');
-            paragraphElement.appendChild(space);
+            contentElement.appendChild(space);
             
             const linkElement = document.createElement('a');
             linkElement.href = newsItem.link;
             linkElement.textContent = newsItem.linkText;
-            // Add target="_blank" for external links
             if (newsItem.link && !newsItem.link.startsWith('#')) {
                 linkElement.setAttribute('target', '_blank');
             }
-            paragraphElement.appendChild(linkElement);
+            contentElement.appendChild(linkElement);
         }
-        
-        contentElement.appendChild(paragraphElement);
         
         // Add date and content to the news item
         newsElement.appendChild(dateElement);
@@ -366,6 +338,54 @@ function renderNewsItems(newsData, containerId) {
         
         // Add the news item to the container
         container.appendChild(newsElement);
+    });
+}
+
+// Function to render honors items
+function renderHonorsItems(honorsData, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.warn('Honors container not found:', containerId);
+        return;
+    }
+    
+    // Clear any existing content
+    container.innerHTML = '';
+    
+    // Add each honor item to the container
+    honorsData.forEach(honorItem => {
+        const honorElement = document.createElement('div');
+        honorElement.className = 'honor-item';
+        
+        // Create the year element
+        const yearElement = document.createElement('div');
+        yearElement.className = 'honor-year';
+        
+        const yearHighlight = document.createElement('span');
+        yearHighlight.className = 'year-highlight';
+        yearHighlight.textContent = honorItem.date;
+        yearElement.appendChild(yearHighlight);
+        
+        // Create the content element
+        const contentElement = document.createElement('div');
+        contentElement.className = 'honor-content';
+        
+        // Create the title element
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = honorItem.title;
+        contentElement.appendChild(titleElement);
+        
+        // Create the description element
+        const descElement = document.createElement('p');
+        descElement.innerHTML = honorItem.description;
+        contentElement.appendChild(descElement);
+        
+        // Add year and content to the honor item
+        honorElement.appendChild(yearElement);
+        honorElement.appendChild(contentElement);
+        
+        // Add the honor item to the container
+        container.appendChild(honorElement);
     });
 }
 
