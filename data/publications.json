@@ -14,12 +14,12 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2509.20745"
       },
       {
         "text": "Code",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://github.com/gy65896/Neptune-X"
       }
     ]
   },
@@ -37,7 +37,7 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2509.15888"
       }
     ]
   },
@@ -71,7 +71,7 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2506.22890"
       }
     ]
   },
@@ -108,6 +108,11 @@
         "text": "Paper",
         "class": "paper-tag",
         "link": "https://arxiv.org/abs/2410.04168"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/fangzr/R-ACP"
       }
     ]
   },
@@ -205,7 +210,7 @@
       {
         "text": "Code",
         "class": "code-tag",
-        "link": "#"
+        "link": "https://github.com/CP-Security/CP-Guard"
       }
     ]
   },
