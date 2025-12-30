@@ -1,5 +1,23 @@
 [
   {
+    "title": "Decoder Gradient Shields: A Family of Provable and High-Fidelity Methods Against Gradient-Based Box-Free Watermark Removal",
+    "authors": "Haonan An, Guang Hua, Wei Du, Hangcheng Cao, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Susanto Rahardja, Yuguang Fang",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "showOnHomepage": true,
+    "venue": "IEEE TDSC 2025",
+    "year": "2025",
+    "thumbnail": "assets/publications/2025-decoder-gradient-shields/thumbnail.png",
+    "venueLogo": "assets/publications/2025-decoder-gradient-shields/venue-logo.png",
+    "tags": [
+      {
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
     "title": "Neptune-X: Active X-to-Maritime Generation for Universal Maritime Object Detection",
     "authors": "Yu Guo, Shengfeng He, Yuxu Lu, Haonan An, <strong><u>Yihang Tao</u></strong>, Huilin Zhu, Jingxian Liu, Yuguang Fang",
     "type": "accepted",
@@ -60,11 +78,12 @@
   },
   {
     "title": "CP-uniGuard: A Unified, Probability-Agnostic, and Adaptive Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems",
-    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Yuguang Fang, et al.",
-    "type": "preprint",
+    "authors": "Senkang \"Forest\" Hu, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Xinyuan Qian, Yiqin Deng, Xianhao Chen, Sam Tak Wu Kwong, Yuguang Fang",
+    "type": "accepted",
     "isFirstAuthor": false,
-    "showOnHomepage": false,
-    "venue": "ArXiv 2025",
+    "showOnHomepage": true,
+    "venue": "IEEE TMC 2025",
+    "year": "2025",
     "thumbnail": "assets/publications/2025-cp-uniguard/thumbnail.png",
     "venueLogo": "assets/publications/2025-cp-uniguard/venue-logo.svg",
     "tags": [

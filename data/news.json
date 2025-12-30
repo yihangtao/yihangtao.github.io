@@ -1,5 +1,15 @@
 [
   {
+    "date": "Dec. 2025",
+    "title": "Paper Accepted by IEEE TDSC",
+    "content": "One co-authored paper entitled \"Decoder Gradient Shields: A Family of Provable and High-Fidelity Methods Against Gradient-Based Box-Free Watermark Removal\" has been accepted by <strong>IEEE TDSC</strong>!"
+  },
+  {
+    "date": "Dec. 2025",
+    "title": "Paper Accepted by IEEE TMC",
+    "content": "One co-authored paper entitled \"CP-uniGuard: A Unified, Probability-Agnostic, and Adaptive Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems\" has been accepted by <strong>IEEE TMC</strong>!"
+  },
+  {
     "date":"Sept. 2025",
     "title": "Two Papers Accepted by NeurIPS'25",
     "content": "Two co-authored papers was accepted by <strong>NeurIPS'25</strong> (one spotlight), congratulations!"
