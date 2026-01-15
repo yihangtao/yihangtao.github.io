@@ -145,7 +145,7 @@ html {
 /* News Item Dashed Line */
 .news-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr;
     gap: 1.5rem;
     align-items: baseline;
     padding-bottom: 0.5rem;
@@ -157,6 +157,7 @@ html {
     font-weight: 600;
     font-size: 0.85rem;
     color: #64748b;
+    white-space: nowrap;
 }
 
 .news-content {
@@ -172,7 +173,7 @@ html {
 /* Honors Section Styling */
 .honor-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr;
     gap: 1.5rem;
     align-items: baseline;
     margin-bottom: 1.5rem;
@@ -184,6 +185,7 @@ html {
     font-size: 0.9rem;
     color: #d4a562; /* accent */
     text-align: right;
+    white-space: nowrap;
 }
 
 .honor-content h3 {
