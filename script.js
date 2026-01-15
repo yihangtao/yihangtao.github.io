@@ -192,6 +192,10 @@ function loadPublications() {
                     const li = document.createElement('li');
                     li.className = 'pub-list-item';
 
+                    // Wrapper for text content to allow side-by-side layout with thumbnail
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.className = 'pub-content-wrapper';
+
                     // --- Line 1: [Venue] Title ---
                     const line1 = document.createElement('div');
                     line1.className = 'pub-line-1';
@@ -234,14 +238,43 @@ function loadPublications() {
                             }
                         });
                     }
+
+                    // Thumbnail Preview Button (if thumbnail exists)
+                    let thumbBox = null;
+                    if (pub.thumbnail) {
+                        const btnPreview = document.createElement('button');
+                        btnPreview.className = 'pub-link-btn pub-btn-preview';
+                        btnPreview.textContent = 'Image';
+                        btnPreview.onclick = function() {
+                            if (li.classList.contains('with-thumbnail-expanded')) {
+                                li.classList.remove('with-thumbnail-expanded');
+                                thumbBox.style.display = 'none';
+                                btnPreview.classList.remove('active');
+                            } else {
+                                li.classList.add('with-thumbnail-expanded');
+                                thumbBox.style.display = 'block';
+                                btnPreview.classList.add('active');
+                            }
+                        };
+                        line1.appendChild(btnPreview);
+
+                        // Create thumbnail container
+                        thumbBox = document.createElement('div');
+                        thumbBox.className = 'pub-thumbnail-box';
+                        thumbBox.style.display = 'none';
+                        const thumbImg = document.createElement('img');
+                        thumbImg.src = pub.thumbnail;
+                        thumbImg.alt = 'Publication Thumbnail';
+                        thumbBox.appendChild(thumbImg);
+                    }
                     
-                    li.appendChild(line1);
+                    contentWrapper.appendChild(line1);
 
                     // --- Line 2: Authors ---
                     const line2 = document.createElement('div');
                     line2.className = 'pub-line-2';
                     line2.innerHTML = pub.authors; // keep innerHTML for <strong>/<u>
-                    li.appendChild(line2);
+                    contentWrapper.appendChild(line2);
 
                     // --- Line 3: Venue Details ---
                     const line3 = document.createElement('div');
@@ -275,7 +308,14 @@ function loadPublications() {
                         line3.appendChild(rankSpan);
                     }
 
-                    li.appendChild(line3);
+                    contentWrapper.appendChild(line3);
+                    
+                    // Append wrapper and thumbnail box to LI
+                    li.appendChild(contentWrapper);
+                    if (thumbBox) {
+                        li.appendChild(thumbBox);
+                    }
+
                     ul.appendChild(li);
                 });
 

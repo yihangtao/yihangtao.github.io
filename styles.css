@@ -1,102 +1,154 @@
-/* Global Custom Styles */
-:root {
-    --glass-bg: rgba(254, 255, 254, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.5);
-    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #0f172a; /* slate-900 */
+    background-color: #f8fafc; /* slate-50 */
+    line-height: 1.6;
 }
 
-/* Glassmorphism Utilities */
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+}
+
+.font-serif {
+    font-family: 'Crimson Text', serif;
+}
+
+.font-sans {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Navigation */
 .glass {
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
-/* Custom Scroll Behavior */
-html {
-    scroll-behavior: smooth;
+.nav-item {
+    position: relative;
+    font-weight: 500;
+    color: #475569; /* slate-600 */
+    transition: color 0.2s;
 }
 
-/* Grid Layout System - Custom Implementation for specific responsiveness */
-.grid-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+.nav-item:hover {
+    color: #1e293b; /* slate-800 */
 }
 
-@media (min-width: 1024px) {
-    .grid-layout {
-        grid-template-columns: 300px 1fr; /* Profile column fixed width, Content fluid */
-        gap: 5rem;
-    }
-}
-
-/* Component Styles that are too complex for utility classes alone */
-
-/* Profile Image */
-.profile-image-container {
-    width: 200px;
-    margin: 0 auto;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
-}
-
-/* Social Buttons Hover Effect */
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    background-color: transparent;
-    color: #64748b; /* muted */
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.social-btn:hover {
-    background-color: rgba(212, 165, 98, 0.1);
-    color: #d4a562; /* accent */
-    transform: translateY(-2px);
-}
-
-/* Navigation Link Active State Indicator */
-.nav-links li a.active {
-    color: #1e293b; /* primary */
-}
-
-.nav-links li a.active::after {
+.nav-item::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
+    bottom: -4px;
+    left: 0;
     background-color: #d4a562; /* accent */
-    border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
-/* Link Highlight Animation */
-.link-highlight {
-    color: #d4a562; /* accent */
-    font-weight: 500;
-    border-bottom: 1px dashed #d4a562;
-    transition: all 0.2s;
+.nav-item:hover::after {
+    width: 100%;
 }
 
-.link-highlight:hover {
-    color: #b88a4d; /* accent-dark */
-    border-bottom-style: solid;
+/* Hero Section */
+.profile-image-container {
+    position: relative;
+    z-index: 10;
 }
 
-/* Publication Card Hover (Deprecated - keeping for reference or alternative view) */
-.publication {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.75rem;
-    padding: 1.5rem;
+.profile-image-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #d4a562; /* accent */
+    border-radius: 0.75rem; /* rounded-xl */
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.profile-image-container:hover::before {
+    transform: translate(-5px, -5px);
+}
+
+/* Section Styling */
+section {
+    position: relative;
+}
+
+.section-header h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background-color: rgba(212, 165, 98, 0.3); /* accent with opacity */
+    z-index: -1;
+}
+
+/* Cards */
+.news-card, .research-card, .contact-card {
+    transition: all 0.3s ease;
+}
+
+.news-card:hover, .research-card:hover, .contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1; /* slate-300 */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Utility */
+.text-accent {
+    color: #d4a562;
+}
+
+.bg-accent {
+    background-color: #d4a562;
+}
+
+.border-accent {
+    border-color: #d4a562;
+}
+
+.hover\:text-accent:hover {
+    color: #d4a562;
+}
+
+/* Research Highlights (Accordion/Details Style if needed, but using clean list for now) */
+details summary {
+    cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: justify;
 }
@@ -322,50 +374,54 @@ html {
     font-size: 1rem;
     font-weight: 600;
     color: #1e293b; /* primary */
-    margin-bottom: 0.25rem;
 }
 
-.honor-content p {
-    font-size: 0.9rem;
-    color: #64748b; /* muted */
-    line-height: 1.5;
+/* Publication Thumbnail & Layout */
+.pub-content-wrapper {
+    width: 100%;
 }
 
-/* Filter Chips Hover */
-.filter-chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: white;
+.pub-list-item.with-thumbnail-expanded {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.pub-thumbnail-box {
+    width: 250px;
+    flex-shrink: 0;
     border: 1px solid #e2e8f0;
-    border-radius: 2rem;
-    font-size: 0.85rem;
-    color: #64748b;
-    transition: all 0.2s;
+    padding: 4px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.filter-chip:hover {
-    border-color: #d4a562;
-    color: #d4a562;
+.pub-thumbnail-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
 }
 
-/* Tags Hover */
-.tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    background-color: #f1f5f9;
-    color: #64748b;
-    font-weight: 500;
-    transition: all 0.2s;
+.pub-btn-preview {
+    cursor: pointer;
 }
 
-.tag:hover {
+.pub-btn-preview.active {
     background-color: #1e293b;
     color: white;
+    border-color: #1e293b;
 }
 
-/* Education Logo Container */
-.school-logo-container img {
-    object-fit: contain;
+/* Make sure mobile layout stacks */
+@media (max-width: 640px) {
+    .pub-list-item.with-thumbnail-expanded {
+        flex-direction: column;
+    }
+    .pub-thumbnail-box {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0.5rem;
+    }
 }
