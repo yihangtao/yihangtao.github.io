@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
 
 /* Base Styles */
 body {
@@ -60,23 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 .profile-image-container {
     position: relative;
     z-index: 10;
-}
-
-.profile-image-container::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: 10px;
-    bottom: 10px;
-    border: 2px solid #d4a562; /* accent */
-    border-radius: 0.75rem; /* rounded-xl */
-    z-index: -1;
-    transition: transform 0.3s ease;
-}
-
-.profile-image-container:hover::before {
-    transform: translate(-5px, -5px);
 }
 
 /* Section Styling */
@@ -350,15 +333,16 @@ details summary {
 }
 
 .news-date {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: 400;
+    font-size: 0.95rem; /* Adjusted slightly for handwriting readability */
     color: #64748b;
     white-space: nowrap;
 }
 
 .news-content {
-    font-size: 0.9rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem; /* Adjusted slightly for handwriting readability */
     color: #334155;
     line-height: 1.5;
 }
