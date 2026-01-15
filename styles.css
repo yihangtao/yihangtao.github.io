@@ -101,6 +101,36 @@ html {
     text-align: justify;
 }
 
+/* Publication Card Typography */
+.pub-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b; /* primary */
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.pub-authors {
+    font-size: 0.95rem;
+    color: #64748b; /* muted */
+    margin-bottom: 0.5rem;
+}
+
+.pub-venue {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #64748b; /* muted */
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.pub-highlight {
+    font-size: 0.85rem;
+    color: #d97706; /* amber-600 */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
 .publication:hover {
     border-color: #d4a562; /* accent */
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
@@ -114,11 +144,23 @@ html {
 
 /* News Item Dashed Line */
 .news-item {
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
     align-items: baseline;
     padding-bottom: 0.75rem;
     border-bottom: 1px dashed #e2e8f0;
+}
+
+.news-date {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.news-content {
+    color: #334155;
 }
 
 .news-item:last-child {

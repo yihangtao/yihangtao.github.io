@@ -153,51 +153,31 @@ function loadPublications() {
                 const pubElement = document.createElement('div');
                 pubElement.className = 'publication';
                 
-                // Add thumbnail if exists - REMOVED per request
-
-                
                 // Create publication content container
                 const contentElement = document.createElement('div');
                 contentElement.className = 'pub-content';
                 
-                // Create header with venue logo
-                const headerDiv = document.createElement('div');
-                headerDiv.className = 'pub-header';
-                
-                if (pub.venueLogo) {
-                    const venueLogoImg = document.createElement('img');
-                    venueLogoImg.src = pub.venueLogo;
-                    venueLogoImg.alt = pub.venue || 'Venue';
-                    venueLogoImg.className = 'venue-logo';
-                    headerDiv.appendChild(venueLogoImg);
-                }
-                
-                const infoDiv = document.createElement('div');
-                infoDiv.className = 'pub-info';
-                
-                // Add venue name
-                if (pub.venue) {
-                    const venueNameElement = document.createElement('div');
-                    venueNameElement.className = 'pub-venue-name';
-                    venueNameElement.textContent = pub.venue;
-                    infoDiv.appendChild(venueNameElement);
-                }
-                
-                // Add title
+                // 1. Add Title (H3, Bold, Primary)
                 const titleElement = document.createElement('h3');
+                titleElement.className = 'pub-title';
                 titleElement.textContent = pub.title;
-                infoDiv.appendChild(titleElement);
+                contentElement.appendChild(titleElement);
                 
-                headerDiv.appendChild(infoDiv);
-                contentElement.appendChild(headerDiv);
-                
-                // Add authors
+                // 2. Add Authors (Regular, Neutral)
                 const authorsElement = document.createElement('p');
-                authorsElement.className = 'authors';
+                authorsElement.className = 'pub-authors';
                 authorsElement.innerHTML = pub.authors;
                 contentElement.appendChild(authorsElement);
                 
-                // Add highlight if exists (like Spotlight, Oral, etc.)
+                // 3. Add Venue (Distinct style)
+                if (pub.venue) {
+                    const venueNameElement = document.createElement('div');
+                    venueNameElement.className = 'pub-venue';
+                    venueNameElement.textContent = pub.venue;
+                    contentElement.appendChild(venueNameElement);
+                }
+                
+                // Add highlight if exists
                 if (pub.highlight) {
                     const highlightElement = document.createElement('p');
                     highlightElement.className = 'pub-highlight';
