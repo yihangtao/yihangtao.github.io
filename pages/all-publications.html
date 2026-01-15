@@ -100,53 +100,28 @@
                     const pubElement = document.createElement('div');
                     pubElement.className = 'publication';
                     
-                    // Add thumbnail if exists
-                    if (pub.thumbnail) {
-                        const thumbnailDiv = document.createElement('div');
-                        thumbnailDiv.className = 'pub-thumbnail';
-                        const thumbnailImg = document.createElement('img');
-                        thumbnailImg.src = '../' + pub.thumbnail;
-                        thumbnailImg.alt = pub.title;
-                        thumbnailDiv.appendChild(thumbnailImg);
-                        pubElement.appendChild(thumbnailDiv);
-                    }
-                    
                     const contentElement = document.createElement('div');
                     contentElement.className = 'pub-content';
                     
-                    // Create header with venue logo
-                    const headerDiv = document.createElement('div');
-                    headerDiv.className = 'pub-header';
-                    
-                    if (pub.venueLogo) {
-                        const venueLogoImg = document.createElement('img');
-                        venueLogoImg.src = '../' + pub.venueLogo;
-                        venueLogoImg.alt = pub.venue || 'Venue';
-                        venueLogoImg.className = 'venue-logo';
-                        headerDiv.appendChild(venueLogoImg);
-                    }
-                    
-                    const infoDiv = document.createElement('div');
-                    infoDiv.className = 'pub-info';
-                    
-                    if (pub.venue) {
-                        const venueNameElement = document.createElement('div');
-                        venueNameElement.className = 'pub-venue-name';
-                        venueNameElement.textContent = pub.venue;
-                        infoDiv.appendChild(venueNameElement);
-                    }
-                    
+                    // 1. Add Title (H3, Bold, Primary)
                     const titleElement = document.createElement('h3');
+                    titleElement.className = 'pub-title';
                     titleElement.textContent = pub.title;
-                    infoDiv.appendChild(titleElement);
+                    contentElement.appendChild(titleElement);
                     
-                    headerDiv.appendChild(infoDiv);
-                    contentElement.appendChild(headerDiv);
-                    
+                    // 2. Add Authors (Regular, Neutral)
                     const authorsElement = document.createElement('p');
-                    authorsElement.className = 'authors';
+                    authorsElement.className = 'pub-authors';
                     authorsElement.innerHTML = pub.authors;
                     contentElement.appendChild(authorsElement);
+                    
+                    // 3. Add Venue (Distinct style)
+                    if (pub.venue) {
+                        const venueNameElement = document.createElement('div');
+                        venueNameElement.className = 'pub-venue';
+                        venueNameElement.textContent = pub.venue;
+                        contentElement.appendChild(venueNameElement);
+                    }
                     
                     if (pub.highlight) {
                         const highlightElement = document.createElement('p');
