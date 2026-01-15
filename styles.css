@@ -361,26 +361,31 @@ details summary {
 }
 
 /* Service Section */
+.service-category {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 1.5rem;
+}
+
+.service-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 .service-category h3 {
     font-size: 1.1rem;
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 0.5rem;
-    font-family: 'Inter', sans-serif; /* Keep headers clean */
+    font-family: 'Inter', sans-serif;
 }
 
-.service-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1.5rem;
-}
-
-.service-list li {
-    font-family: 'Times New Roman', Times, serif;
+.service-items {
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    color: #334155;
-    margin-bottom: 0.25rem;
-    line-height: 1.5;
+    color: #475569;
+    line-height: 1.6;
 }
 
 /* Honors Section Styling */
