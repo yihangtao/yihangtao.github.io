@@ -11,6 +11,7 @@ vendor/
 # Build outputs
 dist/
 build/
+Templates/
 
 # Logs
 *.log

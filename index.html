@@ -1,262 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yihang Tao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: '#fefffe',
+              foreground: '#0f172a',
+              primary: '#1e293b',
+              accent: '#d4a562',
+              'accent-dark': '#b88a4d',
+              muted: '#64748b',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Crimson Text', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
 </head>
-<body>
-    <!-- Top Navigation - Shared Banner -->
-    <nav class="top-nav">
-        <ul class="nav-links">
-            <li><a href="#homepage" class="active">Homepage</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#latest-news">News</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#honors">Honors and Awards</a></li>
-            <li><a href="#educations">Educations</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Content Container -->
-    <div class="content-container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-section">
-                    <img src="assets/profile.jpg" id="profile-img" alt="Yihang Tao">
-                    <h1>Yihang Tao | 陶祎航</h1>
-                    <p class="subtitle">PhD Student at CityU</p>
+<body class="bg-background text-foreground antialiased font-sans">
+    <!-- Top Navigation -->
+    <nav class="top-nav glass fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl lg:text-2xl font-serif font-semibold text-primary hover:text-accent transition-colors duration-200">
+                        Yihang Tao
+                    </a>
                 </div>
-                
-                <div class="sidebar-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Hong Kong, China</span>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <ul class="nav-links flex space-x-8">
+                            <li><a href="#homepage" class="nav-item">Homepage</a></li>
+                            <li><a href="#about" class="nav-item">About Me</a></li>
+                            <li><a href="#latest-news" class="nav-item">News</a></li>
+                            <li><a href="#publications" class="nav-item">Publications</a></li>
+                            <li><a href="#honors" class="nav-item">Honors</a></li>
+                            <li><a href="#educations" class="nav-item">Education</a></li>
+                            <li><a href="#contact" class="nav-item">Contact</a></li>
+                        </ul>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:yihang.tommy@my.cityu.edu.hk">Email</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-file-pdf"></i>
-                        <a href="assets/CV.pdf" target="_blank">CV</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <a href="https://scholar.google.com.hk/citations?user=YopoapwAAAAJ&hl=zh-CN&oi=ao" target="_blank">Google Scholar</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/yihangtao" target="_blank">Github</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-researchgate"></i>
-                        <a href="https://www.researchgate.net/profile/Yihang-Tao" target="_blank">ResearchGate</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-blog"></i>
-                        <a href="https://yihangtao.github.io/blog/" target="_blank">Blog</a>
-                    </div>
-                    <div class="info-item">
-                        <img src="assets/openreview.svg" alt="OpenReview" class="icon-svg">
-                        <a href="https://openreview.net/profile?id=~Yihang_Tao1" target="_blank">OpenReview</a>
-                    </div>
+                </div>
+
+                <!-- Mobile Menu Button (Simplified for now) -->
+                <div class="lg:hidden flex items-center">
+                    <button class="mobile-menu-btn p-2 rounded-md text-neutral-600 hover:text-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="main-wrapper">
-
-        <main class="main-content">
-            <!-- Homepage/About Me Section - Biography -->
-            <section id="homepage" class="section about-section">
-                <span id="about"></span>
-                <h2 class="section-title">About Me</h2>
-                <div class="content-block">
-                    <p><b>Yihang Tao</b> received the B.S. degree from the School of Information Science and Engineering, <a href="https://www.seu.edu.cn/">Southeast University</a>, Nanjing, China, in 2021 and received his M.S. degree from the School of Computer Science, <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, Shanghai, China, in 2024. Currently, he is pursuing his PhD degree in the Department of Computer Science at <a href="https://www.cityu.edu.hk/">City University of Hong Kong</a> (Advisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a>).</p>
-                    
-                    <p>His current research interests include <b>computer vision</b>, <b>generative models</b>, and <b>autonomous driving</b>. He serves as the program committee member for CVPR, ICML, ICLR, ACM MM, and the reviewer for IEEE TITS, TMC, RA-L, etc.</p>
-                    
-                    <div class="highlight-box">
-                        <i class="fas fa-lightbulb"></i>
-                        <p><strong>I am actively seeking collaborators of like-minded interests.</strong> If you are interested in my work, please feel free to contact me via email: <a href="mailto:yihang.tommy@my.cityu.edu.hk">yihang.tommy@my.cityu.edu.hk</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- News Section -->
-            <section id="latest-news" class="section">
-                <h2 class="section-title">🔥 News</h2>
-                <div class="content-block">
-                    <div id="news-container" class="news-list">
-                        <!-- News items will be dynamically loaded here from news.json -->
-                    </div>
-                    <div class="view-all-container">
-                        <a href="pages/all-news.html" class="view-all-btn">View All News <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Publications Section -->
-            <section id="publications" class="section">
-                <h2 class="section-title">📄 Publications <span class="subtitle-text">(* means equal contribution)</span></h2>
-                <div class="content-block">
-                    <div class="publications-list">
-                        <!-- Publications items will be dynamically loaded here from publications.json -->
-                    </div>
-                    <div class="publication-filters">
-                        <a href="pages/all-publications.html" class="filter-link">
-                            <i class="fas fa-list"></i> View All Publications
-                        </a>
-                        <a href="pages/all-publications.html?filter=first-author" class="filter-link">
-                            <i class="fas fa-user"></i> First Author Papers
-                        </a>
-                        <a href="pages/all-publications.html?filter=accepted" class="filter-link">
-                            <i class="fas fa-check-circle"></i> Accepted Papers
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Educations Section -->
-            <section id="educations" class="section">
-                <h2 class="section-title">🎓 Education</h2>
-                <div class="content-block">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="edu-content-wrapper">
-                                    <div class="edu-text">
-                                        <h3>PhD @ City University of Hong Kong (CITYUHK)</h3>
-                                        <p class="timeline-date">Sep. 2024 - Now</p>
-                                        <p>Department of Computer Science</p>
-                                        <p>Supervisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/">Prof. Yuguang "Michael" Fang</a> </p>
-                                    </div>
-                                    <div class="school-logo">
-                                        <img src="assets/cityu.png" alt="City University of Hong Kong" class="edu-logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="edu-content-wrapper">
-                                    <div class="edu-text">
-                                        <h3>MEng @ Shanghai Jiao Tong University (SJTU)</h3>
-                                        <p class="timeline-date">Sep. 2021 - Apr. 2024</p>
-                                        <p>School of Computer Science</p>
-                                    </div>
-                                    <div class="school-logo">
-                                        <img src="assets/sjtu.png" alt="Shanghai Jiao Tong University" class="edu-logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="edu-content-wrapper">
-                                    <div class="edu-text">
-                                        <h3>BEng @ Southeast University (SEU)</h3>
-                                        <p class="timeline-date">Sep. 2017 - Jul. 2021</p>
-                                        <p>School of Information Engineering</p>
-                                    </div>
-                                    <div class="school-logo">
-                                        <img src="assets/seu.png" alt="Southeast University" class="edu-logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Honors Section -->
-            <section id="honors" class="section">
-                <h2 class="section-title">🏆 Honors & Awards</h2>
-                <div class="content-block">
-                    <div id="honors-container" class="honors-list">
-                        <!-- Honors items will be dynamically loaded here from honors.json -->
-                    </div>
-                    <div class="view-all-container">
-                        <a href="pages/all-honors.html" class="view-all-btn">View All Honors <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section with Map -->
-            <section id="contact" class="section">
-                <h2 class="section-title">📍 Contact</h2>
-                <div class="content-block">
-                    <div class="address-container">
-                        <div class="address-info">
-                            <h3>Office Address</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> 83 Tat Chee Avenue Kowloon, Hong Kong</p>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156431518!2d114.16990907694372!3d22.3379294415273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040736e9ad7dd3%3A0x1706ff4e8aa79fd1!2z5Lmd6b6N5aGY6YGU5LmL6LevODPomZ_lrbjooZPmqJMgKOS4iSk!5e0!3m2!1szh-CN!2shk!4v1747664344094!5m2!1szh-CN!2shk"
-                            width="100%" 
-                            height="400" 
-                            style="border:0; border-radius: 8px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <div class="visitor-map">
-                        <h3 style="text-align: center; margin: 40px 0 20px 0;">Visitor Statistics</h3>
-                        <div style="width: 300px; margin: 0 auto;">
-                            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DGYryRUj2d1F6bWJ5iDqqI6z8tPVyqLu9TOe9LQmSt4"></script>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
         </div>
-    </div>
-    
-    <footer>
-        <p>&copy; <span id="current-year"></span> Yihang Tao. All rights reserved.</p>
+    </nav>
+
+    <!-- Main Content Grid -->
+    <main class="min-h-screen pt-20 lg:pt-28 pb-12">
+        <div class="max-w-[50%] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid-layout">
+                
+                <!-- Left Column - Profile (Sticky) -->
+                <div class="profile-column">
+                    <div class="profile-card sticky top-24">
+                        <!-- Profile Image -->
+                        <div class="profile-image-container mb-6">
+                            <img src="assets/profile.jpg" id="profile-img" alt="Yihang Tao" class="w-full h-auto">
+                        </div>
+
+                        <!-- Name and Title -->
+                        <div class="text-center mb-6">
+                            <h1 class="text-3xl font-serif font-bold text-primary mb-2">Yihang Tao | 陶祎航</h1>
+                            <p class="text-lg text-accent font-medium mb-1">PhD Student</p>
+                            <p class="text-neutral-600 mb-2">City University of Hong Kong</p>
+                        </div>
+
+                        <!-- Contact Links -->
+                        <div class="social-links flex flex-wrap justify-center gap-3 mb-6">
+                            <a href="mailto:yihang.tommy@my.cityu.edu.hk" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="assets/CV.pdf" target="_blank" class="social-btn" title="CV"><i class="fas fa-file-pdf"></i></a>
+                            <a href="https://scholar.google.com.hk/citations?user=YopoapwAAAAJ&hl=zh-CN&oi=ao" target="_blank" class="social-btn" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                            <a href="https://github.com/yihangtao" target="_blank" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.researchgate.net/profile/Yihang-Tao" target="_blank" class="social-btn" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                            <a href="https://yihangtao.github.io/blog/" target="_blank" class="social-btn" title="Blog"><i class="fas fa-blog"></i></a>
+                        </div>
+                        
+                        <!-- Research Interests -->
+                         <div class="research-interests bg-neutral-100 rounded-lg p-4 mb-6">
+                            <h3 class="font-semibold text-primary mb-3">Research Interests</h3>
+                            <div class="space-y-2 text-sm text-neutral-700">
+                                <div>Computer Vision</div>
+                                <div>Generative Models</div>
+                                <div>Autonomous Driving</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column - Content -->
+                <div class="content-column space-y-12">
+                    
+                    <!-- About Section -->
+                    <section id="homepage" class="scroll-mt-24">
+                        <span id="about"></span> <!-- Anchor for About link -->
+                        <div class="section-header mb-6">
+                            <h2 class="text-3xl font-serif font-bold text-primary">About Me</h2>
+                        </div>
+                        <div class="prose max-w-none text-neutral-600 text-justify">
+                            <p class="mb-4"><b>Yihang Tao</b> received the B.S. degree from the School of Information Science and Engineering, <a href="https://www.seu.edu.cn/" class="link-highlight">Southeast University</a>, Nanjing, China, in 2021 and received his M.S. degree from the School of Computer Science, <a href="https://www.sjtu.edu.cn/" class="link-highlight">Shanghai Jiao Tong University</a>, Shanghai, China, in 2024. Currently, he is pursuing his PhD degree in the Department of Computer Science at <a href="https://www.cityu.edu.hk/" class="link-highlight">City University of Hong Kong</a> (Advisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/" class="link-highlight">Prof. Yuguang "Michael" Fang</a>).</p>
+                            
+                            <p class="mb-4">His current research interests include <b>computer vision</b>, <b>generative models</b>, and <b>autonomous driving</b>. He serves as the program committee member for CVPR, ICML, ICLR, ACM MM, and the reviewer for IEEE TITS, TMC, RA-L, etc.</p>
+                            
+                            <div class="highlight-box bg-accent/10 border-l-4 border-accent p-4 rounded-r-lg text-left">
+                                <p><strong><i class="fas fa-lightbulb text-accent mr-2"></i>I am actively seeking collaborators of like-minded interests.</strong> If you are interested in my work, please feel free to contact me via email: <a href="mailto:yihang.tommy@my.cityu.edu.hk" class="link-highlight">yihang.tommy@my.cityu.edu.hk</a>.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- News Section -->
+                    <section id="latest-news" class="scroll-mt-24">
+                        <div class="section-header mb-6 flex justify-between items-center">
+                            <h2 class="text-3xl font-serif font-bold text-primary">🔥 News</h2>
+                            <a href="pages/all-news.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div id="news-container" class="news-list space-y-4">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </section>
+
+                    <!-- Publications Section -->
+                    <section id="publications" class="scroll-mt-24">
+                        <div class="section-header mb-6">
+                            <h2 class="text-3xl font-serif font-bold text-primary">📄 Publications</h2>
+                            <p class="text-sm text-neutral-500 mt-1">(* means equal contribution)</p>
+                        </div>
+                        
+                        <div class="publication-filters flex flex-wrap gap-3 mb-6">
+                            <a href="pages/all-publications.html" class="filter-chip">
+                                <i class="fas fa-list mr-1"></i> View All
+                            </a>
+                            <a href="pages/all-publications.html?filter=first-author" class="filter-chip">
+                                <i class="fas fa-user mr-1"></i> First Author
+                            </a>
+                            <a href="pages/all-publications.html?filter=accepted" class="filter-chip">
+                                <i class="fas fa-check-circle mr-1"></i> Accepted
+                            </a>
+                        </div>
+
+                        <div class="publications-list space-y-6">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </section>
+
+                    <!-- Honors Section -->
+                    <section id="honors" class="scroll-mt-24">
+                        <div class="section-header mb-6 flex justify-between items-center">
+                            <h2 class="text-3xl font-serif font-bold text-primary">🏆 Honors & Awards</h2>
+                            <a href="pages/all-honors.html" class="text-sm font-medium text-accent hover:text-accent-dark transition-colors">View All <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div id="honors-container" class="honors-list space-y-4">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </section>
+
+                    <!-- Education Section -->
+                    <section id="educations" class="scroll-mt-24">
+                        <div class="section-header mb-6">
+                            <h2 class="text-3xl font-serif font-bold text-primary">🎓 Education</h2>
+                        </div>
+                        <div class="timeline space-y-6">
+                            <!-- PhD -->
+                            <div class="timeline-item flex gap-4">
+                                <div class="school-logo-container w-16 h-16 flex-shrink-0 bg-white rounded-lg shadow-sm p-2 flex items-center justify-center border border-neutral-100">
+                                    <img src="assets/cityu.png" alt="CityU" class="max-w-full max-h-full">
+                                </div>
+                                <div class="timeline-content">
+                                    <h3 class="font-semibold text-primary">PhD @ City University of Hong Kong</h3>
+                                    <p class="text-sm text-accent font-medium">Sep. 2024 - Now</p>
+                                    <p class="text-sm text-neutral-600 mt-1">Department of Computer Science</p>
+                                    <p class="text-sm text-neutral-600">Supervisor: <a href="https://www.cs.cityu.edu.hk/~yugufang/" class="link-highlight">Prof. Yuguang "Michael" Fang</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Masters -->
+                            <div class="timeline-item flex gap-4">
+                                <div class="school-logo-container w-16 h-16 flex-shrink-0 bg-white rounded-lg shadow-sm p-2 flex items-center justify-center border border-neutral-100">
+                                    <img src="assets/sjtu.png" alt="SJTU" class="max-w-full max-h-full">
+                                </div>
+                                <div class="timeline-content">
+                                    <h3 class="font-semibold text-primary">MEng @ Shanghai Jiao Tong University</h3>
+                                    <p class="text-sm text-accent font-medium">Sep. 2021 - Apr. 2024</p>
+                                    <p class="text-sm text-neutral-600 mt-1">School of Computer Science</p>
+                                </div>
+                            </div>
+
+                            <!-- Bachelors -->
+                            <div class="timeline-item flex gap-4">
+                                <div class="school-logo-container w-16 h-16 flex-shrink-0 bg-white rounded-lg shadow-sm p-2 flex items-center justify-center border border-neutral-100">
+                                    <img src="assets/seu.png" alt="SEU" class="max-w-full max-h-full">
+                                </div>
+                                <div class="timeline-content">
+                                    <h3 class="font-semibold text-primary">BEng @ Southeast University</h3>
+                                    <p class="text-sm text-accent font-medium">Sep. 2017 - Jul. 2021</p>
+                                    <p class="text-sm text-neutral-600 mt-1">School of Information Engineering</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Section -->
+                    <section id="contact" class="scroll-mt-24">
+                        <div class="section-header mb-6">
+                            <h2 class="text-3xl font-serif font-bold text-primary">📍 Contact</h2>
+                        </div>
+                        <div class="contact-card bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
+                            <div class="mb-6">
+                                <h3 class="font-semibold text-primary mb-2">Office Address</h3>
+                                <p class="text-neutral-600 flex items-start gap-2">
+                                    <i class="fas fa-map-marker-alt mt-1 text-accent"></i>
+                                    <span>83 Tat Chee Avenue Kowloon, Hong Kong</span>
+                                </p>
+                            </div>
+                            <div class="map-container rounded-lg overflow-hidden shadow-sm border border-neutral-100 mb-8">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156431518!2d114.16990907694372!3d22.3379294415273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040736e9ad7dd3%3A0x1706ff4e8aa79fd1!2z5Lmd6b6N5aGY6YGU5LmL6LevODPomZ_lrbjooZPmqJMgKOS4iSk!5e0!3m2!1szh-CN!2shk!4v1747664344094!5m2!1szh-CN!2shk"
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="visitor-stats text-center">
+                                <h3 class="font-semibold text-primary mb-4">Visitor Statistics</h3>
+                                <div class="inline-block">
+                                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=DGYryRUj2d1F6bWJ5iDqqI6z8tPVyqLu9TOe9LQmSt4"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-200 py-8 mt-12 bg-neutral-50">
+        <div class="max-w-[90rem] mx-auto px-4 text-center text-neutral-500 text-sm">
+            <p>&copy; <span id="current-year"></span> Yihang Tao. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Update copyright year
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Active nav link on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            function setActiveLink() {
-                let currentSection = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    if (window.pageYOffset >= sectionTop - 200) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + currentSection) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', setActiveLink);
-            setActiveLink();
-        });
     </script>
 </body>
 </html>

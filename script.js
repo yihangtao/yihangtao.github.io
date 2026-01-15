@@ -153,16 +153,8 @@ function loadPublications() {
                 const pubElement = document.createElement('div');
                 pubElement.className = 'publication';
                 
-                // Add thumbnail if exists
-                if (pub.thumbnail) {
-                    const thumbnailDiv = document.createElement('div');
-                    thumbnailDiv.className = 'pub-thumbnail';
-                    const thumbnailImg = document.createElement('img');
-                    thumbnailImg.src = pub.thumbnail;
-                    thumbnailImg.alt = pub.title;
-                    thumbnailDiv.appendChild(thumbnailImg);
-                    pubElement.appendChild(thumbnailDiv);
-                }
+                // Add thumbnail if exists - REMOVED per request
+
                 
                 // Create publication content container
                 const contentElement = document.createElement('div');
