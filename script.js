@@ -147,7 +147,7 @@ function loadPublications() {
             console.log('Loaded publications:', publications.length);
             
             // Filter publications to show on homepage based on showOnHomepage flag
-            let pubsToShow = publications.filter(pub => pub.showOnHomepage === true);
+            let pubsToShow = publications;
             
             // Sort by year descending
             pubsToShow.sort((a, b) => {
