@@ -1,5 +1,22 @@
 [
   {
+    "title": "Controllable Street View Generation for Collaborative Driving Scenes",
+    "authors": "<strong><u>Yihang Tao</u></strong>, Yu Guo, Senkang Hu, Yanan Ma, Zihan Fang, Sam Kwong, Yuguang Fang",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "showOnHomepage": true,
+    "venue": "ArXiv 2025",
+    "thumbnail": "assets/publications/2025-v2xcrafter/thumbnail.png",
+    "venueLogo": "assets/publications/2025-v2xcrafter/venue-logo.svg",
+    "tags": [
+      {
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "#"
+      }
+    ]
+  },
+  {
     "title": "Decoder Gradient Shields: A Family of Provable and High-Fidelity Methods Against Gradient-Based Box-Free Watermark Removal",
     "authors": "Haonan An, Guang Hua, Wei Du, Hangcheng Cao, <strong><u>Yihang Tao</u></strong>, Guowen Xu, Susanto Rahardja, Yuguang Fang",
     "type": "accepted",
