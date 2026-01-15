@@ -149,17 +149,17 @@ function loadPublications() {
             // Filter publications to show on homepage based on showOnHomepage flag
             let pubsToShow = publications;
             
-            // Sort by year descending
+            // Sort by year descending (Preprints/Missing year at top)
             pubsToShow.sort((a, b) => {
-                const yearA = parseInt(a.year) || 0;
-                const yearB = parseInt(b.year) || 0;
+                const yearA = a.year ? parseInt(a.year) : 9999;
+                const yearB = b.year ? parseInt(b.year) : 9999;
                 return yearB - yearA;
             });
 
             // Group by year
             const pubsByYear = {};
             pubsToShow.forEach(pub => {
-                const year = pub.year || 'Unknown';
+                const year = pub.year || 'Preprint';
                 if (!pubsByYear[year]) {
                     pubsByYear[year] = [];
                 }
@@ -167,7 +167,11 @@ function loadPublications() {
             });
 
             // Get sorted years
-            const sortedYears = Object.keys(pubsByYear).sort((a, b) => b - a);
+            const sortedYears = Object.keys(pubsByYear).sort((a, b) => {
+                if (a === 'Preprint') return -1;
+                if (b === 'Preprint') return 1;
+                return b - a;
+            });
 
             // Render groups
             sortedYears.forEach(year => {
@@ -204,23 +208,33 @@ function loadPublications() {
                     }
                     line1.appendChild(venueTagSpan);
 
-                    // Title Link
-                    const titleLink = document.createElement('a');
-                    titleLink.className = 'pub-title-link';
-                    titleLink.textContent = pub.title;
+                    // Title (Text only, no link on title itself)
+                    const titleSpan = document.createElement('span');
+                    titleSpan.className = 'pub-title-text';
+                    titleSpan.textContent = pub.title;
+                    line1.appendChild(titleSpan);
                     
-                    // Find a link (Paper > Code > Project)
-                    let targetLink = '#';
+                    // Paper/Code Buttons
                     if (pub.tags) {
-                        const paperTag = pub.tags.find(t => t.text === 'Paper');
-                        const codeTag = pub.tags.find(t => t.text === 'Code');
-                        if (paperTag && paperTag.link) targetLink = paperTag.link;
-                        else if (codeTag && codeTag.link) targetLink = codeTag.link;
+                        pub.tags.forEach(tag => {
+                            if (tag.link && tag.link !== '#') {
+                                const btn = document.createElement('a');
+                                btn.className = 'pub-link-btn';
+                                btn.href = tag.link;
+                                btn.target = '_blank';
+                                
+                                // Customize text/icon based on tag type
+                                if (tag.text === 'Paper') {
+                                    btn.textContent = 'PDF';
+                                } else {
+                                    btn.textContent = tag.text;
+                                }
+                                
+                                line1.appendChild(btn);
+                            }
+                        });
                     }
-                    titleLink.href = targetLink;
-                    if (targetLink !== '#') titleLink.target = '_blank';
                     
-                    line1.appendChild(titleLink);
                     li.appendChild(line1);
 
                     // --- Line 2: Authors ---
@@ -247,7 +261,7 @@ function loadPublications() {
                     }
 
                     // 2. Full Venue Name (No Year for Journals)
-                    const fullVenueName = getVenueFullName(pub.venue);
+                    const fullVenueName = getVenueFullName(pub.venue, pub.year);
                     const venueNameSpan = document.createElement('span');
                     venueNameSpan.textContent = fullVenueName;
                     line3.appendChild(venueNameSpan);
@@ -312,23 +326,40 @@ function getVenueShortName(venueStr, year) {
     return s;
 }
 
-function getVenueFullName(venueStr) {
+function getVenueFullName(venueStr, year) {
     if (!venueStr) return '';
     let s = venueStr.replace(/\d{4}/g, '').trim(); // Remove year
     
-    // Journal Full Names Mapping
+    // Get year suffix for conferences
+    let yearSuffix = '';
+    if (year) {
+        const yearStr = year.toString();
+        if (yearStr.length === 4) {
+            yearSuffix = "'" + yearStr.substring(2);
+        }
+    }
+
+    // Journal Full Names Mapping (No Year)
     if (s.includes('TDSC')) return 'IEEE Transactions on Dependable and Secure Computing';
     if (s.includes('TMC')) return 'IEEE Transactions on Mobile Computing';
     if (s.includes('JSAC')) return 'IEEE Journal on Selected Areas in Communications';
     if (s.includes('TGCN')) return 'IEEE Transactions on Green Communications and Networking';
     if (s.includes('TNSE')) return 'IEEE Transactions on Network Science and Engineering';
     if (s.includes('IoTJ') || s.includes('IoTJ')) return 'IEEE Internet of Things Journal';
+    if (s.includes('LNET') || s.includes('LNet')) return 'IEEE Networking Letters';
     
-    // For conferences, usually the name in JSON is just "NeurIPS 2025" -> "NeurIPS".
-    // If we want to keep it simple or expand if needed.
-    // User didn't ask to expand conferences, just journals ("期刊名称需要给出全称").
+    // Conference Full Names Mapping (With Year Suffix)
+    if (s.includes('NeurIPS')) return `Annual Conference on Neural Information Processing Systems (NeurIPS${yearSuffix})`;
+    if (s.includes('CVPR')) return `IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR${yearSuffix})`;
+    if (s.includes('ICCV')) return `IEEE/CVF International Conference on Computer Vision (ICCV${yearSuffix})`;
+    if (s.includes('ECCV')) return `European Conference on Computer Vision (ECCV${yearSuffix})`;
+    if (s.includes('ICRA')) return `IEEE International Conference on Robotics and Automation (ICRA${yearSuffix})`;
+    if (s.includes('AAAI')) return `AAAI Conference on Artificial Intelligence (AAAI${yearSuffix})`;
+    if (s.includes('GLOBECOM')) return `IEEE Global Communications Conference (GLOBECOM${yearSuffix})`;
+    if (s.includes('INFOCOM')) return `IEEE International Conference on Computer Communications (INFOCOM${yearSuffix})`;
+    if (s.includes('MOBICOM')) return `Annual International Conference on Mobile Computing and Networking (MobiCom${yearSuffix})`;
     
-    if (s.toLowerCase().includes('arxiv')) return 'ArXiv Preprint';
+    if (s.toLowerCase().includes('arxiv')) return 'arXiv preprint';
     
     return s;
 }
