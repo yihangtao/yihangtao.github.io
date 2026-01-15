@@ -145,26 +145,58 @@ html {
 /* News Item Dashed Line */
 .news-item {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 1.5rem;
     align-items: baseline;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px dashed #e2e8f0;
 }
 
 .news-date {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #64748b;
 }
 
 .news-content {
+    font-size: 0.9rem;
     color: #334155;
+    line-height: 1.5;
 }
 
 .news-item:last-child {
     border-bottom: none;
+}
+
+/* Honors Section Styling */
+.honor-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+}
+
+.honor-year {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #d4a562; /* accent */
+    text-align: right;
+}
+
+.honor-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b; /* primary */
+    margin-bottom: 0.25rem;
+}
+
+.honor-content p {
+    font-size: 0.9rem;
+    color: #64748b; /* muted */
+    line-height: 1.5;
 }
 
 /* Filter Chips Hover */
