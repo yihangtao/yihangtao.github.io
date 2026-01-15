@@ -145,7 +145,7 @@ html {
 /* News Item Dashed Line */
 .news-item {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 1.5rem;
     align-items: baseline;
     padding-bottom: 0.5rem;

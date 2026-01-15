@@ -1,73 +1,73 @@
 [
   {
-    "date": "Dec. 2025",
+    "date": "2025.12",
     "title": "Paper Accepted by IEEE TDSC",
     "content": "One co-authored paper entitled \"Decoder Gradient Shields: A Family of Provable and High-Fidelity Methods Against Gradient-Based Box-Free Watermark Removal\" has been accepted by <strong>IEEE TDSC</strong>!"
   },
   {
-    "date": "Dec. 2025",
+    "date": "2025.12",
     "title": "Paper Accepted by IEEE TMC",
     "content": "One co-authored paper entitled \"CP-uniGuard: A Unified, Probability-Agnostic, and Adaptive Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems\" has been accepted by <strong>IEEE TMC</strong>!"
   },
   {
-    "date":"Sept. 2025",
+    "date":"2025.09",
     "title": "Two Papers Accepted by NeurIPS'25",
     "content": "Two co-authored papers was accepted by <strong>NeurIPS'25</strong> (one spotlight), congratulations!"
   },
   {
-    "date": "Sept. 2025",
+    "date": "2025.09",
     "title": "Passing QE",
     "content": "I passed my <strong>PhD Qualifying Examination</strong>!"
   },
   {
-    "date": "Aug. 2025",
+    "date": "2025.08",
     "title": "CityUHK OAPA Scholarship Award",
     "content": "I was awarded the <strong>Outstanding Academic Performance Award (OAPA) Scholarship</strong> by City University of Hong Kong!"
   },
   {
-    "date": "Aug. 2025",
+    "date": "2025.08",
     "title": "Paper Accepted by IEEE GLOBECOM'25",
     "content": "One co-authored paper entitled \"Task-Aware Parameter-Efficient Fine-Tuning of Large Pre-Trained Models at the Edge\" has been accepted by <strong>IEEE GLOBECOM'25</strong>!"
   },
   {
-    "date": "Apr. 2025",
+    "date": "2025.04",
     "title": "Paper Accepted by IEEE JSAC",
     "content": "One co-authored paper entitled \"R-ACP: Real-Time Adaptive Collaborative Perception Leveraging Robust Task-Oriented Communications\" has been accepted by <strong>IEEE JSAC</strong>!"
   },
 
   {
-    "date": "Mar. 2025",
+    "date": "2025.03",
     "title": "IEEE RAS Student Grant Award",
     "content": "I was awarded the <strong>IEEE Robotics and Automation Society (RAS) Student Grant Award</strong> (Amount: 1500 USD) for my conference travel to ICRA'25!"
   },
 
   {
-    "date": "Jan. 2025",
+    "date": "2025.01",
     "title": "One Paper Accepted by ICRA'25",
     "content": "One first-author paper entitled \"Directed-CP: Directed Collaborative Perception for Connected and Autonomous Vehicles via Proactive Attention\" has been accepted by <strong>ICRA'25</strong>!"
   },
   {
-    "date": "Jan. 2025",
+    "date": "2025.01",
     "title": "AAAI'25 Oral Presentation",
     "content": "Our paper accepted by AAAI'25 was selected for <strong>Oral Presentation</strong>!"
   },
   {
-    "date": "Dec. 2024",
+    "date": "2024.12",
     "title": "Paper Accepted by AAAI'25",
     "content": "One first-author paper entitled \"CP-Guard: Malicious Agent Detection and Defense in Collaborative Bird's Eye View Perception\" has been accepted by <strong>AAAI'25</strong>!"
   },
   {
-    "date": "Aug. 2024",
+    "date": "2024.08",
     "title": "Paper Accepted by IEEE TGCN",
     "content": "One first-author paper entitled \"O-RAN-Based Digital Twin Function Virtualization for Sustainable IoV Service Response: An Asynchronous Hierarchical Reinforcement Learning Approach\" has been accepted by <strong>IEEE TGCN</strong>!"
   },
   {
-    "date": "Aug. 2023",
+    "date": "2023.08",
     "title": "Paper Accepted by GLOBECOM'23",
     "content": "One first-author paper entitled \"Digital Twin and DRL-Driven Semantic Dissemination for 6G Autonomous Driving Service\" has been accepted by <strong>GLOBECOM'23</strong>!"
   },
   {
-    "date": "Apr. 2023",
+    "date": "2023.04",
     "title": "Paper Accepted by IEEE LNET",
     "content": "One first-author paper entitled \"DRL-Driven Digital Twin Function Virtualization for Adaptive Service Response in 6G Networks\" has been accepted by <strong>IEEE LNET</strong>!"
   }
