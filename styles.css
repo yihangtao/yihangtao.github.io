@@ -137,6 +137,31 @@ html {
     margin-right: 0.5rem;
 }
 
+.pub-title-text {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.pub-link-btn {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    color: #475569;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.pub-link-btn:hover {
+    border-color: #d4a562;
+    color: #d4a562;
+    background-color: #fffbeb;
+}
+
 .tag-arxiv {
     color: #2563eb; /* Blue for Arxiv */
 }
