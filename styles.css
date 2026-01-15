@@ -385,16 +385,22 @@ details summary {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .pub-thumbnail-box {
-    width: 250px;
+    width: 200px; /* Fixed width for thumbnail */
     flex-shrink: 0;
-    border: 1px solid #e2e8f0;
-    padding: 4px;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    order: -1; /* Move to the left */
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .pub-thumbnail-box img {
@@ -402,6 +408,20 @@ details summary {
     height: auto;
     display: block;
     border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pub-list-item.with-thumbnail-expanded .pub-content-wrapper {
+    flex-grow: 1;
+}
+
+/* Adjust text spacing in expanded mode */
+.pub-list-item.with-thumbnail-expanded .pub-line-1 {
+    margin-bottom: 0.5rem;
+}
+
+.pub-list-item.with-thumbnail-expanded .pub-title-text {
+    font-size: 1.1rem; /* Larger title in expanded mode */
 }
 
 .pub-btn-preview {
