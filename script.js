@@ -147,101 +147,135 @@ function loadPublications() {
             console.log('Loaded publications:', publications.length);
             
             // Filter publications to show on homepage based on showOnHomepage flag
-            const pubsToShow = publications.filter(pub => pub.showOnHomepage === true);
+            let pubsToShow = publications.filter(pub => pub.showOnHomepage === true);
             
-            pubsToShow.forEach((pub, index) => {
-                const pubElement = document.createElement('div');
-                pubElement.className = 'publication';
-                
-                // Create publication content container
-                const contentElement = document.createElement('div');
-                contentElement.className = 'pub-content';
-                
-                // 1. Add Title (H3, Bold, Primary)
-                const titleElement = document.createElement('h3');
-                titleElement.className = 'pub-title';
-                titleElement.textContent = pub.title;
-                contentElement.appendChild(titleElement);
-                
-                // 2. Add Authors (Regular, Neutral)
-                const authorsElement = document.createElement('p');
-                authorsElement.className = 'pub-authors';
-                authorsElement.innerHTML = pub.authors;
-                contentElement.appendChild(authorsElement);
-                
-                // 3. Add Venue (Distinct style)
-                if (pub.venue) {
-                    const venueNameElement = document.createElement('div');
-                    venueNameElement.className = 'pub-venue';
-                    venueNameElement.textContent = pub.venue;
-                    contentElement.appendChild(venueNameElement);
+            // Sort by year descending
+            pubsToShow.sort((a, b) => {
+                const yearA = parseInt(a.year) || 0;
+                const yearB = parseInt(b.year) || 0;
+                return yearB - yearA;
+            });
+
+            // Group by year
+            const pubsByYear = {};
+            pubsToShow.forEach(pub => {
+                const year = pub.year || 'Unknown';
+                if (!pubsByYear[year]) {
+                    pubsByYear[year] = [];
                 }
-                
-                // Add highlight if exists
-                if (pub.highlight) {
-                    const highlightElement = document.createElement('p');
-                    highlightElement.className = 'pub-highlight';
-                    highlightElement.textContent = pub.highlight;
-                    contentElement.appendChild(highlightElement);
-                }
-                
-                // Add tags
-                if (pub.tags && pub.tags.length > 0) {
-                    const tagsContainer = document.createElement('div');
-                    tagsContainer.className = 'pub-tags';
-                    
-                    pub.tags.forEach(tag => {
-                        if (tag.link) {
-                            const tagLink = document.createElement('a');
-                            tagLink.href = tag.link;
-                            tagLink.className = `tag ${tag.class || ''}`;
-                            tagLink.textContent = tag.text;
-                            if (!tag.link.startsWith('#')) {
-                                tagLink.setAttribute('target', '_blank');
-                            }
-                            tagsContainer.appendChild(tagLink);
-                        } else {
-                            const tagSpan = document.createElement('span');
-                            tagSpan.className = `tag ${tag.class || ''}`;
-                            tagSpan.textContent = tag.text;
-                            tagsContainer.appendChild(tagSpan);
-                        }
-                    });
-                    
-                    contentElement.appendChild(tagsContainer);
-                }
-                
-                // Add GitHub stats if exists
-                if (pub.githubStats) {
-                    const statsDiv = document.createElement('div');
-                    statsDiv.className = 'pub-github-stats';
-                    
-                    if (pub.githubStats.stars !== undefined) {
-                        const starStat = document.createElement('div');
-                        starStat.className = 'github-stat';
-                        starStat.innerHTML = `<i class="fab fa-github github-icon"></i><i class="fas fa-star star-icon"></i><span class="count">${pub.githubStats.stars}</span>`;
-                        statsDiv.appendChild(starStat);
+                pubsByYear[year].push(pub);
+            });
+
+            // Get sorted years
+            const sortedYears = Object.keys(pubsByYear).sort((a, b) => b - a);
+
+            // Render groups
+            sortedYears.forEach(year => {
+                const yearGroup = document.createElement('div');
+                yearGroup.className = 'pub-year-group';
+
+                // Year Header
+                const yearHeader = document.createElement('h3');
+                yearHeader.className = 'pub-year-header';
+                yearHeader.textContent = `-${year}-`;
+                yearGroup.appendChild(yearHeader);
+
+                // List
+                const ul = document.createElement('ul');
+                ul.className = 'pub-list-ul';
+
+                pubsByYear[year].forEach(pub => {
+                    const li = document.createElement('li');
+                    li.className = 'pub-list-item';
+
+                    // --- Line 1: [Venue] Title ---
+                    const line1 = document.createElement('div');
+                    line1.className = 'pub-line-1';
+
+                    // Venue Tag
+                    const venueTagSpan = document.createElement('span');
+                    const venueShort = getVenueShortName(pub.venue);
+                    venueTagSpan.textContent = `[${venueShort}]`;
+                    venueTagSpan.className = 'pub-venue-tag';
+                    if (venueShort.toLowerCase().includes('arxiv')) {
+                        venueTagSpan.classList.add('tag-arxiv');
+                    } else {
+                        venueTagSpan.classList.add('tag-conference');
                     }
+                    line1.appendChild(venueTagSpan);
+
+                    // Title Link
+                    const titleLink = document.createElement('a');
+                    titleLink.className = 'pub-title-link';
+                    titleLink.textContent = pub.title;
                     
-                    if (pub.githubStats.forks !== undefined) {
-                        const forkStat = document.createElement('div');
-                        forkStat.className = 'github-stat';
-                        forkStat.innerHTML = `<i class="fas fa-code-branch fork-icon"></i><span class="count">${pub.githubStats.forks}</span>`;
-                        statsDiv.appendChild(forkStat);
+                    // Find a link (Paper > Code > Project)
+                    let targetLink = '#';
+                    if (pub.tags) {
+                        const paperTag = pub.tags.find(t => t.text === 'Paper');
+                        const codeTag = pub.tags.find(t => t.text === 'Code');
+                        if (paperTag && paperTag.link) targetLink = paperTag.link;
+                        else if (codeTag && codeTag.link) targetLink = codeTag.link;
                     }
+                    titleLink.href = targetLink;
+                    if (targetLink !== '#') titleLink.target = '_blank';
                     
-                    contentElement.appendChild(statsDiv);
-                }
-                
-                // Add to publications list
-                pubElement.appendChild(contentElement);
-                publicationsList.appendChild(pubElement);
+                    line1.appendChild(titleLink);
+                    li.appendChild(line1);
+
+                    // --- Line 2: Authors ---
+                    const line2 = document.createElement('div');
+                    line2.className = 'pub-line-2';
+                    line2.innerHTML = pub.authors; // keep innerHTML for <strong>/<u>
+                    li.appendChild(line2);
+
+                    // --- Line 3: Venue Details ---
+                    const line3 = document.createElement('div');
+                    line3.className = 'pub-line-3';
+                    // Use the full venue string from JSON or highlight
+                    // If highlight exists, append it? User said "one paper 3 lines".
+                    // Let's combine venue and highlight/details.
+                    let venueText = pub.venue || '';
+                    if (pub.highlight) {
+                        venueText += ` ${pub.highlight}`;
+                    }
+                    // Or if there's a more detailed venue name, use that.
+                    // For now, use pub.venue.
+                    line3.textContent = venueText;
+                    li.appendChild(line3);
+
+                    ul.appendChild(li);
+                });
+
+                yearGroup.appendChild(ul);
+                publicationsList.appendChild(yearGroup);
             });
         })
         .catch(error => {
             console.error('Error loading publications data:', error);
             publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
         });
+}
+
+function getVenueShortName(venueStr) {
+    if (!venueStr) return 'Unknown';
+    // Remove year (4 digits at end or start)
+    let s = venueStr.replace(/\d{4}/g, '').trim();
+    // Special cases
+    if (s.toLowerCase().includes('arxiv')) return 'ArXiv';
+    if (s.includes('NeurIPS')) return 'NeurIPS';
+    if (s.includes('CVPR')) return 'CVPR';
+    if (s.includes('ICCV')) return 'ICCV';
+    if (s.includes('ECCV')) return 'ECCV';
+    if (s.includes('ICRA')) return 'ICRA';
+    if (s.includes('AAAI')) return 'AAAI';
+    if (s.includes('TDSC')) return 'IEEE TDSC';
+    if (s.includes('TMC')) return 'IEEE TMC';
+    if (s.includes('JSAC')) return 'IEEE JSAC';
+    if (s.includes('GLOBECOM')) return 'GLOBECOM';
+    
+    // Default: take first word or split by common delimiters
+    return s.split(/[\s,]+/)[0];
 }
 
 // Function to render news items

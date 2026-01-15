@@ -91,7 +91,7 @@ html {
     border-bottom-style: solid;
 }
 
-/* Publication Card Hover */
+/* Publication Card Hover (Deprecated - keeping for reference or alternative view) */
 .publication {
     background: #fff;
     border: 1px solid #e2e8f0;
@@ -101,7 +101,81 @@ html {
     text-align: justify;
 }
 
-/* Publication Card Typography */
+/* New Publication List Styles */
+.pub-year-group {
+    margin-bottom: 2rem;
+}
+
+.pub-year-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+    display: inline-block;
+}
+
+.pub-list-ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.pub-list-item {
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.pub-line-1 {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.pub-venue-tag {
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.tag-arxiv {
+    color: #2563eb; /* Blue for Arxiv */
+}
+
+.tag-conference {
+    color: #dc2626; /* Red for Conference/Journal */
+}
+
+.pub-title-link {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.pub-title-link:hover {
+    color: #d4a562; /* accent */
+    border-bottom-color: #d4a562;
+}
+
+.pub-line-2 {
+    font-size: 0.95rem;
+    color: #4b5563; /* neutral-600 */
+    margin-bottom: 0.1rem;
+}
+
+.pub-line-2 strong, .pub-line-2 b {
+    color: #1e293b; /* primary */
+    font-weight: 600;
+}
+
+.pub-line-3 {
+    font-size: 0.9rem;
+    color: #64748b; /* slate-500 */
+    font-style: italic;
+}
+
+/* Publication Card Typography (Legacy/Unused for now) */
 .pub-title {
     font-size: 1.1rem;
     font-weight: 600;
