@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
 
 /* Base Styles */
 body {
@@ -335,16 +335,16 @@ details summary {
 }
 
 .news-date {
-    font-family: 'Indie Flower', cursive; /* Wider handwriting font */
-    font-weight: 600; /* Slightly bolder for readability */
-    font-size: 1.05rem; 
+    font-family: 'Kalam', cursive; /* Cleaner, wider handwriting font */
+    font-weight: 400; 
+    font-size: 1rem; 
     color: #64748b;
     white-space: nowrap;
 }
 
 .news-content {
-    font-family: 'Indie Flower', cursive; /* Wider handwriting font */
-    font-size: 1.1rem; 
+    font-family: 'Kalam', cursive; /* Cleaner, wider handwriting font */
+    font-size: 1.05rem; 
     color: #334155;
     line-height: 1.5;
 }
