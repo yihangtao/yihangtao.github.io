@@ -374,18 +374,18 @@ details summary {
 }
 
 .service-category h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1rem; /* Match education header size */
+    font-weight: 600;
     color: #1e293b;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     font-family: 'Inter', sans-serif;
 }
 
 .service-items {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Match education text size (approx) */
     color: #475569;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* Honors Section Styling */
