@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
 
 /* Base Styles */
 body {
@@ -157,9 +157,11 @@ details summary {
 }
 
 .pub-year-header {
-    font-size: 1.25rem;
+    font-family: 'Inter', sans-serif; /* Wider than Crimson Text */
+    font-size: 1.35rem; /* Slightly larger */
     font-weight: 700;
     font-style: italic;
+    letter-spacing: 0.05em; /* Add spacing for wider look */
     color: #1e293b;
     margin-bottom: 1rem;
     border-bottom: 2px solid #e2e8f0;
@@ -333,16 +335,16 @@ details summary {
 }
 
 .news-date {
-    font-family: 'Patrick Hand', cursive;
-    font-weight: 400;
-    font-size: 0.95rem; /* Adjusted slightly for handwriting readability */
+    font-family: 'Indie Flower', cursive; /* Wider handwriting font */
+    font-weight: 600; /* Slightly bolder for readability */
+    font-size: 1.05rem; 
     color: #64748b;
     white-space: nowrap;
 }
 
 .news-content {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1rem; /* Adjusted slightly for handwriting readability */
+    font-family: 'Indie Flower', cursive; /* Wider handwriting font */
+    font-size: 1.1rem; 
     color: #334155;
     line-height: 1.5;
 }
