@@ -194,10 +194,10 @@ function loadPublications() {
 
                     // Venue Tag
                     const venueTagSpan = document.createElement('span');
-                    const venueShort = getVenueShortName(pub.venue);
+                    const venueShort = getVenueShortName(pub.venue, pub.year);
                     venueTagSpan.textContent = `[${venueShort}]`;
                     venueTagSpan.className = 'pub-venue-tag';
-                    if (venueShort.toLowerCase().includes('arxiv')) {
+                    if (venueShort.toLowerCase().includes('arxiv') || venueShort.toLowerCase().includes('preprint')) {
                         venueTagSpan.classList.add('tag-arxiv');
                     } else {
                         venueTagSpan.classList.add('tag-conference');
@@ -232,18 +232,36 @@ function loadPublications() {
                     // --- Line 3: Venue Details ---
                     const line3 = document.createElement('div');
                     line3.className = 'pub-line-3';
-                    // Use the full venue string from JSON or highlight
-                    // If highlight exists, append it? User said "one paper 3 lines".
-                    // Let's combine venue and highlight/details.
-                    let venueText = pub.venue || '';
-                    if (pub.highlight) {
-                        venueText += ` ${pub.highlight}`;
+                    
+                    // 1. Badge (Oral/Spotlight) - Red Box at start
+                    let highlightText = pub.highlight || '';
+                    let badgeText = '';
+                    if (highlightText.toLowerCase().includes('oral')) badgeText = 'Oral';
+                    else if (highlightText.toLowerCase().includes('spotlight')) badgeText = 'Spotlight';
+                    
+                    if (badgeText) {
+                        const badge = document.createElement('span');
+                        badge.className = 'pub-badge-highlight';
+                        badge.textContent = badgeText;
+                        line3.appendChild(badge);
                     }
-                    // Or if there's a more detailed venue name, use that.
-                    // For now, use pub.venue.
-                    line3.textContent = venueText;
-                    li.appendChild(line3);
 
+                    // 2. Full Venue Name (No Year for Journals)
+                    const fullVenueName = getVenueFullName(pub.venue);
+                    const venueNameSpan = document.createElement('span');
+                    venueNameSpan.textContent = fullVenueName;
+                    line3.appendChild(venueNameSpan);
+
+                    // 3. CCF Rank
+                    const ccfRank = getCCFRank(fullVenueName, pub.venue);
+                    if (ccfRank) {
+                        const rankSpan = document.createElement('span');
+                        rankSpan.className = `ccf-rank ccf-${ccfRank.toLowerCase()}`;
+                        rankSpan.textContent = `(CCF-${ccfRank})`;
+                        line3.appendChild(rankSpan);
+                    }
+
+                    li.appendChild(line3);
                     ul.appendChild(li);
                 });
 
@@ -257,25 +275,87 @@ function loadPublications() {
         });
 }
 
-function getVenueShortName(venueStr) {
-    if (!venueStr) return 'Unknown';
+function getVenueShortName(venueStr, year) {
+    if (!venueStr) return 'Preprint';
+    
     // Remove year (4 digits at end or start)
     let s = venueStr.replace(/\d{4}/g, '').trim();
+    let suffix = '';
+    
+    // Check if it is a conference that needs year suffix
+    const conferences = ['NeurIPS', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI', 'GLOBECOM', 'INFOCOM', 'MOBICOM'];
+    for (const conf of conferences) {
+        if (s.includes(conf)) {
+            // Get last two digits of year
+            if (year) {
+                const yearStr = year.toString();
+                if (yearStr.length === 4) {
+                    suffix = "'" + yearStr.substring(2);
+                }
+            }
+            return conf + suffix;
+        }
+    }
+
     // Special cases
-    if (s.toLowerCase().includes('arxiv')) return 'ArXiv';
-    if (s.includes('NeurIPS')) return 'NeurIPS';
-    if (s.includes('CVPR')) return 'CVPR';
-    if (s.includes('ICCV')) return 'ICCV';
-    if (s.includes('ECCV')) return 'ECCV';
-    if (s.includes('ICRA')) return 'ICRA';
-    if (s.includes('AAAI')) return 'AAAI';
+    if (s.toLowerCase().includes('arxiv')) return 'ArXiv'; // No year
+    
+    // Journals or specific conferences
     if (s.includes('TDSC')) return 'IEEE TDSC';
     if (s.includes('TMC')) return 'IEEE TMC';
     if (s.includes('JSAC')) return 'IEEE JSAC';
-    if (s.includes('GLOBECOM')) return 'GLOBECOM';
+    if (s.includes('TGCN')) return 'IEEE TGCN';
+    if (s.includes('LNET')) return 'IEEE LNET';
+    if (s.includes('TNSE')) return 'IEEE TNSE';
+    if (s.includes('IOTJ') || s.includes('IoTJ')) return 'IEEE IoTJ';
+
+    return s;
+}
+
+function getVenueFullName(venueStr) {
+    if (!venueStr) return '';
+    let s = venueStr.replace(/\d{4}/g, '').trim(); // Remove year
     
-    // Default: take first word or split by common delimiters
-    return s.split(/[\s,]+/)[0];
+    // Journal Full Names Mapping
+    if (s.includes('TDSC')) return 'IEEE Transactions on Dependable and Secure Computing';
+    if (s.includes('TMC')) return 'IEEE Transactions on Mobile Computing';
+    if (s.includes('JSAC')) return 'IEEE Journal on Selected Areas in Communications';
+    if (s.includes('TGCN')) return 'IEEE Transactions on Green Communications and Networking';
+    if (s.includes('TNSE')) return 'IEEE Transactions on Network Science and Engineering';
+    if (s.includes('IoTJ') || s.includes('IoTJ')) return 'IEEE Internet of Things Journal';
+    
+    // For conferences, usually the name in JSON is just "NeurIPS 2025" -> "NeurIPS".
+    // If we want to keep it simple or expand if needed.
+    // User didn't ask to expand conferences, just journals ("期刊名称需要给出全称").
+    
+    if (s.toLowerCase().includes('arxiv')) return 'ArXiv Preprint';
+    
+    return s;
+}
+
+function getCCFRank(fullName, originalVenue) {
+    const v = (fullName + ' ' + originalVenue).toLowerCase();
+    
+    // CCF-A
+    if (v.includes('tdsc') || v.includes('dependable and secure') || 
+        v.includes('tmc') || v.includes('mobile computing') || 
+        v.includes('aaai') || v.includes('neurips') || 
+        v.includes('cvpr') || v.includes('iccv') || 
+        v.includes('infocom') || v.includes('jsac')) {
+        return 'A';
+    }
+    
+    // CCF-B
+    if (v.includes('icra')) {
+        return 'B';
+    }
+    
+    // CCF-C
+    if (v.includes('globecom')) {
+        return 'C';
+    }
+    
+    return null;
 }
 
 // Function to render news items
