@@ -1,11 +1,11 @@
 [
   {
-    "title": "Controllable Street View Generation for Collaborative Driving Scenes",
+    "title": "Learning to Generate Driving Scene Across Agents",
     "authors": "<strong><u>Yihang Tao</u></strong>*, Yu Guo*, Senkang Hu, Yanan Ma, Zihan Fang, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
     "showOnHomepage": true,
-    "venue": "ArXiv 2025",
+    "venue": "Under Review",
     "thumbnail": "assets/publications/2025-v2xcrafter/thumbnail.png",
     "venueLogo": "assets/publications/2025-v2xcrafter/venue-logo.svg",
     "tags": [
@@ -82,7 +82,7 @@
     "type": "preprint",
     "isFirstAuthor": false,
     "showOnHomepage": false,
-    "venue": "ArXiv 2025",
+    "venue": "IEEE TMC (Minor Revision)",
     "thumbnail": "assets/publications/2025-dynamic-uncertainty-multimodal/thumbnail.png",
     "venueLogo": "assets/publications/2025-dynamic-uncertainty-multimodal/venue-logo.svg",
     "tags": [
@@ -158,7 +158,7 @@
     "type": "preprint",
     "isFirstAuthor": false,
     "showOnHomepage": false,
-    "venue": "ArXiv 2025",
+    "venue": "IEEE TDSC (Major Revision)",
     "thumbnail": "assets/publications/2025-cp-guard-plus/thumbnail.png",
     "venueLogo": "assets/publications/2025-cp-guard-plus/venue-logo.svg",
     "tags": [
@@ -175,7 +175,7 @@
     "type": "preprint",
     "isFirstAuthor": true,
     "showOnHomepage": true,
-    "venue": "ArXiv 2025",
+    "venue": "IEEE TDSC (Major Revision)",
     "thumbnail": "assets/publications/2025-gcp/thumbnail.png",
     "venueLogo": "assets/publications/2025-gcp/venue-logo.svg",
     "tags": [
