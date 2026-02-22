@@ -223,7 +223,9 @@ function loadPublications() {
                     const venueShort = getVenueShortName(pub.venue, pub.year);
                     venueTagSpan.textContent = `[${venueShort}]`;
                     venueTagSpan.className = 'pub-venue-tag';
-                    if (venueShort.toLowerCase().includes('arxiv') || venueShort.toLowerCase().includes('preprint')) {
+                    if (venueShort.toLowerCase().includes('arxiv') || 
+                        venueShort.toLowerCase().includes('preprint') || 
+                        year === 'Preprint') {
                         venueTagSpan.classList.add('tag-arxiv');
                     } else {
                         venueTagSpan.classList.add('tag-conference');
@@ -350,6 +352,14 @@ function loadPublications() {
 function getVenueShortName(venueStr, year) {
     if (!venueStr) return 'Preprint';
     
+    // Check for revision status
+    let revisionSuffix = '';
+    if (venueStr.toLowerCase().includes('major revision')) {
+        revisionSuffix = ', Major Revision';
+    } else if (venueStr.toLowerCase().includes('minor revision')) {
+        revisionSuffix = ', Minor Revision';
+    }
+
     // Remove year (4 digits at end or start)
     let s = venueStr.replace(/\d{4}/g, '').trim();
     let suffix = '';
@@ -365,21 +375,21 @@ function getVenueShortName(venueStr, year) {
                     suffix = "'" + yearStr.substring(2);
                 }
             }
-            return conf + suffix;
+            return conf + suffix + revisionSuffix;
         }
     }
 
     // Special cases
-    if (s.toLowerCase().includes('arxiv')) return 'ArXiv'; // No year
+    if (s.toLowerCase().includes('arxiv')) return 'ArXiv' + revisionSuffix; // No year
     
     // Journals or specific conferences
-    if (s.includes('TDSC')) return 'IEEE TDSC';
-    if (s.includes('TMC')) return 'IEEE TMC';
-    if (s.includes('JSAC')) return 'IEEE JSAC';
-    if (s.includes('TGCN')) return 'IEEE TGCN';
-    if (s.includes('LNET')) return 'IEEE LNET';
-    if (s.includes('TNSE')) return 'IEEE TNSE';
-    if (s.includes('IOTJ') || s.includes('IoTJ')) return 'IEEE IoTJ';
+    if (s.includes('TDSC')) return 'IEEE TDSC' + revisionSuffix;
+    if (s.includes('TMC')) return 'IEEE TMC' + revisionSuffix;
+    if (s.includes('JSAC')) return 'IEEE JSAC' + revisionSuffix;
+    if (s.includes('TGCN')) return 'IEEE TGCN' + revisionSuffix;
+    if (s.includes('LNET')) return 'IEEE LNET' + revisionSuffix;
+    if (s.includes('TNSE')) return 'IEEE TNSE' + revisionSuffix;
+    if (s.includes('IOTJ') || s.includes('IoTJ')) return 'IEEE IoTJ' + revisionSuffix;
 
     return s;
 }
