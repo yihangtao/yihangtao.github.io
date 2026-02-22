@@ -366,9 +366,9 @@ function getVenueShortName(venueStr, year) {
     // Check for revision status
     let revisionSuffix = '';
     if (venueStr.toLowerCase().includes('major revision')) {
-        revisionSuffix = ', Major Revision';
+        revisionSuffix = ', Major';
     } else if (venueStr.toLowerCase().includes('minor revision')) {
-        revisionSuffix = ', Minor Revision';
+        revisionSuffix = ', Minor';
     }
 
     // Remove year (4 digits at end or start)
