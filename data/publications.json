@@ -187,14 +187,38 @@
     ]
   },
   {
-    "title": "Adaptive Attack on Multi-Agent Collaborative Perception",
+    "title": "Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception",
     "authors": "<strong><u>Yihang Tao</u></strong>, Senkang \"Forest\" Hu, Haonan An, Zhengru Fang, Hangcheng Cao, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": true,
     "showOnHomepage": true,
-    "venue": "ArXiv 2025",
+    "venue": "CVPR 2026",
+    "year": "2026",
     "thumbnail": "assets/publications/2025-adaptive-attack/thumbnail.png",
-    "venueLogo": "assets/publications/2025-adaptive-attack/venue-logo.svg",
+    "venueLogo": "assets/publications/2025-adaptive-attack/venue-logo.png",
+    "tags": [
+      {
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "#"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/yihangtao/MVIG.git"
+      }
+    ]
+  },
+  {
+    "title": "RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces",
+    "authors": "Haonan An, Ye Xiaohui, Guang Hua, <strong><u>Yihang Tao</u></strong>, Hangcheng Cao, Xiangyu Yu, Yuguang Fang",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "showOnHomepage": false,
+    "venue": "CVPR 2026",
+    "year": "2026",
+    "thumbnail": "assets/publications/2026-recovermark/thumbnail.png",
+    "venueLogo": "assets/publications/2026-recovermark/venue-logo.png",
     "tags": [
       {
         "text": "Paper",

@@ -1,5 +1,10 @@
 [
   {
+    "date": "2026.02",
+    "title": "Two Papers Accepted by CVPR'26",
+    "content": "Two papers (one first-author) have been accepted by <strong>CVPR'26</strong>!"
+  },
+  {
     "date": "2025.12",
     "title": "Paper Accepted by IEEE TDSC",
     "content": "One co-authored paper entitled \"Decoder Gradient Shields: A Family of Provable and High-Fidelity Methods Against Gradient-Based Box-Free Watermark Removal\" has been accepted by <strong>IEEE TDSC</strong>!"
