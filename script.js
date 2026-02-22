@@ -314,18 +314,29 @@ function loadPublications() {
                     }
 
                     // 2. Full Venue Name (No Year for Journals)
-                    const fullVenueName = getVenueFullName(pub.venue, pub.year);
+                    let fullVenueName = getVenueFullName(pub.venue, pub.year);
+                    
+                    // Check for revision status
+                    const isRevision = pub.venue.toLowerCase().includes('major revision') || 
+                                       pub.venue.toLowerCase().includes('minor revision');
+                    
+                    if (isRevision) {
+                        fullVenueName = "Under Review";
+                    }
+
                     const venueNameSpan = document.createElement('span');
                     venueNameSpan.textContent = fullVenueName;
                     line3.appendChild(venueNameSpan);
 
                     // 3. CCF Rank
-                    const ccfRank = getCCFRank(fullVenueName, pub.venue);
-                    if (ccfRank) {
-                        const rankSpan = document.createElement('span');
-                        rankSpan.className = `ccf-rank ccf-${ccfRank.toLowerCase()}`;
-                        rankSpan.textContent = `(CCF-${ccfRank})`;
-                        line3.appendChild(rankSpan);
+                    if (!isRevision) {
+                        const ccfRank = getCCFRank(fullVenueName, pub.venue);
+                        if (ccfRank) {
+                            const rankSpan = document.createElement('span');
+                            rankSpan.className = `ccf-rank ccf-${ccfRank.toLowerCase()}`;
+                            rankSpan.textContent = `(CCF-${ccfRank})`;
+                            line3.appendChild(rankSpan);
+                        }
                     }
 
                     contentWrapper.appendChild(line3);
