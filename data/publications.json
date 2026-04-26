@@ -79,10 +79,11 @@
   {
     "title": "Dynamic Uncertainty-aware Multimodal Fusion for Outdoor Health Monitoring",
     "authors": "Zihan Fang, Zheng Lin, Senkang Hu, <strong><u>Yihang Tao</u></strong>, Yiqin Deng, Xianhao Chen, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": false,
     "showOnHomepage": false,
-    "venue": "IEEE TMC (Minor Revision)",
+    "venue": "IEEE TMC 2026",
+    "year": "2026",
     "thumbnail": "assets/publications/2025-dynamic-uncertainty-multimodal/thumbnail.png",
     "venueLogo": "assets/publications/2025-dynamic-uncertainty-multimodal/venue-logo.svg",
     "tags": [
@@ -172,10 +173,11 @@
   {
     "title": "GCP: Guarded Collaborative Perception with Spatial-Temporal Aware Malicious Agent Detection",
     "authors": "<strong><u>Yihang Tao</u></strong>*, Senkang \"Forest\" Hu*, Yue Hu, Haonan An, Hangcheng Cao, Yuguang Fang",
-    "type": "preprint",
+    "type": "accepted",
     "isFirstAuthor": true,
     "showOnHomepage": true,
-    "venue": "IEEE TDSC (Major Revision)",
+    "venue": "IEEE TDSC 2026",
+    "year": "2026",
     "thumbnail": "assets/publications/2025-gcp/thumbnail.png",
     "venueLogo": "assets/publications/2025-gcp/venue-logo.svg",
     "tags": [
