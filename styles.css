@@ -170,48 +170,82 @@ details summary {
 }
 
 .pub-list-ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
 }
 
 .pub-list-item {
-    margin-bottom: 1.25rem;
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
     line-height: 1.5;
 }
 
+.pub-list-item:hover {
+    border-color: rgba(212, 165, 98, 0.55);
+}
+
 .pub-line-1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
     font-size: 1rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.45rem;
 }
 
 .pub-venue-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.28rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 20px -16px rgba(15, 23, 42, 0.6);
+    font-size: 0.78rem;
     font-weight: 700;
-    margin-right: 0.5rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
 .pub-title-text {
     font-weight: 600;
     color: #1e293b;
+    font-size: 1.08rem;
+    line-height: 1.35;
+    flex: 0 1 auto;
 }
 
 .pub-link-btn {
     display: inline-block;
-    font-size: 0.75rem;
-    padding: 0.1rem 0.5rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 999px;
     color: #475569;
-    margin-left: 0.5rem;
     text-decoration: none;
     transition: all 0.2s;
     vertical-align: middle;
-    background-color: white;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px -14px rgba(15, 23, 42, 0.45);
 }
 
 .pub-link-btn:hover {
-    border-color: #d4a562;
-    color: #d4a562;
-    background-color: #fffbeb;
+    border-color: rgba(212, 165, 98, 0.55);
+    color: #b7791f;
+    background-color: #fffaf0;
 }
 
 .tag-arxiv {
@@ -219,7 +253,15 @@ details summary {
 }
 
 .tag-conference {
-    color: #dc2626; /* Red for Conference/Journal */
+    color: #b7791f;
+    border-color: rgba(212, 165, 98, 0.36);
+    background: #fffaf0;
+}
+
+.tag-under-review {
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.22);
+    background: #eff6ff;
 }
 
 .pub-title-link {
@@ -238,7 +280,7 @@ details summary {
 .pub-line-2 {
     font-size: 0.95rem;
     color: #4b5563; /* neutral-600 */
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.35rem;
 }
 
 .pub-line-2 strong, .pub-line-2 b {
@@ -249,7 +291,10 @@ details summary {
 .pub-line-3 {
     font-size: 0.9rem;
     color: #64748b; /* slate-500 */
-    font-style: italic;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 /* Publication Card Typography (Legacy/Unused for now) */
@@ -289,11 +334,11 @@ details summary {
     color: white;
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
-    margin-right: 0.5rem;
+    padding: 0.16rem 0.5rem;
+    border-radius: 999px;
     vertical-align: middle;
     line-height: 1.2;
+    box-shadow: 0 10px 18px -14px rgba(239, 68, 68, 0.9);
 }
 
 .ccf-rank {
@@ -415,36 +460,40 @@ details summary {
 /* Publication Thumbnail & Layout */
 .pub-content-wrapper {
     width: 100%;
+    flex: 1 1 auto;
 }
 
 .pub-list-item.with-thumbnail-expanded {
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1rem;
-    background-color: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .pub-thumbnail-box {
-    width: 200px; /* Fixed width for thumbnail */
+    width: 280px;
     flex-shrink: 0;
-    order: -1; /* Move to the left */
-    border: none;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
+    order: -1;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
     box-shadow: none;
+    padding: 0.35rem;
 }
 
 .pub-thumbnail-box img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.pub-venue-inline-tag {
+    padding: 0.18rem 0.58rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.025em;
+    box-shadow: none;
 }
 
 .pub-list-item.with-thumbnail-expanded .pub-content-wrapper {
@@ -453,11 +502,18 @@ details summary {
 
 /* Adjust text spacing in expanded mode */
 .pub-list-item.with-thumbnail-expanded .pub-line-1 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
 }
 
 .pub-list-item.with-thumbnail-expanded .pub-title-text {
-    font-size: 1.1rem; /* Larger title in expanded mode */
+    font-size: 1.08rem;
+}
+
+.pub-line-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.45rem;
 }
 
 .pub-btn-preview {
@@ -472,12 +528,12 @@ details summary {
 
 /* Make sure mobile layout stacks */
 @media (max-width: 640px) {
+    .pub-list-item,
     .pub-list-item.with-thumbnail-expanded {
         flex-direction: column;
     }
     .pub-thumbnail-box {
         width: 100%;
-        max-width: 300px;
-        margin-top: 0.5rem;
+        max-width: none;
     }
 }
