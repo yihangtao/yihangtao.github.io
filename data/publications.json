@@ -129,7 +129,25 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://arxiv.org/abs/2508.09085"
+      }
+    ]
+  },
+  {
+    "title": "Optimizing Agentic Reasoning with Retrieval via Synthetic Semantic Information Gain Reward",
+    "authors": "Senkang Hu, Yong Dai, Yuzhi Zhao, <strong><u>Yihang Tao</u></strong>, Yu Guo, Zhengru Fang, Sam Tak Wu Kwong, Yuguang Fang",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "showOnHomepage": false,
+    "venue": "ICML 2026",
+    "year": "2026",
+    "thumbnail": "assets/publications/2026-synthetic-semantic-gain/thumbnail.png",
+    "venueLogo": "assets/publications/2026-synthetic-semantic-gain/venue-logo.png",
+    "tags": [
+      {
+        "text": "Paper",
+        "class": "paper-tag",
+        "link": "https://arxiv.org/abs/2602.00845"
       }
     ]
   },

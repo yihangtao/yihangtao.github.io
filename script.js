@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
     // Make all links open in a new tab
     makeAllLinksOpenInNewTab();
 
@@ -145,15 +150,14 @@ function loadPublications() {
         publicationsJsonPath = '../data/publications.json';
     }
 
-    const publicationsList = document.querySelector('.publications-list');
-    if (!publicationsList) {
+    const featuredContainer = document.getElementById('featured-publications-container') || document.querySelector('#publications .publications-list');
+    const allContainer = document.getElementById('all-publications-container');
+
+    if (!featuredContainer && !allContainer) {
         console.warn('Publications list not found');
         return;
     }
-    
-    // Clear existing publications
-    publicationsList.innerHTML = '';
-    
+
     fetch(publicationsJsonPath)
         .then(response => {
             if (!response.ok) {
@@ -178,11 +182,22 @@ function loadPublications() {
                     return yearB - yearA;
                 });
 
-            renderFeaturedPublications(publicationsList, pubsToShow);
+            if (featuredContainer) {
+                renderFeaturedPublications(featuredContainer, pubsToShow);
+            }
+
+            if (allContainer) {
+                renderAllPublicationsPage(allContainer, publications);
+            }
         })
         .catch(error => {
             console.error('Error loading publications data:', error);
-            publicationsList.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
+            if (featuredContainer) {
+                featuredContainer.innerHTML = '<p>Failed to load publications. Please check the console for details.</p>';
+            }
+            if (allContainer) {
+                allContainer.innerHTML = '<p class="empty-state">Failed to load publications. Please check the console for details.</p>';
+            }
         });
 }
 
@@ -202,6 +217,71 @@ function renderFeaturedPublications(container, publications) {
     });
 
     container.appendChild(ul);
+}
+
+function renderAllPublicationsPage(container, publications) {
+    const filter = getPublicationFilter();
+    const filterIndicator = document.getElementById('filter-indicator');
+
+    let filtered = publications.slice();
+
+    if (filter === 'first-author') {
+        filtered = filtered.filter(pub => pub.isFirstAuthor === true);
+        if (filterIndicator) {
+            filterIndicator.textContent = '(First Author Papers)';
+        }
+    } else if (filter === 'accepted') {
+        filtered = filtered.filter(pub => String(pub.type || '').toLowerCase() === 'accepted');
+        if (filterIndicator) {
+            filterIndicator.textContent = '(Accepted Papers)';
+        }
+    } else if (filterIndicator) {
+        filterIndicator.textContent = '';
+    }
+
+    updateFilterButtons(filter);
+    renderAllPublications(container, filtered);
+}
+
+function renderAllPublications(container, publications) {
+    container.innerHTML = '';
+
+    if (!publications.length) {
+        container.innerHTML = '<p class="empty-state">No publications found for this filter.</p>';
+        return;
+    }
+
+    const grouped = new Map();
+
+    publications
+        .slice()
+        .sort(compareAllPublications)
+        .forEach(pub => {
+            const yearLabel = getYearLabel(pub);
+            if (!grouped.has(yearLabel)) {
+                grouped.set(yearLabel, []);
+            }
+            grouped.get(yearLabel).push(pub);
+        });
+
+    Array.from(grouped.entries()).forEach(([year, items]) => {
+        const group = document.createElement('div');
+        group.className = 'pub-year-group';
+
+        const header = document.createElement('h3');
+        header.className = 'pub-year-header';
+        header.textContent = year;
+        group.appendChild(header);
+
+        const list = document.createElement('ul');
+        list.className = 'pub-list-ul';
+        items.forEach(pub => {
+            list.appendChild(createFeaturedPublicationItem(pub));
+        });
+
+        group.appendChild(list);
+        container.appendChild(group);
+    });
 }
 
 function createFeaturedPublicationItem(pub) {
@@ -272,7 +352,7 @@ function createFeaturedPublicationItem(pub) {
             if (tag.link && tag.link !== '#') {
                 const btn = document.createElement('a');
                 btn.className = 'pub-link-btn';
-                btn.href = tag.link;
+                btn.href = normalizeAssetPath(tag.link);
                 btn.target = '_blank';
                 btn.rel = 'noopener noreferrer';
                 btn.textContent = tag.text === 'Paper' ? 'PDF' : tag.text;
@@ -313,14 +393,97 @@ function createFeaturedPublicationItem(pub) {
 function getPreferredThumbnail(thumbnailPath) {
     const lastSlash = thumbnailPath.lastIndexOf('/');
     if (lastSlash === -1) {
-        return { primary: thumbnailPath, fallback: thumbnailPath };
+        const normalized = normalizeAssetPath(thumbnailPath);
+        return { primary: normalized, fallback: normalized };
     }
 
     const directory = thumbnailPath.substring(0, lastSlash);
     return {
-        primary: `${directory}/demo.gif`,
-        fallback: thumbnailPath
+        primary: normalizeAssetPath(`${directory}/demo.gif`),
+        fallback: normalizeAssetPath(thumbnailPath)
     };
+}
+
+function normalizeAssetPath(path) {
+    if (!path) {
+        return path;
+    }
+
+    if (/^(https?:|mailto:|tel:|#)/i.test(path)) {
+        return path;
+    }
+
+    if (window.location.pathname.includes('/pages/') && !path.startsWith('../')) {
+        return `../${path}`;
+    }
+
+    return path;
+}
+
+function compareAllPublications(a, b) {
+    const yearA = getComparableYear(a);
+    const yearB = getComparableYear(b);
+    if (yearA !== yearB) {
+        return yearB - yearA;
+    }
+
+    const acceptedA = String(a.type || '').toLowerCase() === 'accepted' ? 1 : 0;
+    const acceptedB = String(b.type || '').toLowerCase() === 'accepted' ? 1 : 0;
+    if (acceptedA !== acceptedB) {
+        return acceptedB - acceptedA;
+    }
+
+    const orderA = a.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) {
+        return orderA - orderB;
+    }
+
+    return String(a.title || '').localeCompare(String(b.title || ''));
+}
+
+function getComparableYear(pub) {
+    const parsedYear = parseInt(pub.year, 10);
+    if (!Number.isNaN(parsedYear)) {
+        return parsedYear;
+    }
+    return String(pub.type || '').toLowerCase() === 'accepted' ? 0 : 9999;
+}
+
+function getYearLabel(pub) {
+    const parsedYear = parseInt(pub.year, 10);
+    if (!Number.isNaN(parsedYear)) {
+        return String(parsedYear);
+    }
+    return 'Preprints / Under Review';
+}
+
+function getPublicationFilter() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('filter') || 'all';
+}
+
+function updateFilterButtons(filter) {
+    document.querySelectorAll('.filter-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    if (filter === 'first-author') {
+        const element = document.getElementById('filter-first');
+        if (element) {
+            element.classList.add('active');
+        }
+    } else if (filter === 'accepted') {
+        const element = document.getElementById('filter-accepted');
+        if (element) {
+            element.classList.add('active');
+        }
+    } else {
+        const element = document.getElementById('filter-all');
+        if (element) {
+            element.classList.add('active');
+        }
+    }
 }
 
 function getVenueShortName(venueStr, year) {
@@ -339,7 +502,7 @@ function getVenueShortName(venueStr, year) {
     let suffix = '';
     
     // Check if it is a conference that needs year suffix
-    const conferences = ['NeurIPS', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI', 'GLOBECOM', 'INFOCOM', 'MOBICOM'];
+    const conferences = ['NeurIPS', 'ICML', 'CVPR', 'ICCV', 'ECCV', 'ICRA', 'AAAI', 'GLOBECOM', 'INFOCOM', 'MOBICOM'];
     for (const conf of conferences) {
         if (s.includes(conf)) {
             // Get last two digits of year
@@ -383,6 +546,7 @@ function getVenueFullName(venueStr, year) {
     
     // Conference Full Names Mapping (With Year Suffix)
     if (s.includes('NeurIPS')) return 'Annual Conference on Neural Information Processing Systems';
+    if (s.includes('ICML')) return 'International Conference on Machine Learning';
     if (s.includes('CVPR')) return 'IEEE/CVF Conference on Computer Vision and Pattern Recognition';
     if (s.includes('ICCV')) return 'IEEE/CVF International Conference on Computer Vision';
     if (s.includes('ECCV')) return 'European Conference on Computer Vision';
