@@ -1,6 +1,6 @@
 [
   {
-    "title": "Learning to Generate Driving Scene Across Agents",
+    "title": "V2XCrafter: Learning to Generate Driving Scene Across Agents",
     "authors": "<strong><u>Yihang Tao</u></strong>*, Yu Guo*, Senkang Hu, Yanan Ma, Zihan Fang, Sam Kwong, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
@@ -37,7 +37,7 @@
   },
   {
     "title": "FRUC: Feedforward Dynamic Scene Reconstruction from Uncalibrated Collaborative Driving Views",
-    "displayTitle": "Feedforward Dynamic Scene Reconstruction from Unstructured Ego-Centric Multi-Camera Agent Systems",
+    "displayTitle": "FRUC: Feedforward Dynamic Scene Reconstruction from Uncalibrated Collaborative Driving Views",
     "authors": "<strong><u>Yihang Tao</u></strong>, Yu Guo, Zhengru Fang, Haonan An, Yuguang Fang",
     "type": "preprint",
     "isFirstAuthor": true,
