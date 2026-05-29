@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initSite() {
     const currentYear = document.getElementById('current-year');
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
@@ -141,7 +141,15 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error loading honors data:', error);
         });
-});
+    
+    loadVisitorStatsWhenIdle();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSite);
+} else {
+    initSite();
+}
 
 // Function to load publications from JSON
 function loadPublications() {
@@ -718,6 +726,42 @@ function renderHonorsItems(honorsData, containerId) {
         // Add the honor item to the container
         container.appendChild(honorElement);
     });
+}
+
+function loadVisitorStatsWhenIdle() {
+    const widget = document.getElementById('clustrmaps-widget');
+    if (!widget || widget.dataset.loaded === 'true') {
+        return;
+    }
+
+    const scriptSrc = widget.dataset.src;
+    if (!scriptSrc) {
+        return;
+    }
+
+    const injectScript = () => {
+        if (widget.dataset.loaded === 'true') {
+            return;
+        }
+
+        widget.dataset.loaded = 'true';
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.id = 'clstr_globe';
+        script.src = scriptSrc;
+        script.async = true;
+        widget.appendChild(script);
+    };
+
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(injectScript, { timeout: 2000 });
+        return;
+    }
+
+    window.addEventListener('load', () => {
+        window.setTimeout(injectScript, 300);
+    }, { once: true });
 }
 
 // Function to make all links open in a new tab
