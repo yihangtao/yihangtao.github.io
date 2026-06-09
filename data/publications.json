@@ -68,7 +68,7 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://ieeexplore.ieee.org/abstract/document/11328834/"
       }
     ]
   },
@@ -286,7 +286,7 @@
       {
         "text": "Paper",
         "class": "paper-tag",
-        "link": "#"
+        "link": "https://openaccess.thecvf.com/content/CVPR2026/papers/An_RecoverMark_Robust_Watermarking_for_Localization_and_Recovery_of_Manipulated_Faces_CVPR_2026_paper.pdf"
       }
     ]
   },
