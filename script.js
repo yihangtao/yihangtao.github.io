@@ -329,10 +329,12 @@ function createFeaturedPublicationItem(pub) {
     venueNameSpan.textContent = fullVenueName;
     line3.appendChild(venueNameSpan);
 
-    if (shouldShowVenueTag(pub.venue, fullVenueName, venueShort)) {
+    const showVenueTag = shouldShowVenueTag(pub.venue, fullVenueName, venueShort);
+
+    if (showVenueTag) {
         const venueTagSpan = document.createElement('span');
         venueTagSpan.textContent = venueShort;
-        venueTagSpan.className = 'pub-venue-tag pub-venue-inline-tag';
+        venueTagSpan.className = 'pub-meta-tag';
 
         const lowerVenue = venueShort.toLowerCase();
         if (lowerVenue.includes('under review') || lowerVenue.includes('preprint') || lowerVenue.includes('arxiv')) {
@@ -350,12 +352,29 @@ function createFeaturedPublicationItem(pub) {
         line3.appendChild(badge);
     }
 
+    const paperTag = Array.isArray(pub.tags)
+        ? pub.tags.find(tag => tag.text === 'Paper' && tag.link && tag.link !== '#')
+        : null;
+
+    if (paperTag && !showVenueTag) {
+        const sourceBadge = getPaperSourceBadge(paperTag.link);
+        if (sourceBadge) {
+            const sourceTag = document.createElement('span');
+            sourceTag.className = `pub-meta-tag ${sourceBadge.className}`;
+            sourceTag.textContent = sourceBadge.label;
+            line3.appendChild(sourceTag);
+        }
+    }
+
     contentWrapper.appendChild(line3);
 
-    if (pub.tags) {
-        const line4 = document.createElement('div');
-        line4.className = 'pub-line-4';
+    const footerRow = document.createElement('div');
+    footerRow.className = 'pub-line-4 pub-footer-row';
 
+    const actionGroup = document.createElement('div');
+    actionGroup.className = 'pub-action-group';
+
+    if (pub.tags) {
         pub.tags.forEach(tag => {
             if (tag.link && tag.link !== '#') {
                 const btn = document.createElement('a');
@@ -364,13 +383,36 @@ function createFeaturedPublicationItem(pub) {
                 btn.target = '_blank';
                 btn.rel = 'noopener noreferrer';
                 btn.textContent = tag.text === 'Paper' ? 'PDF' : tag.text;
-                line4.appendChild(btn);
+                btn.classList.add(getLinkButtonClass(tag));
+                actionGroup.appendChild(btn);
             }
         });
+    }
 
-        if (line4.children.length > 0) {
-            contentWrapper.appendChild(line4);
-        }
+    const publicationLogo = getPublicationLogoInfo(venueShort, paperTag ? paperTag.link : '');
+    if (publicationLogo) {
+        const logoWrap = document.createElement('div');
+        logoWrap.className = 'pub-logo-wrap';
+
+        const logoImg = document.createElement('img');
+        logoImg.className = 'pub-venue-logo';
+        logoImg.src = normalizeAssetPath(publicationLogo.src);
+        logoImg.alt = publicationLogo.alt;
+        logoImg.loading = 'lazy';
+        logoImg.onerror = function() {
+            this.parentElement?.remove();
+        };
+
+        logoWrap.appendChild(logoImg);
+        footerRow.appendChild(logoWrap);
+    }
+
+    if (actionGroup.children.length > 0) {
+        footerRow.prepend(actionGroup);
+    }
+
+    if (footerRow.children.length > 0) {
+        contentWrapper.appendChild(footerRow);
     }
 
     li.appendChild(contentWrapper);
@@ -426,6 +468,87 @@ function normalizeAssetPath(path) {
     }
 
     return path;
+}
+
+function getPaperSourceBadge(link) {
+    const normalizedLink = String(link || '').toLowerCase();
+
+    if (normalizedLink.includes('arxiv.org')) {
+        return { label: 'ArXiv', className: 'tag-arxiv' };
+    }
+
+    if (normalizedLink.includes('openaccess.thecvf.com')) {
+        return { label: 'CVF', className: 'tag-cvf' };
+    }
+
+    if (normalizedLink.includes('ieeexplore.ieee.org')) {
+        return { label: 'IEEE', className: 'tag-ieee' };
+    }
+
+    if (normalizedLink.includes('openreview.net')) {
+        return { label: 'OpenReview', className: 'tag-openreview' };
+    }
+
+    return null;
+}
+
+function getPublicationLogoInfo(venueShort, paperLink) {
+    const short = String(venueShort || '').toLowerCase();
+
+    if (!short) {
+        return null;
+    }
+
+    if (short.includes('cvpr')) {
+        return { src: 'assets/publications/logos/CVPR.png', alt: 'CVPR logo' };
+    }
+
+    if (short.includes('neurips')) {
+        return { src: 'assets/publications/logos/NeurIPS.svg', alt: 'NeurIPS logo' };
+    }
+
+    if (short.includes('icml')) {
+        return { src: 'assets/publications/logos/ICML.svg', alt: 'ICML logo' };
+    }
+
+    if (short.includes('icra')) {
+        return { src: 'assets/publications/logos/ICRA.png', alt: 'ICRA logo' };
+    }
+
+    if (short.includes('aaai')) {
+        return { src: 'assets/publications/logos/AAAI.png', alt: 'AAAI logo' };
+    }
+
+    if (short.includes('eccv')) {
+        return { src: 'assets/publications/logos/ECCV.svg', alt: 'ECCV logo' };
+    }
+
+    if (short.includes('globecom')) {
+        return { src: 'assets/publications/logos/GLOBECOM.png', alt: 'GLOBECOM logo' };
+    }
+
+    if (short.includes('ieee') || short.includes('tdsc') || short.includes('tmc') ||
+        short.includes('jsac') || short.includes('tgcn') || short.includes('lnet') ||
+        short.includes('tnse') || short.includes('iotj')) {
+        return { src: 'assets/publications/logos/IEEE_Trans.png', alt: 'IEEE Transactions logo' };
+    }
+
+    if (short.includes('under review') || short.includes('preprint') || short.includes('arxiv')) {
+        const sourceBadge = getPaperSourceBadge(paperLink);
+        if (sourceBadge && sourceBadge.label === 'ArXiv') {
+            return { src: 'assets/publications/logos/arxiv.svg', alt: 'arXiv logo' };
+        }
+    }
+
+    return null;
+}
+
+function getLinkButtonClass(tag) {
+    const tagText = String(tag.text || '').toLowerCase();
+    if (tagText === 'paper') return 'pub-link-btn-primary';
+    if (tagText === 'code') return 'pub-link-btn-secondary';
+    if (tagText.includes('project')) return 'pub-link-btn-secondary';
+    return 'pub-link-btn-tertiary';
 }
 
 function compareAllPublications(a, b) {
