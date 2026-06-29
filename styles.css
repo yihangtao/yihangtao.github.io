@@ -128,6 +128,10 @@ section {
     background: linear-gradient(180deg, #ffffff 0%, #fafaf9 100%);
 }
 
+.contact-panel-title {
+    text-align: center;
+}
+
 .map-container {
     flex: 1 1 auto;
     min-height: 180px;
@@ -148,6 +152,7 @@ section {
 .visitor-stats {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .visitor-stats-widget {
@@ -156,7 +161,9 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
+    max-width: 300px;
     min-height: 180px;
+    margin: 0 auto;
     border-radius: 0.75rem;
     border: 1px solid #f1f5f9;
     background: #ffffff;
