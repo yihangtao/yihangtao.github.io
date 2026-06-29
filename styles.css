@@ -110,8 +110,8 @@ section {
 }
 
 .contact-panels {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1rem;
     align-items: stretch;
 }
@@ -119,8 +119,10 @@ section {
 .contact-panel {
     display: flex;
     flex-direction: column;
-    min-height: 280px;
-    padding: 1rem;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 230px;
+    padding: 0.9rem;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
     background: linear-gradient(180deg, #ffffff 0%, #fafaf9 100%);
@@ -128,7 +130,7 @@ section {
 
 .map-container {
     flex: 1 1 auto;
-    min-height: 230px;
+    min-height: 180px;
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
@@ -139,7 +141,7 @@ section {
 .contact-map-frame {
     width: 100%;
     height: 100%;
-    min-height: 230px;
+    min-height: 180px;
     display: block;
 }
 
@@ -154,7 +156,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 230px;
+    min-height: 180px;
     border-radius: 0.75rem;
     border: 1px solid #f1f5f9;
     background: #ffffff;
@@ -775,9 +777,9 @@ details summary {
 }
 
 /* Make sure mobile layout stacks */
-@media (max-width: 640px) {
+@media (max-width: 520px) {
     .contact-panels {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .contact-panel {
