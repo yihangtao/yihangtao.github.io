@@ -109,6 +109,58 @@ section {
     border-color: #cbd5e1; /* slate-300 */
 }
 
+.contact-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.contact-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fafaf9 100%);
+}
+
+.map-container {
+    flex: 1 1 auto;
+    min-height: 230px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+    border: 1px solid #f1f5f9;
+    background: #ffffff;
+}
+
+.contact-map-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+    display: block;
+}
+
+.visitor-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.visitor-stats-widget {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 230px;
+    border-radius: 0.75rem;
+    border: 1px solid #f1f5f9;
+    background: #ffffff;
+    overflow: hidden;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -724,6 +776,14 @@ details summary {
 
 /* Make sure mobile layout stacks */
 @media (max-width: 640px) {
+    .contact-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-panel {
+        min-height: auto;
+    }
+
     .content-container {
         padding-top: 5rem;
     }
