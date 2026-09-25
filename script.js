@@ -178,6 +178,13 @@ function loadPublications() {
             const pubsToShow = publications
                 .filter(pub => pub.showOnHomepage)
                 .sort((a, b) => {
+                    // Preprints / under-review papers stay on top; accepted papers follow
+                    const acceptedA = String(a.type || '').toLowerCase() === 'accepted' ? 1 : 0;
+                    const acceptedB = String(b.type || '').toLowerCase() === 'accepted' ? 1 : 0;
+                    if (acceptedA !== acceptedB) {
+                        return acceptedA - acceptedB;
+                    }
+
                     const orderA = a.featuredOrder ?? Number.MAX_SAFE_INTEGER;
                     const orderB = b.featuredOrder ?? Number.MAX_SAFE_INTEGER;
                     if (orderA !== orderB) {
