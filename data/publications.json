@@ -32,6 +32,11 @@
         "text": "Paper",
         "class": "paper-tag",
         "link": "https://arxiv.org/pdf/2604.24661"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/fangzr/aco-moe-code"
       }
     ]
   },
@@ -51,9 +56,9 @@
         "link": "https://arxiv.org/abs/2606.17557"
       },
       {
-        "text": "Code",
-        "class": "code-tag",
-        "link": "https://gy65896.github.io/projects/ArXiv2026_CoTIR/"
+        "text": "Project",
+        "class": "project-tag",
+        "link": "https://gy65896.github.io/projects/ArXiv2026_CoTIR/index.html"
       }
     ]
   },
@@ -74,6 +79,16 @@
         "text": "Paper",
         "class": "paper-tag",
         "link": "https://arxiv.org/abs/2605.29997"
+      },
+      {
+        "text": "Project",
+        "class": "project-tag",
+        "link": "https://yihangtao.github.io/FRUC/"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/yihangtao/FRUC"
       }
     ]
   },
@@ -277,6 +292,11 @@
         "text": "Paper",
         "class": "paper-tag",
         "link": "https://arxiv.org/abs/2501.02450"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/yihangtao/GCP"
       }
     ]
   },
@@ -320,6 +340,11 @@
         "text": "Paper",
         "class": "paper-tag",
         "link": "https://openaccess.thecvf.com/content/CVPR2026/papers/An_RecoverMark_Robust_Watermarking_for_Localization_and_Recovery_of_Manipulated_Faces_CVPR_2026_paper.pdf"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/haonanAN309/CVPR-2026-Official-Implementation-RecoverMark"
       }
     ]
   },
