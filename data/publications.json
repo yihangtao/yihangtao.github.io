@@ -59,6 +59,11 @@
         "text": "Project",
         "class": "project-tag",
         "link": "https://gy65896.github.io/projects/ArXiv2026_CoTIR/index.html"
+      },
+      {
+        "text": "Code",
+        "class": "code-tag",
+        "link": "https://github.com/gy65896/CoTIR"
       }
     ]
   },
